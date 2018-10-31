@@ -2,7 +2,7 @@ package seeker;
 
 public class Model extends user.Model {
 
-    int id;
+    int seekerId;
     long telephone;
 
     String name;
@@ -10,14 +10,22 @@ public class Model extends user.Model {
     String educationLevel;
     String biography;
 
-    @Override
-    public int getId() {
-        return id;
+    public Model(int uid, String email, String username, String password, int seekerId, long telephone, String name, String email1, String educationLevel, String biography) {
+        super(uid, email, username, password);
+        this.seekerId = seekerId;
+        this.telephone = telephone;
+        this.name = name;
+        this.email = email1;
+        this.educationLevel = educationLevel;
+        this.biography = biography;
     }
 
-    @Override
-    public void setId(int id) {
-        this.id = id;
+    public int getSeekerId() {
+        return seekerId;
+    }
+
+    public void setSeekerId(int seekerId) {
+        this.seekerId = seekerId;
     }
 
     public long getTelephone() {

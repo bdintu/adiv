@@ -9,14 +9,22 @@ public class Model extends user.Model {
     String Address;
     String biography;
 
-    @Override
-    public int getId() {
+    public Model(int uid, String email, String username, String password, int id, long telephone, String name, String email1, String address, String biography) {
+        super(uid, email, username, password);
+        this.id = id;
+        this.telephone = telephone;
+        this.name = name;
+        this.email = email1;
+        Address = address;
+        this.biography = biography;
+    }
+
+    public int getSeekerId() {
         return id;
     }
 
-    @Override
-    public void setId(int id) {
-        this.id = id;
+    public void setSeekerId(int seekerId) {
+        this.id = seekerId;
     }
 
     public long getTelephone() {
@@ -35,12 +43,10 @@ public class Model extends user.Model {
         this.name = name;
     }
 
-    @Override
     public String getEmail() {
         return email;
     }
 
-    @Override
     public void setEmail(String email) {
         this.email = email;
     }

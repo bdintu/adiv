@@ -1,19 +1,31 @@
 package user;
 
-public class Model {
-    private int id;
+import java.io.Serializable;
+
+public class Model implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    private int uid;
 
     private String email;
     private String username;
 
     private String password;
 
-    public int getId() {
-        return id;
+    public Model(int uid, String email, String username, String password) {
+        this.uid = uid;
+        this.email = email;
+        this.username = username;
+        this.password = password;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getUid() {
+        return uid;
+    }
+
+    public void setUid(int uid) {
+        this.uid = uid;
     }
 
     public String getEmail() {
