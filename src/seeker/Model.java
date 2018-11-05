@@ -10,8 +10,8 @@ public class Model extends user.Model {
     String educationLevel;
     String biography;
 
-    public Model(int uid, String email, String username, String password, int seekerId, long telephone, String name, String email1, String educationLevel, String biography) {
-        super(uid, email, username, password);
+    public Model(int uid, String email, String password, int seekerId, long telephone, String name, String email1, String educationLevel, String biography) {
+        super(uid, email, password);
         this.seekerId = seekerId;
         this.telephone = telephone;
         this.name = name;

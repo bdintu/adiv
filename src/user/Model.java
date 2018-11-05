@@ -7,16 +7,12 @@ public class Model implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private int uid;
-
     private String email;
-    private String username;
-
     private String password;
 
-    public Model(int uid, String email, String username, String password) {
+    public Model(int uid, String email, String password) {
         this.uid = uid;
         this.email = email;
-        this.username = username;
         this.password = password;
     }
 
@@ -36,19 +32,20 @@ public class Model implements Serializable {
         this.email = email;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "UserModel{" +
+                "uid=" + uid +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

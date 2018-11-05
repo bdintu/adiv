@@ -30,21 +30,13 @@ public class Main extends Application {
 
     public static void main(String[] args) {
 
-        ArrayList<user.Model> users = new ArrayList<user.Model>();
-        user.Model user = new user.Model(1, "j@mail.com","j","passwd");
-        users.add(user);
-
-        ArrayList<skill.Model> skills = new ArrayList<skill.Model>();
-        skill.Model skill = new skill.Model(1, "assembly");
-        skills.add(skill);
-
-        objWrite();
-
         objRead();
         for(user.Model u: users)
-            System.out.println(u.getUsername());
+            System.out.println(u);
 
         launch(args);
+
+        //objWrite();
     }
 
     public static void objWrite() {
