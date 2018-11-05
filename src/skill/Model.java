@@ -3,6 +3,7 @@ package skill;
 import java.io.Serializable;
 
 public class Model implements Serializable {
+
     private int skillId;
     private String name;
 

@@ -1,24 +1,18 @@
 package seeker;
 
-public class Model extends user.Model {
+import java.io.Serializable;
 
-    int seekerId;
-    long telephone;
+public class Model implements Serializable {
 
-    String name;
-    String email;
-    String educationLevel;
-    String biography;
+    private int seekerId;
 
-    public Model(int uid, String email, String password, int seekerId, long telephone, String name, String email1, String educationLevel, String biography) {
-        super(uid, email, password);
-        this.seekerId = seekerId;
-        this.telephone = telephone;
-        this.name = name;
-        this.email = email1;
-        this.educationLevel = educationLevel;
-        this.biography = biography;
-    }
+    private user.Model user;
+
+    private long telephone;
+
+    private String name;
+    private String educationLevel;
+    private String biography;
 
     public int getSeekerId() {
         return seekerId;
@@ -26,6 +20,14 @@ public class Model extends user.Model {
 
     public void setSeekerId(int seekerId) {
         this.seekerId = seekerId;
+    }
+
+    public user.Model getUser() {
+        return user;
+    }
+
+    public void setUser(user.Model user) {
+        this.user = user;
     }
 
     public long getTelephone() {
@@ -44,16 +46,6 @@ public class Model extends user.Model {
         this.name = name;
     }
 
-    @Override
-    public String getEmail() {
-        return email;
-    }
-
-    @Override
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getEducationLevel() {
         return educationLevel;
     }
@@ -68,5 +60,17 @@ public class Model extends user.Model {
 
     public void setBiography(String biography) {
         this.biography = biography;
+    }
+
+    @Override
+    public String toString() {
+        return "Model{" +
+                "seekerId=" + seekerId +
+                ", user=" + user +
+                ", telephone=" + telephone +
+                ", name='" + name + '\'' +
+                ", educationLevel='" + educationLevel + '\'' +
+                ", biography='" + biography + '\'' +
+                '}';
     }
 }

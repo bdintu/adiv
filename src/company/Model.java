@@ -1,30 +1,54 @@
 package company;
 
-public class Model extends user.Model {
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class Model implements Serializable {
     int id;
+
+    user.Model user;
+    ArrayList<industry.Model> industry;
+
     long telephone;
 
     String name;
-    String email;
     String Address;
     String biography;
+    String website;
 
-    public Model(int uid, String email, String password, int id, long telephone, String name, String email1, String address, String biography) {
-        super(uid, email, password);
+    public Model(int id, user.Model user, ArrayList<industry.Model> industry, long telephone, String name, String address, String biography, String website) {
         this.id = id;
+        this.user = user;
+        this.industry = industry;
         this.telephone = telephone;
         this.name = name;
-        this.email = email1;
         Address = address;
         this.biography = biography;
+        this.website = website;
     }
 
-    public int getSeekerId() {
+    public int getId() {
         return id;
     }
 
-    public void setSeekerId(int seekerId) {
-        this.id = seekerId;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public user.Model getUser() {
+        return user;
+    }
+
+    public void setUser(user.Model user) {
+        this.user = user;
+    }
+
+    public ArrayList<industry.Model> getIndustry() {
+        return industry;
+    }
+
+    public void setIndustry(ArrayList<industry.Model> industry) {
+        this.industry = industry;
     }
 
     public long getTelephone() {
@@ -43,14 +67,6 @@ public class Model extends user.Model {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getAddress() {
         return Address;
     }
@@ -65,5 +81,27 @@ public class Model extends user.Model {
 
     public void setBiography(String biography) {
         this.biography = biography;
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
+    }
+
+    @Override
+    public String toString() {
+        return "Model{" +
+                "id=" + id +
+                ", user=" + user +
+                ", industry=" + industry +
+                ", telephone=" + telephone +
+                ", name='" + name + '\'' +
+                ", Address='" + Address + '\'' +
+                ", biography='" + biography + '\'' +
+                ", website='" + website + '\'' +
+                '}';
     }
 }

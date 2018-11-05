@@ -17,14 +17,18 @@ public class Main extends Application {
 
     private static final String filepath="adiv.db";
     private static HashMap<String, ArrayList> map;
+
     public static ArrayList<user.Model> users;
-    public static ArrayList<user.Model> skills;
+    public static ArrayList<seeker.Model> seekers;
+    public static ArrayList<company.Model> companys;
+    public static ArrayList<job.Model> jobs;
+    public static ArrayList<skill.Model> skills;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 600, 550));
+        primaryStage.setScene(new Scene(root, 1280, 720));
         primaryStage.show();
     }
 
@@ -42,6 +46,9 @@ public class Main extends Application {
     public static void objWrite() {
         HashMap<String, ArrayList> map = new HashMap<String, ArrayList>();
         map.put("user", users);
+        map.put("seeker", seekers);
+        map.put("company", companys);
+        map.put("job", jobs);
         map.put("skill", skills);
         serializeWrite(map);
         System.out.println("The Object  was succesfully written to a file");
@@ -50,6 +57,9 @@ public class Main extends Application {
     public static void objRead() {
         serializeRead();
         users = map.get("user");
+        seekers = map.get("seeker");
+        companys = map.get("company");
+        jobs = map.get("jobs");
         skills = map.get("skill");
     }
 

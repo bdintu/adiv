@@ -9,11 +9,17 @@ public class Model implements Serializable {
     private int uid;
     private String email;
     private String password;
+    private String phone;
 
-    public Model(int uid, String email, String password) {
+    public Model(int uid, String email, String password, String phone) {
         this.uid = uid;
         this.email = email;
         this.password = password;
+        this.phone = phone;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 
     public int getUid() {
@@ -40,12 +46,21 @@ public class Model implements Serializable {
         this.password = password;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     @Override
     public String toString() {
-        return "UserModel{" +
+        return "Model{" +
                 "uid=" + uid +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
+                ", phone='" + phone + '\'' +
                 '}';
     }
 }
