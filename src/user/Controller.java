@@ -1,11 +1,16 @@
 package user;
 
-import main.Main;
+import java.util.ArrayList;
 
 public class Controller  {
 
+    public static ArrayList<Model> models;
+
+    public static void Controller() {
+    }
+
     public static void register(user.Model user) {
-        Main.users.add(user);
+        Controller.models.add(user);
     }
 
     public static boolean login(user.Model user_input) {
@@ -24,7 +29,7 @@ public class Controller  {
     }
 
     private static user.Model getUser(user.Model user_input) {
-        for(user.Model user: Main.users) {
+        for(user.Model user: Controller.models) {
             if (user.getEmail() == user_input.getEmail()) {
                 return user;
             }

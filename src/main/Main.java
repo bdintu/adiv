@@ -15,27 +15,24 @@ import java.util.HashMap;
 
 public class Main extends Application {
 
-    private static final String filepath="adiv.db";
+    private static final String dbpath = "adiv.db";
     private static HashMap<String, ArrayList> map;
 
-    public static ArrayList<user.Model> users;
-    public static ArrayList<seeker.Model> seekers;
-    public static ArrayList<company.Model> companys;
-    public static ArrayList<job.Model> jobs;
-    public static ArrayList<skill.Model> skills;
+    public static final int width = 1280;
+    public static final int height = 720;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 1280, 720));
+        primaryStage.setTitle("ADIV");
+        primaryStage.setScene(new Scene(root, width, height));
         primaryStage.show();
     }
 
     public static void main(String[] args) {
 
         objRead();
-        for(user.Model u: users)
+        for(user.Model u: user.Controller.models)
             System.out.println(u);
 
         launch(args);
@@ -45,28 +42,28 @@ public class Main extends Application {
 
     public static void objWrite() {
         HashMap<String, ArrayList> map = new HashMap<String, ArrayList>();
-        map.put("user", users);
-        map.put("seeker", seekers);
-        map.put("company", companys);
-        map.put("job", jobs);
-        map.put("skill", skills);
+        map.put("user", user.Controller.models);
+        map.put("seeker", seeker.Controller.models);
+        map.put("company", company.Controller.models);
+        map.put("job", job.Controller.models);
+        map.put("skill", skill.Controller.models);
         serializeWrite(map);
         System.out.println("The Object  was succesfully written to a file");
     }
 
     public static void objRead() {
         serializeRead();
-        users = map.get("user");
-        seekers = map.get("seeker");
-        companys = map.get("company");
-        jobs = map.get("jobs");
-        skills = map.get("skill");
+        user.Controller.models = map.get("user");
+        seeker.Controller.models = map.get("seeker");
+        company.Controller.models = map.get("company");
+        job.Controller.models = map.get("jobs");
+        skill.Controller.models = map.get("skill");
     }
 
     public static void serializeWrite(Object serObj) {
 
         try {
-            FileOutputStream fileOut = new FileOutputStream(filepath);
+            FileOutputStream fileOut = new FileOutputStream(dbpath);
             ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
             objectOut.writeObject(serObj);
             objectOut.close();
@@ -79,7 +76,7 @@ public class Main extends Application {
     public static void serializeRead() {
 
         try {
-            FileInputStream fileIn = new FileInputStream(filepath);
+            FileInputStream fileIn = new FileInputStream(dbpath);
             ObjectInputStream objectIn = new ObjectInputStream(fileIn);
             map = (HashMap<String, ArrayList>)objectIn.readObject();
             objectIn.close();
