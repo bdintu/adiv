@@ -4,30 +4,24 @@ import java.io.Serializable;
 
 public class Model implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-
-    private int uid;
+    private int id;
     private String email;
     private String password;
     private String phone;
 
     public Model(int uid, String email, String password, String phone) {
-        this.uid = uid;
+        this.id = uid;
         this.email = email;
         this.password = password;
         this.phone = phone;
     }
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
+    public int getId() {
+        return id;
     }
 
-    public int getUid() {
-        return uid;
-    }
-
-    public void setUid(int uid) {
-        this.uid = uid;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getEmail() {
@@ -57,7 +51,7 @@ public class Model implements Serializable {
     @Override
     public String toString() {
         return "Model{" +
-                "uid=" + uid +
+                "id=" + id +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", phone='" + phone + '\'' +

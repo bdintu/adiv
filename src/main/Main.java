@@ -22,7 +22,7 @@ public class Main extends Application {
     public static final int height = 720;
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("ADIV");
         primaryStage.setScene(new Scene(root, width, height));
@@ -32,12 +32,11 @@ public class Main extends Application {
     public static void main(String[] args) {
 
         objRead();
-        for(user.Model u: user.Controller.models)
-            System.out.println(u);
+        user.Controller.Controller();
 
         launch(args);
 
-        //objWrite();
+        objWrite();
     }
 
     public static void objWrite() {
@@ -53,6 +52,7 @@ public class Main extends Application {
 
     public static void objRead() {
         serializeRead();
+        System.out.println("The Object  was succesfully read");
         user.Controller.models = map.get("user");
         seeker.Controller.models = map.get("seeker");
         company.Controller.models = map.get("company");
@@ -78,7 +78,7 @@ public class Main extends Application {
         try {
             FileInputStream fileIn = new FileInputStream(dbpath);
             ObjectInputStream objectIn = new ObjectInputStream(fileIn);
-            map = (HashMap<String, ArrayList>)objectIn.readObject();
+            map = (HashMap<String, ArrayList>) objectIn.readObject();
             objectIn.close();
             fileIn.close();
         } catch (Exception ex) {

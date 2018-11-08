@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Model implements Serializable {
 
-    private int seekerId;
+    private int id;
 
     private user.Model user;
 
@@ -14,12 +14,12 @@ public class Model implements Serializable {
     private String educationLevel;
     private String biography;
 
-    public int getSeekerId() {
-        return seekerId;
+    public int getId() {
+        return id;
     }
 
-    public void setSeekerId(int seekerId) {
-        this.seekerId = seekerId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public user.Model getUser() {
@@ -65,7 +65,7 @@ public class Model implements Serializable {
     @Override
     public String toString() {
         return "Model{" +
-                "seekerId=" + seekerId +
+                "id=" + id +
                 ", user=" + user +
                 ", telephone=" + telephone +
                 ", name='" + name + '\'' +

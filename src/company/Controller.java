@@ -9,7 +9,7 @@ public class Controller {
     public static void Controller() {
     }
 
-    public void createSeeker(company.Model company_input) {
-        Controller.models.add(company_input);
+    public void createSeeker(Model company_input) {
+        models.add(company_input);
     }
 }

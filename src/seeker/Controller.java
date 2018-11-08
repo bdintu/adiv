@@ -6,10 +6,10 @@ public class Controller {
 
     public static ArrayList<Model> models;
 
-    public static void Controller() {
+    public void Controller() {
     }
 
-    public void createSeeker(seeker.Model seeker_input) {
-        Controller.models.add(seeker_input);
+    public void createSeeker(Model seeker_input) {
+        models.add(seeker_input);
     }
 }
