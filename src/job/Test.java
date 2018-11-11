@@ -1,5 +1,7 @@
 package job;
 
+import java.util.ArrayList;
+
 public class Test {
 
     public static void createJob() {
@@ -26,6 +28,11 @@ public class Test {
 //        skill.add(ski);
 //
 //        job.Model j = new job.Model("Computer Vision", ind, jf, jl, jt, skill, 30000, 50000);
+//        Controller.createJob(j);
 
+    }
+
+    public static void printModel() {
+        System.out.println(Controller.getModels().get(0));
     }
 }

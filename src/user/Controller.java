@@ -12,10 +12,11 @@ public class Controller {
 
         Test.createUser();
         Test.login();
+        Test.printModel();
     }
 
-    public static void createUser(Model user) {
-        if (!duplicateUser(user)) {
+    public static void add(Model user) {
+        if (!isDuplicate(user)) {
             models.add(user);
         }
 
@@ -48,7 +49,7 @@ public class Controller {
         return null;
     }
 
-    private static boolean duplicateUser(Model user_input) {
+    private static boolean isDuplicate(Model user_input) {
         for (Model user : models) {
             if (user.equals(user_input)) {
                 return true;

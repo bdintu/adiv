@@ -11,7 +11,7 @@ public class Controller {
 
     }
 
-    public static void createSkill(Model industry) {
+    public static void add(Model industry) {
         models.add(industry);
     }
 

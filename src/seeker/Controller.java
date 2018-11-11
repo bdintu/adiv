@@ -11,17 +11,23 @@ public class Controller {
 //        models = new ArrayList<Model>();
 
         Test.createSeeker();
-        Test.setSession();
-        Test.getSession();
+        Test.login();
+        Test.printModel();
     }
 
-    public static void createSeeker(Model seeker) {
-        if (!duplicateSeeker(seeker)) {
+    public static void add(Model seeker) {
+        if (!isDuplicate(seeker)) {
             models.add(seeker);
         }
 
-        System.out.println("Error: duplicate seeker profile");
+        System.out.println("Error: duplicate seeker");
 
+    }
+
+    public static void login() {
+        if (isSeeker(user.Controller.getSession())) {
+            setSession(user.Controller.getSession());
+        }
     }
 
     public static boolean isSeeker(user.Model user) {
@@ -44,7 +50,7 @@ public class Controller {
         return null;
     }
 
-    private static boolean duplicateSeeker(Model seeker_input) {
+    private static boolean isDuplicate(Model seeker_input) {
         for (Model seeker : models) {
             if (seeker.equals(seeker_input)) {
                 return true;

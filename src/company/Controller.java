@@ -11,12 +11,23 @@ public class Controller {
 //        models = new ArrayList<Model>();
 
         Test.createCompany();
-        Test.setSession();
-        Test.getSession();
+        Test.login();
+        Test.printModel();
     }
 
-    public static void createCompany(Model company_input) {
-        models.add(company_input);
+    public static void add(Model company) {
+        if (!isDuplicate(company)) {
+            models.add(company);
+        }
+
+        System.out.println("Error: duplicate company");
+
+    }
+
+    public static void login() {
+        if (isCompany(user.Controller.getSession())) {
+            setSession(user.Controller.getSession());
+        }
     }
 
     public static boolean isCompany(user.Model user) {
@@ -37,6 +48,16 @@ public class Controller {
         }
 
         return null;
+    }
+
+    private static boolean isDuplicate(Model company_input) {
+        for (Model company : models) {
+            if (company.equals(company_input)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public static ArrayList<Model> getModels() {

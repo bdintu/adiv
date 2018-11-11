@@ -9,22 +9,23 @@ public class Controller {
     public static void Controller() {
 //        models = new ArrayList<Model>();
 
-        Test.createJob();
+//        Test.createJob();
+        Test.printModel();
     }
 
-    public static void createJob(Model job) {
+    public static void add(Model job) {
         models.add(job);
     }
 
-    public void postJob() {
+    public static void postJob() {
 
     }
 
-    public void approveJob() {
+    public static void approveJob() {
 
     }
 
-    public void applyJob() {
+    public static void applyJob() {
 
     }
 

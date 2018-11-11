@@ -11,7 +11,7 @@ public class Controller {
 
     }
 
-    public static void createJobLevel(Model jobLevel) {
+    public static void add(Model jobLevel) {
         models.add(jobLevel);
     }
 
