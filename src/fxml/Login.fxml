@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:controller="user.FXMLController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="900.0">
          <children>
@@ -21,8 +21,8 @@
                   <Image url="@logo.png" />
                </image>
             </ImageView>
-            <TextField layoutX="288.0" layoutY="268.0" prefHeight="58.0" prefWidth="337.0" />
-            <PasswordField layoutX="288.0" layoutY="368.0" prefHeight="58.0" prefWidth="337.0" />
+            <TextField fx:id="email" layoutX="288.0" layoutY="268.0" prefHeight="58.0" prefWidth="337.0" />
+            <PasswordField fx:id="password" layoutX="288.0" layoutY="368.0" prefHeight="58.0" prefWidth="337.0" />
             <Label layoutX="288.0" layoutY="243.0" text="E-mail">
                <font>
                   <Font size="18.0" />
@@ -38,7 +38,7 @@
                   <Font size="20.0" />
                </font>
             </Button>
-            <Hyperlink fx:id="createUserButton" layoutX="693.0" layoutY="546.0" text="Don't have Account?">
+            <Hyperlink fx:id="createUserHyperlink" layoutX="693.0" layoutY="546.0" text="Don't have Account?">
                <font>
                   <Font size="18.0" />
                </font>
