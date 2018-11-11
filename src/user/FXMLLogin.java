@@ -13,7 +13,7 @@ import stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class FXMLController implements Initializable {
+public class FXMLLogin implements Initializable {
 
     @FXML
     private TextField email;
