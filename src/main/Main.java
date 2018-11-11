@@ -1,7 +1,6 @@
 package main;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -20,17 +19,15 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Login.fxml"));
-        Parent root = loader.load();
-        FXMLController cont = (FXMLController)loader.getController();
+        Parent login = new user.FXController().start();
 
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(login);
         primaryStage.setTitle("ADIV");
         primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
         primaryStage.show();
 
-        System.out.println(cont.getUsername());
-
+//        primaryStage.getScene().setRoot(login);
     }
 
     public static void main(String[] args) {
