@@ -1,21 +1,14 @@
 package jobfunction;
 
-public class Model {
+import java.io.Serializable;
+import java.util.Objects;
 
-    private int id;
+public class Model implements Serializable {
+
     private String name;
 
-    public Model(int id, String name) {
-        this.id = id;
+    public Model(String name) {
         this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -27,10 +20,22 @@ public class Model {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Model)) return false;
+        Model model = (Model) o;
+        return Objects.equals(getName(), model.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName());
+    }
+
+    @Override
     public String toString() {
-        return "Model{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+        return "JobFunction{" +
+                "name='" + name + '\'' +
                 '}';
     }
 }

@@ -1,18 +1,18 @@
-package skill;
+package jobtype;
 
 import java.util.ArrayList;
 
 public class Controller {
 
-    public static ArrayList<Model> models;
+    private static ArrayList<Model> models;
 
     public static void Controller() {
 //        models = new ArrayList<Model>();
 
     }
 
-    public static void createSkill(Model industry) {
-        models.add(industry);
+    public static void createJobType(Model jobType) {
+        models.add(jobType);
     }
 
     public static ArrayList<Model> getModels() {

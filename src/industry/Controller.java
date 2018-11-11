@@ -1,17 +1,17 @@
-package skill;
+package industry;
 
 import java.util.ArrayList;
 
 public class Controller {
 
-    public static ArrayList<Model> models;
+    private static ArrayList<Model> models;
 
     public static void Controller() {
 //        models = new ArrayList<Model>();
 
     }
 
-    public static void createSkill(Model industry) {
+    public static void createIndustry(Model industry) {
         models.add(industry);
     }
 

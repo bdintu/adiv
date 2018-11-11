@@ -33,6 +33,13 @@ public class Main extends Application {
 
         objRead();
         user.Controller.Controller();
+        seeker.Controller.Controller();
+        industry.Controller.Controller();
+        company.Controller.Controller();
+        skill.Controller.Controller();
+        jobfunction.Controller.Controller();
+        joblevel.Controller.Controller();
+        job.Controller.Controller();
 
         launch(args);
 
@@ -41,11 +48,16 @@ public class Main extends Application {
 
     public static void objWrite() {
         HashMap<String, ArrayList> map = new HashMap<String, ArrayList>();
-        map.put("user", user.Controller.models);
-        map.put("seeker", seeker.Controller.models);
-        map.put("company", company.Controller.models);
-        map.put("job", job.Controller.models);
-        map.put("skill", skill.Controller.models);
+        map.put("user", user.Controller.getModels());
+        map.put("seeker", seeker.Controller.getModels());
+        map.put("industry", industry.Controller.getModels());
+        map.put("company", company.Controller.getModels());
+        map.put("skill", skill.Controller.getModels());
+        map.put("jobfunction", jobfunction.Controller.getModels());
+        map.put("joblevel", joblevel.Controller.getModels());
+        map.put("jobtype", jobtype.Controller.getModels());
+        map.put("job", job.Controller.getModels());
+
         serializeWrite(map);
         System.out.println("The Object  was succesfully written to a file");
     }
@@ -53,11 +65,16 @@ public class Main extends Application {
     public static void objRead() {
         serializeRead();
         System.out.println("The Object  was succesfully read");
-        user.Controller.models = map.get("user");
-        seeker.Controller.models = map.get("seeker");
-        company.Controller.models = map.get("company");
-        job.Controller.models = map.get("jobs");
-        skill.Controller.models = map.get("skill");
+
+        user.Controller.setModels(map.get("user"));
+        seeker.Controller.setModels( map.get("seeker"));
+        industry.Controller.setModels(map.get("industry"));
+        company.Controller.setModels(map.get("company"));
+        skill.Controller.setModels(map.get("skill"));
+        jobfunction.Controller.setModels(map.get("jobfunction"));
+        joblevel.Controller.setModels(map.get("joblevel"));
+        jobtype.Controller.setModels(map.get("jobtype"));
+        job.Controller.setModels(map.get("job"));
     }
 
     public static void serializeWrite(Object serObj) {

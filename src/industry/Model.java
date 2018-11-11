@@ -1,21 +1,14 @@
 package industry;
 
-public class Model {
+import java.io.Serializable;
+import java.util.Objects;
 
-    private int IndustryId;
+public class Model implements Serializable {
+
     private String name;
 
-    public Model(int industryId, String name) {
-        IndustryId = industryId;
+    public Model(String name) {
         this.name = name;
-    }
-
-    public int getIndustryId() {
-        return IndustryId;
-    }
-
-    public void setIndustryId(int industryId) {
-        IndustryId = industryId;
     }
 
     public String getName() {
@@ -27,10 +20,22 @@ public class Model {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Model)) return false;
+        Model model = (Model) o;
+        return Objects.equals(getName(), model.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName());
+    }
+
+    @Override
     public String toString() {
-        return "Model{" +
-                "IndustryId=" + IndustryId +
-                ", name='" + name + '\'' +
+        return "Industry{" +
+                ",name='" + name + '\'' +
                 '}';
     }
 }

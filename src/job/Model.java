@@ -1,37 +1,39 @@
 package job;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Objects;
 
-public class Model {
-    int jobId;
+public class Model implements Serializable {
 
-    company.Model company;
-    jobtype.Model jobType;
-    joblevel.Model jobLevel;
-    jobfunction.Model jobFunction;
+    private String name;
 
-    ArrayList<skill.Model> skill;
+    private company.Model company;
+    private jobfunction.Model jobFunction;
+    private joblevel.Model jobLevel;
+    private jobtype.Model jobType;
+    private ArrayList<skill.Model> skill;
 
     int salary_begin;
     int salary_end;
 
-    public Model(int jobId, company.Model company, jobtype.Model jobType, joblevel.Model jobLevel, jobfunction.Model jobFunction, ArrayList<skill.Model> skill, int salary_begin, int salary_end) {
-        this.jobId = jobId;
+    public Model(String name, company.Model company, jobfunction.Model jobFunction, joblevel.Model jobLevel, jobtype.Model jobType, ArrayList<skill.Model> skill, int salary_begin, int salary_end) {
+        this.name = name;
         this.company = company;
-        this.jobType = jobType;
-        this.jobLevel = jobLevel;
         this.jobFunction = jobFunction;
+        this.jobLevel = jobLevel;
+        this.jobType = jobType;
         this.skill = skill;
         this.salary_begin = salary_begin;
         this.salary_end = salary_end;
     }
 
-    public int getJobId() {
-        return jobId;
+    public String getName() {
+        return name;
     }
 
-    public void setJobId(int jobId) {
-        this.jobId = jobId;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public company.Model getCompany() {
@@ -42,12 +44,12 @@ public class Model {
         this.company = company;
     }
 
-    public jobtype.Model getJobType() {
-        return jobType;
+    public jobfunction.Model getJobFunction() {
+        return jobFunction;
     }
 
-    public void setJobType(jobtype.Model jobType) {
-        this.jobType = jobType;
+    public void setJobFunction(jobfunction.Model jobFunction) {
+        this.jobFunction = jobFunction;
     }
 
     public joblevel.Model getJobLevel() {
@@ -58,12 +60,12 @@ public class Model {
         this.jobLevel = jobLevel;
     }
 
-    public jobfunction.Model getJobFunction() {
-        return jobFunction;
+    public jobtype.Model getJobType() {
+        return jobType;
     }
 
-    public void setJobFunction(jobfunction.Model jobFunction) {
-        this.jobFunction = jobFunction;
+    public void setJobType(jobtype.Model jobType) {
+        this.jobType = jobType;
     }
 
     public ArrayList<skill.Model> getSkill() {
@@ -91,13 +93,27 @@ public class Model {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Model)) return false;
+        Model model = (Model) o;
+        return Objects.equals(getName(), model.getName()) &&
+                Objects.equals(getCompany(), model.getCompany());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getCompany());
+    }
+
+    @Override
     public String toString() {
-        return "Model{" +
-                "jobId=" + jobId +
+        return "Job{" +
+                "name='" + name + '\'' +
                 ", company=" + company +
-                ", jobType=" + jobType +
-                ", jobLevel=" + jobLevel +
                 ", jobFunction=" + jobFunction +
+                ", jobLevel=" + jobLevel +
+                ", jobType=" + jobType +
                 ", skill=" + skill +
                 ", salary_begin=" + salary_begin +
                 ", salary_end=" + salary_end +

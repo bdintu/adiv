@@ -1,27 +1,16 @@
 package user;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Model implements Serializable {
 
-    private int id;
     private String email;
     private String password;
-    private String phone;
 
-    public Model(int uid, String email, String password, String phone) {
-        this.id = uid;
+    public Model(String email, String password) {
         this.email = email;
         this.password = password;
-        this.phone = phone;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getEmail() {
@@ -40,21 +29,24 @@ public class Model implements Serializable {
         this.password = password;
     }
 
-    public String getPhone() {
-        return phone;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Model)) return false;
+        Model model = (Model) o;
+        return Objects.equals(getEmail(), model.getEmail());
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    @Override
+    public int hashCode() {
+        return Objects.hash(getEmail());
     }
 
     @Override
     public String toString() {
-        return "Model{" +
-                "id=" + id +
-                ", email='" + email + '\'' +
+        return "User{" +
+                "email=" + email +
                 ", password='" + password + '\'' +
-                ", phone='" + phone + '\'' +
                 '}';
     }
 }

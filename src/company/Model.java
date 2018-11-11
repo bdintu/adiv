@@ -2,37 +2,27 @@ package company;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Model implements Serializable {
-    int id;
 
     user.Model user;
-    ArrayList<industry.Model> industry;
-
-    long telephone;
+    industry.Model industry;
 
     String name;
-    String Address;
+    String phone;
+    String address;
     String biography;
     String website;
 
-    public Model(int id, user.Model user, ArrayList<industry.Model> industry, long telephone, String name, String address, String biography, String website) {
-        this.id = id;
+    public Model(user.Model user, industry.Model industry, String name, String phone, String address, String biography, String website) {
         this.user = user;
         this.industry = industry;
-        this.telephone = telephone;
+        this.phone = phone;
         this.name = name;
-        Address = address;
+        this.address = address;
         this.biography = biography;
         this.website = website;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public user.Model getUser() {
@@ -43,20 +33,20 @@ public class Model implements Serializable {
         this.user = user;
     }
 
-    public ArrayList<industry.Model> getIndustry() {
+    public industry.Model getIndustry() {
         return industry;
     }
 
-    public void setIndustry(ArrayList<industry.Model> industry) {
+    public void setIndustry(industry.Model industry) {
         this.industry = industry;
     }
 
-    public long getTelephone() {
-        return telephone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setTelephone(long telephone) {
-        this.telephone = telephone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getName() {
@@ -68,11 +58,11 @@ public class Model implements Serializable {
     }
 
     public String getAddress() {
-        return Address;
+        return address;
     }
 
     public void setAddress(String address) {
-        Address = address;
+        address = address;
     }
 
     public String getBiography() {
@@ -92,14 +82,26 @@ public class Model implements Serializable {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Model)) return false;
+        Model model = (Model) o;
+        return Objects.equals(getName(), model.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName());
+    }
+
+    @Override
     public String toString() {
-        return "Model{" +
-                "id=" + id +
-                ", user=" + user +
+        return "Company{" +
+                "user=" + user +
                 ", industry=" + industry +
-                ", telephone=" + telephone +
+                ", phone=" + phone +
                 ", name='" + name + '\'' +
-                ", Address='" + Address + '\'' +
+                ", Address='" + address + '\'' +
                 ", biography='" + biography + '\'' +
                 ", website='" + website + '\'' +
                 '}';

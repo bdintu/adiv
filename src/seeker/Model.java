@@ -1,25 +1,27 @@
 package seeker;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Model implements Serializable {
 
-    private int id;
-
     private user.Model user;
 
-    private long telephone;
-
-    private String name;
+    private String firstName;
+    private String lastName;
+    private String phone;
+    private String address;
     private String educationLevel;
     private String biography;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public Model(user.Model user, String firstName, String lastName, String phone, String address, String educationLevel, String biography) {
+        this.user = user;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.address = address;
+        this.educationLevel = educationLevel;
+        this.biography = biography;
     }
 
     public user.Model getUser() {
@@ -30,20 +32,36 @@ public class Model implements Serializable {
         this.user = user;
     }
 
-    public long getTelephone() {
-        return telephone;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setTelephone(long telephone) {
-        this.telephone = telephone;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getName() {
-        return name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getEducationLevel() {
@@ -63,12 +81,27 @@ public class Model implements Serializable {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Model)) return false;
+        Model model = (Model) o;
+        return Objects.equals(getFirstName(), model.getFirstName()) &&
+                Objects.equals(getLastName(), model.getLastName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getFirstName(), getLastName());
+    }
+
+    @Override
     public String toString() {
-        return "Model{" +
-                "id=" + id +
-                ", user=" + user +
-                ", telephone=" + telephone +
-                ", name='" + name + '\'' +
+        return "Seeker{" +
+                "user=" + user +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phone='" + phone + '\'' +
+                ", address='" + address + '\'' +
                 ", educationLevel='" + educationLevel + '\'' +
                 ", biography='" + biography + '\'' +
                 '}';

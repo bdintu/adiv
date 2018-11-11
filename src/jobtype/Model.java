@@ -1,21 +1,14 @@
 package jobtype;
 
-public class Model {
+import java.io.Serializable;
+import java.util.Objects;
 
-    private int jobtypeId;
+public class Model implements Serializable {
+
     private String name;
 
-    public Model(int jobtypeId, String name) {
-        this.jobtypeId = jobtypeId;
+    public Model(String name) {
         this.name = name;
-    }
-
-    public int getJobtypeId() {
-        return jobtypeId;
-    }
-
-    public void setJobtypeId(int jobtypeId) {
-        this.jobtypeId = jobtypeId;
     }
 
     public String getName() {
@@ -27,10 +20,22 @@ public class Model {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Model)) return false;
+        Model model = (Model) o;
+        return Objects.equals(getName(), model.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName());
+    }
+
+    @Override
     public String toString() {
-        return "Model{" +
-                "jobtypeId=" + jobtypeId +
-                ", name='" + name + '\'' +
+        return "JobType{" +
+                "name='" + name + '\'' +
                 '}';
     }
 }

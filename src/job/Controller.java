@@ -4,9 +4,16 @@ import java.util.ArrayList;
 
 public class Controller {
 
-    public static ArrayList<Model> models;
+    private static ArrayList<Model> models;
 
     public static void Controller() {
+//        models = new ArrayList<Model>();
+
+        Test.createJob();
+    }
+
+    public static void createJob(Model job) {
+        models.add(job);
     }
 
     public void postJob() {
@@ -19,5 +26,13 @@ public class Controller {
 
     public void applyJob() {
 
+    }
+
+    public static ArrayList<Model> getModels() {
+        return models;
+    }
+
+    public static void setModels(ArrayList<Model> models) {
+        Controller.models = models;
     }
 }

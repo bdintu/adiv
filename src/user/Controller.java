@@ -4,30 +4,26 @@ import java.util.ArrayList;
 
 public class Controller {
 
-    public static ArrayList<Model> models;
-    public Model session;
+    private static ArrayList<Model> models;
+    private static Model session;
 
     public static void Controller() {
+//        models = new ArrayList<Model>();
 
-        for (Model u : Controller.models)
-            System.out.println(u);
+        Test.createUser();
+        Test.login();
+    }
 
-        Model um = new user.Model(0, "j@adiv.com", "j", "0998061524");
-        Controller u = new Controller();
-        boolean gg = u.login(um);
-        System.out.println(gg);
-        if (gg) {
-            u.session.setEmail("j@adiv.com");
-            System.out.println(u.session.getEmail());
+    public static void createUser(Model user) {
+        if (!duplicateUser(user)) {
+            models.add(user);
         }
+
+        System.out.println("Error: duplicate email");
     }
 
-    public void createUser(user.Model user) {
-        models.add(user);
-    }
-
-    public boolean login(user.Model user_input) {
-        user.Model user = getUser(user_input);
+    public static boolean login(Model user_input) {
+        Model user = getUser(user_input);
         if (user == null) {
             System.out.println("Error: user not in system");
             return false;
@@ -42,7 +38,7 @@ public class Controller {
         return true;
     }
 
-    private Model getUser(Model user_input) {
+    private static Model getUser(Model user_input) {
         for (Model user : models) {
             if (user.getEmail().equals(user_input.getEmail())) {
                 return user;
@@ -52,7 +48,37 @@ public class Controller {
         return null;
     }
 
-    private boolean checkPassword(user.Model user, user.Model user_input) {
+    private static boolean duplicateUser(Model user_input) {
+        for (Model user : models) {
+            if (user.equals(user_input)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private static boolean checkPassword(Model user, Model user_input) {
         return user.getPassword().equals(user_input.getPassword());
+    }
+
+    public static boolean isLogin() {
+        return session != null;
+    }
+
+    public static ArrayList<Model> getModels() {
+        return models;
+    }
+
+    public static void setModels(ArrayList<Model> models) {
+        Controller.models = models;
+    }
+
+    public static Model getSession() {
+        return session;
+    }
+
+    public static void setSession(Model session) {
+        Controller.session = session;
     }
 }
