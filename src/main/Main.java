@@ -18,28 +18,32 @@ public class Main extends Application {
     private static final String dbpath = "adiv.db";
     private static HashMap<String, ArrayList> map;
 
-    public static final int width = 1280;
-    public static final int height = 720;
-
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Login.fxml"));
+        Parent root = loader.load();
+        FXMLController cont = (FXMLController)loader.getController();
+
+        Scene scene = new Scene(root);
         primaryStage.setTitle("ADIV");
-        primaryStage.setScene(new Scene(root, width, height));
+        primaryStage.setScene(scene);
         primaryStage.show();
+
+        System.out.println(cont.getUsername());
+
     }
 
     public static void main(String[] args) {
 
         objRead();
-        user.Controller.Controller();
-        seeker.Controller.Controller();
-        industry.Controller.Controller();
-        company.Controller.Controller();
-        skill.Controller.Controller();
-        jobfunction.Controller.Controller();
-        joblevel.Controller.Controller();
-        job.Controller.Controller();
+//        user.Controller.Controller();
+//        seeker.Controller.Controller();
+//        industry.Controller.Controller();
+//        company.Controller.Controller();
+//        skill.Controller.Controller();
+//        jobfunction.Controller.Controller();
+//        joblevel.Controller.Controller();
+//        job.Controller.Controller();
 
         launch(args);
 

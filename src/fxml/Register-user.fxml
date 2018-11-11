@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="About ADIV">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Join us" />
+            <MenuItem mnemonicParsing="false" text="Privacy statement" />
+            <MenuItem mnemonicParsing="false" text="Check for Updates..." />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+      <SplitPane focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0">
+         <items>
+            <Pane prefHeight="512.0" prefWidth="898.0">
+               <children>
+                  <TextField layoutX="291.0" layoutY="47.0" prefHeight="40.0" prefWidth="303.0" />
+                  <TextField layoutX="291.0" layoutY="127.0" prefHeight="40.0" prefWidth="303.0" />
+                  <Label layoutX="291.0" layoutY="30.0" text="Name" />
+                  <Label layoutX="291.0" layoutY="110.0" text="Surname" />
+                  <ImageView fitHeight="75.0" fitWidth="144.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@logo.png" />
+                     </image>
+                  </ImageView>
+                  <TextField layoutX="291.0" layoutY="207.0" prefHeight="40.0" prefWidth="303.0" />
+                  <Label layoutX="291.0" layoutY="190.0" text="Telephone Number" />
+                  <TextField layoutX="291.0" layoutY="287.0" prefHeight="40.0" prefWidth="303.0" />
+                  <Label layoutX="291.0" layoutY="270.0" text="E-mail" />
+                  <TextField layoutX="291.0" layoutY="367.0" prefHeight="40.0" prefWidth="303.0" />
+                  <Label layoutX="291.0" layoutY="350.0" text="Password" />
+                  <TextField layoutX="291.0" layoutY="447.0" prefHeight="40.0" prefWidth="303.0" />
+                  <Label layoutX="291.0" layoutY="430.0" text="Confirm Password" />
+               </children>
+            </Pane>
+         </items>
+      </SplitPane>
+    <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+      <children>
+        <Pane prefHeight="50.0" prefWidth="670.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <ButtonBar layoutX="340.0" layoutY="5.0" prefHeight="40.0" prefWidth="214.0">
+                    <buttons>
+                      <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="219.0" text="Register" />
+                    </buttons>
+                  </ButtonBar>
+                  <ToggleButton layoutX="700.0" layoutY="13.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="180.0" text="Register account for company " />
+               </children></Pane>
+      </children>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+  </children>
+</VBox>
