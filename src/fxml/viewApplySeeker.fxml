@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="job.FXMLViewApplySeeker">
+  <children>
+      <AnchorPane prefHeight="608.0" prefWidth="900.0">
+         <children>
+            <Pane prefHeight="600.0" prefWidth="900.0">
+               <children>
+                  <ImageView fitHeight="496.0" fitWidth="496.0" layoutX="203.0" layoutY="-173.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@apply.png" />
+                     </image>
+                  </ImageView>
+                  <TableView fx:id="table" layoutX="59.0" layoutY="148.0" prefHeight="360.0" prefWidth="782.0">
+                     <columns>
+                        <TableColumn fx:id="jobFunction1" prefWidth="130.0" resizable="false" text="Job" />
+                        <TableColumn fx:id="jobType1" prefWidth="130.0" resizable="false" text="Employment type" />
+                        <TableColumn fx:id="educationLevel1" prefWidth="100.0" resizable="false" text="Education level" />
+                        <TableColumn fx:id="jobLevel1" prefWidth="100.0" resizable="false" text="Career level" />
+                        <TableColumn fx:id="location1" prefWidth="100.0" resizable="false" text="Location" />
+                        <TableColumn fx:id="skill1" minWidth="0.0" prefWidth="110.0" resizable="false" text="Skill" />
+                        <TableColumn fx:id="salary1" prefWidth="111.0" resizable="false" text="Salary" />
+                     </columns>
+                  </TableView>
+                  <ImageView fx:id="delButton" fitHeight="50.0" fitWidth="50.0" layoutX="760.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons8-trash-can-filled-50.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="backButton" fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons8-go-back-filled-50.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="viewButton" fitHeight="50.0" fitWidth="50.0" layoutX="840.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons8-view-filled-50.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+  </children>
+</VBox>
