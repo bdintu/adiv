@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="job.FXMLApproveJob">
+  <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Pane prefHeight="606.0" prefWidth="900.0">
+               <children>
+                  <ImageView fx:id="okButton" fitHeight="58.0" fitWidth="58.0" layoutX="795.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons8-checked-filled-50%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="267.0" fitWidth="267.0" layoutX="87.0" layoutY="-86.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@approve.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="backButton" fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="542.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons8-go-back-filled-50.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="94.0" layoutY="88.0" text="Name">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="firstName" layoutX="94.0" layoutY="114.0" prefHeight="58.0" prefWidth="337.0" />
+                  <Label layoutX="94.0" layoutY="172.0" text="Surename">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="lastName" layoutX="94.0" layoutY="197.0" prefHeight="58.0" prefWidth="337.0" />
+                  <Label layoutX="94.0" layoutY="256.0" text="E-mail">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="email" layoutX="94.0" layoutY="280.0" prefHeight="58.0" prefWidth="337.0" />
+                  <Label layoutX="94.0" layoutY="339.0" text="Telephone Number">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="phone" layoutX="94.0" layoutY="365.0" prefHeight="58.0" prefWidth="337.0" />
+                  <Label layoutX="94.0" layoutY="422.0" text="Biography">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="biography" layoutX="94.0" layoutY="448.0" prefHeight="58.0" prefWidth="337.0" />
+                  <Label layoutX="94.0" layoutY="505.0" text="Employment type">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="jobType" layoutX="94.0" layoutY="531.0" prefHeight="58.0" prefWidth="337.0" />
+                  <Label layoutX="501.0" layoutY="88.0" text="Position title">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="name" layoutX="501.0" layoutY="114.0" prefHeight="58.0" prefWidth="337.0" />
+                  <Label layoutX="501.0" layoutY="172.0" text="Education level">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="educationLevel" layoutX="501.0" layoutY="197.0" prefHeight="58.0" prefWidth="337.0" />
+                  <Label layoutX="501.0" layoutY="256.0" text="Career level">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="jobLevel" layoutX="501.0" layoutY="280.0" prefHeight="58.0" prefWidth="337.0" />
+                  <Label layoutX="501.0" layoutY="339.0" text="Saraly">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="salary" layoutX="501.0" layoutY="365.0" prefHeight="58.0" prefWidth="337.0" />
+                  <Label layoutX="500.0" layoutY="422.0" text="Skill">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="skill" layoutX="501.0" layoutY="449.0" prefHeight="58.0" prefWidth="337.0" />
+                  <Label layoutX="501.0" layoutY="505.0" text="Job Function">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="jobFunction" layoutX="501.0" layoutY="531.0" prefHeight="58.0" prefWidth="337.0" />
+                  <ImageView fx:id="delButton" fitHeight="60.0" fitWidth="60.0" layoutX="723.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons8-cancel-filled-50.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+  </children>
+</VBox>

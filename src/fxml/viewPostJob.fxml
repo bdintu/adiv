@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="job.FXMLViewPostjob">
+  <children>
+      <AnchorPane prefHeight="608.0" prefWidth="900.0">
+         <children>
+            <Pane prefHeight="600.0" prefWidth="900.0">
+               <children>
+                  <ImageView fitHeight="387.0" fitWidth="383.0" layoutX="259.0" layoutY="-102.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@postjob.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="delButton" fitHeight="50.0" fitWidth="50.0" layoutX="665.0" layoutY="536.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons8-trash-can-filled-50.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="backButton" fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="536.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons8-go-back-filled-50.png" />
+                     </image>
+                  </ImageView>
+                  <ListView fx:id="listView" layoutX="92.0" layoutY="149.0" prefHeight="375.0" prefWidth="717.0" style="-fx-background-color: gray;" />
+                  <ImageView fx:id="viewButton" fitHeight="50.0" fitWidth="50.0" layoutX="759.0" layoutY="536.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons8-view-filled-50.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+  </children>
+</VBox>

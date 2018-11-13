@@ -36,7 +36,7 @@ public class FXMLLogin implements Initializable {
         loginButton.setOnMouseClicked((MouseEvent event) -> {
 
             try {
-                Stage.stage.changeStage("homeCompany");
+                Stage.stage.changeStage("homeSeeker");
             } catch (Exception e) {
                 e.printStackTrace();
             }

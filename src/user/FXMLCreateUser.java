@@ -37,24 +37,40 @@ public class FXMLCreateUser implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        nextButton.setPickOnBounds(true);
-        nextButton.setOnMouseClicked((MouseEvent event) -> {
+        backButton.setPickOnBounds(true);
+        backButton.setOnMouseClicked((MouseEvent event) -> {
 
             try {
 
-                if (1==1) {
-                    Stage.stage.changeStage("homeCompany");
 
-                } else {
-                    Stage.stage.changeStage("homeSeeker");
+                Stage.stage.changeStage("Login");
 
-                }
+
+                //Stage.stage.changeStage("homeSeeker");
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
 
         });
+
+        nextButton.setPickOnBounds(true);
+        nextButton.setOnMouseClicked((MouseEvent event) -> {
+
+            try {
+
+
+                Stage.stage.changeStage("homeCompany");
+
+
+                //Stage.stage.changeStage("homeSeeker");
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
     }
 
 }
