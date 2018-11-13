@@ -1,52 +1,52 @@
-package user;
+package job;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import stage.Stage;
 
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
+public class FXMLViewJob implements Initializable {
+    @FXML
+    private TextField jobFunction;
+    @FXML
+    private TextField salary;
+    @FXML
+    private TextField jobType;
+    @FXML
+    private  TextField skill;
+    @FXML
+    private  TextField educationLevel;
+    @FXML
+    private  TextField location;
+    @FXML
+    private TextField jobLevel;
 
-public class FXMLCreateUser implements Initializable {
+    @FXML
+    private  TextArea detail;
 
-    @FXML
-    private TextField email;
-    @FXML
-    private PasswordField password;
-    @FXML
-    private PasswordField confirmPassword;
-    @FXML
-    private CheckBox seeker;
-    @FXML
-    private CheckBox company;
     @FXML
     private ImageView backButton;
     @FXML
-    private ImageView nextButton;
+    private ImageView okButton;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         backButton.setPickOnBounds(true);
         backButton.setOnMouseClicked((MouseEvent event) -> {
 
             try {
 
 
-                Stage.stage.changeStage("Login");
+                Stage.stage.changeStage("homeSeeker");
 
-
-                //Stage.stage.changeStage("homeSeeker");
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -55,22 +55,21 @@ public class FXMLCreateUser implements Initializable {
 
         });
 
-        nextButton.setPickOnBounds(true);
-        nextButton.setOnMouseClicked((MouseEvent event) -> {
+        okButton.setPickOnBounds(true);
+        okButton.setOnMouseClicked((MouseEvent event) -> {
 
             try {
 
 
-                Stage.stage.changeStage("CreateCompany");
+                Stage.stage.changeStage("viewApplySeeker");
 
-
-                //Stage.stage.changeStage("homeSeeker");
 
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
+
         });
 
     }
-
 }

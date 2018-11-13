@@ -52,7 +52,7 @@ public class FXMLHomeSeeker implements Initializable {
         viewButton.setOnMouseClicked((MouseEvent event) -> {
 
             try {
-                Stage.stage.changeStage("Login");
+                Stage.stage.changeStage("viewJob");
             } catch (Exception e) {
                 e.printStackTrace();
             }

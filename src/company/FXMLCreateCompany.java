@@ -1,42 +1,37 @@
-package user;
+package company;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import stage.Stage;
 
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
-public class FXMLCreateUser implements Initializable {
-
+public class FXMLCreateCompany implements Initializable {
     @FXML
-    private TextField email;
+    private TextField name;
     @FXML
-    private PasswordField password;
+    private  TextField phone;
     @FXML
-    private PasswordField confirmPassword;
+    private TextField website;
     @FXML
-    private CheckBox seeker;
+    private TextArea address;
     @FXML
-    private CheckBox company;
+    private  TextArea biography;
     @FXML
     private ImageView backButton;
     @FXML
-    private ImageView nextButton;
+    private  ImageView okButton;
+
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         backButton.setPickOnBounds(true);
         backButton.setOnMouseClicked((MouseEvent event) -> {
 
@@ -46,8 +41,6 @@ public class FXMLCreateUser implements Initializable {
                 Stage.stage.changeStage("Login");
 
 
-                //Stage.stage.changeStage("homeSeeker");
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -55,22 +48,20 @@ public class FXMLCreateUser implements Initializable {
 
         });
 
-        nextButton.setPickOnBounds(true);
-        nextButton.setOnMouseClicked((MouseEvent event) -> {
+        okButton.setPickOnBounds(true);
+        okButton.setOnMouseClicked((MouseEvent event) -> {
 
             try {
 
 
-                Stage.stage.changeStage("CreateCompany");
+                Stage.stage.changeStage("homeCompany");
 
-
-                //Stage.stage.changeStage("homeSeeker");
 
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
+
         });
-
     }
-
 }
