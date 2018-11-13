@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="user.FXMLHomeCompany">
+  <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Pane prefHeight="600.0" prefWidth="900.0">
+               <children>
+                  <ImageView fitHeight="219.0" fitWidth="420.0" layoutX="252.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@logo.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="postJobButton" accessibleRole="BUTTON" fitHeight="300.0" fitWidth="300.0" layoutX="102.0" layoutY="233.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@postjob.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="approveButton" accessibleRole="BUTTON" fitHeight="300.0" fitWidth="300.0" layoutX="522.0" layoutY="233.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@approve.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="logoutButton" fitHeight="64.0" fitWidth="64.0" layoutX="14.0" layoutY="522.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons8-shutdown-64.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+  </children>
+</VBox>

@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import stage.Stage;
 
 import java.net.URL;
@@ -22,32 +24,29 @@ public class FXMLLogin implements Initializable {
     private PasswordField password;
 
     @FXML
-    private Button loginButton;
+    private ImageView loginButton;
 
     @FXML
-    private Hyperlink createUserHyperlink;
+    private Hyperlink createUserButton;
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL location, ResourceBundle resources) {
 
-        loginButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                try {
-                    Stage.stage.changeStage("Home-user");
-                    email.setText("login");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+        loginButton.setPickOnBounds(true);
+        loginButton.setOnMouseClicked((MouseEvent event) -> {
+
+            try {
+                Stage.stage.changeStage("homeCompany");
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         });
 
-        createUserHyperlink.setOnAction(new EventHandler<ActionEvent>() {
+        createUserButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 try {
-                    Stage.stage.changeStage("Register-user");
-                    email.setText("createUser");
+                    Stage.stage.changeStage("CreateUser");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
