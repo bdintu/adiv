@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,13 +16,12 @@
          <children>
             <Pane prefHeight="607.0" prefWidth="900.0">
                <children>
-                  <ImageView fitHeight="79.0" fitWidth="153.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="144.0" fitWidth="277.0" layoutX="298.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@logo.png" />
                      </image>
                   </ImageView>
-                  <ListView fx:id="listView" layoutX="184.0" layoutY="115.0" prefHeight="395.0" prefWidth="658.0" />
-                  <MenuButton fx:id="jobType" layoutX="23.0" layoutY="115.0" mnemonicParsing="false" text="Employment type">
+                  <MenuButton fx:id="jobType" layoutX="5.0" layoutY="180.0" mnemonicParsing="false" text="Employment type">
                      <items>
                         <MenuItem mnemonicParsing="false" text="Full time" />
                         <MenuItem mnemonicParsing="false" text="Part time" />
@@ -30,7 +30,7 @@
                         <MenuItem mnemonicParsing="false" text="Freelance" />
                      </items>
                   </MenuButton>
-                  <MenuButton fx:id="educationLevel" layoutX="23.0" layoutY="185.0" mnemonicParsing="false" text="Education level">
+                  <MenuButton fx:id="educationLevel" layoutX="5.0" layoutY="245.0" mnemonicParsing="false" text="Education level">
                      <items>
                         <MenuItem mnemonicParsing="false" text="High School" />
                         <MenuItem mnemonicParsing="false" text="Vocational" />
@@ -40,7 +40,7 @@
                         <MenuItem mnemonicParsing="false" text="Doctor Degrees" />
                      </items>
                   </MenuButton>
-                  <MenuButton fx:id="location" layoutX="23.0" layoutY="255.0" mnemonicParsing="false" text="Location">
+                  <MenuButton fx:id="location" layoutX="5.0" layoutY="310.0" mnemonicParsing="false" text="Location">
                      <items>
                         <MenuItem mnemonicParsing="false" text="Phra Nakhon" />
                         <MenuItem mnemonicParsing="false" text="Bang Bon" />
@@ -94,14 +94,14 @@
                         <MenuItem mnemonicParsing="false" text="Yan Nawa" />
                      </items>
                   </MenuButton>
-                  <MenuButton fx:id="jobLevel" layoutX="23.0" layoutY="325.0" mnemonicParsing="false" text="Career level">
+                  <MenuButton fx:id="jobLevel" layoutX="5.0" layoutY="375.0" mnemonicParsing="false" text="Career level">
                      <items>
                         <MenuItem mnemonicParsing="false" text="Entry" />
                         <MenuItem mnemonicParsing="false" text="Middle" />
                         <MenuItem mnemonicParsing="false" text="Senior" />
                      </items>
                   </MenuButton>
-                  <MenuButton fx:id="salary" layoutX="23.0" layoutY="395.0" mnemonicParsing="false" text="Salary">
+                  <MenuButton fx:id="salary" layoutX="5.0" layoutY="440.0" mnemonicParsing="false" text="Salary">
                      <items>
                         <MenuItem mnemonicParsing="false" text="Under 20000 THB" />
                         <MenuItem mnemonicParsing="false" text="20001-30000 THB" />
@@ -110,7 +110,7 @@
                         <MenuItem mnemonicParsing="false" text="Upper 50000 THB" />
                      </items>
                   </MenuButton>
-                  <MenuButton fx:id="skill" layoutX="23.0" layoutY="465.0" mnemonicParsing="false" text="Skill">
+                  <MenuButton fx:id="skill" layoutX="5.0" layoutY="505.0" mnemonicParsing="false" text="Skill">
                      <items>
                         <MenuItem mnemonicParsing="false" text="Java/JavaScript" />
                         <MenuItem mnemonicParsing="false" text="Python" />
@@ -125,7 +125,7 @@
                         <MenuItem mnemonicParsing="false" text="Others" />
                      </items>
                   </MenuButton>
-                  <MenuButton fx:id="jobFunction" layoutX="23.0" layoutY="535.0" mnemonicParsing="false" text="Job function">
+                  <MenuButton fx:id="jobFunction" layoutX="5.0" layoutY="115.0" mnemonicParsing="false" text="Job">
                      <items>
                         <MenuItem mnemonicParsing="false" text="Business Development" />
                         <MenuItem mnemonicParsing="false" text="Content Creator" />
@@ -140,7 +140,7 @@
                         <MenuItem mnemonicParsing="false" text="Others" />
                      </items>
                   </MenuButton>
-                  <ImageView fx:id="viewButton" fitHeight="50.0" fitWidth="50.0" layoutX="793.0" layoutY="536.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="viewButton" fitHeight="50.0" fitWidth="50.0" layoutX="840.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@icons8-view-filled-50.png" />
                      </image>
@@ -150,6 +150,14 @@
                         <Image url="@icons8-shutdown-64.png" />
                      </image>
                   </ImageView>
+                  <TableView fx:id="table" layoutX="142.0" layoutY="115.0" prefHeight="413.0" prefWidth="735.0">
+                     <columns>
+                        <TableColumn fx:id="jobFunction1" prefWidth="150.0" resizable="false" text="Job" />
+                        <TableColumn fx:id="company1" minWidth="0.0" prefWidth="150.0" text="Company" />
+                        <TableColumn fx:id="jobLevel1" prefWidth="110.0" text="Career level" />
+                        <TableColumn fx:id="salary1" prefWidth="114.0" text="Salary" />
+                     </columns>
+                  </TableView>
                </children>
             </Pane>
          </children>

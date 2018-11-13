@@ -34,8 +34,6 @@ public class Model implements Serializable {
 
     @Override
     public String toString() {
-        return "Skill{" +
-                "name='" + name + '\'' +
-                '}';
+        return name;
     }
 }

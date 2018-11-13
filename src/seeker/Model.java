@@ -96,14 +96,6 @@ public class Model implements Serializable {
 
     @Override
     public String toString() {
-        return "Seeker{" +
-                "user=" + user +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", phone='" + phone + '\'' +
-                ", address='" + address + '\'' +
-                ", educationLevel='" + educationLevel + '\'' +
-                ", biography='" + biography + '\'' +
-                '}';
+        return firstName + " " + lastName;
     }
 }

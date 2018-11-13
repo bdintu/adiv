@@ -34,8 +34,6 @@ public class Model implements Serializable {
 
     @Override
     public String toString() {
-        return "Industry{" +
-                ",name='" + name + '\'' +
-                '}';
+        return name;
     }
 }
