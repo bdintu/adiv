@@ -26,7 +26,7 @@ public class FXMLHomeCompany implements Initializable {
             try {
 
 
-                Stage.stage.changeStage("postJob");
+                Stage.stage.changeStage("viewPostJob");
 
 
             } catch (Exception e) {

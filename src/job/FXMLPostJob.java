@@ -63,7 +63,7 @@ public class FXMLPostJob implements Initializable {
             try {
 
 
-                Stage.stage.changeStage("homeCompany");
+                Stage.stage.changeStage("viewPostJob");
 
 
             } catch (Exception e) {

@@ -20,7 +20,8 @@ public class FXMLViewPostjob implements Initializable {
     private  ImageView viewButton;
     @FXML
     private  ImageView delButton;
-
+    @FXML
+    private  ImageView postButton;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         backButton.setPickOnBounds(true);
@@ -41,6 +42,22 @@ public class FXMLViewPostjob implements Initializable {
 
         viewButton.setPickOnBounds(true);
         viewButton.setOnMouseClicked((MouseEvent event) -> {
+
+            try {
+
+
+                Stage.stage.changeStage("postJob");
+
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+
+        });
+
+        postButton.setPickOnBounds(true);
+        postButton.setOnMouseClicked((MouseEvent event) -> {
 
             try {
 
