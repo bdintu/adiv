@@ -4,18 +4,18 @@ import java.util.ArrayList;
 
 public class Test {
 
-    public static void createJob() {
-//        jobfunction.Model jf = new jobfunction.Model("Software Developer");
-//        jobfunction.Controller.controller.add(jf);
-//
-//        joblevel.Model jl = new joblevel.Model("Software Developer");
-//        joblevel.Controller.controller.add(jl);
-//
-//        jobtype.Model jt = new jobtype.Model("Software Developer");
-//        jobtype.Controller.controller.add(jt);
-//
-//        skill.Model ski = new skill.Model("C/C++");
-//        skill.Controller.controller.add(ski);
+    public static void init() {
+        jobfunction.Model cjf = new jobfunction.Model("Software Developer");
+        jobfunction.Controller.controller.add(cjf);
+
+        joblevel.Model cjl = new joblevel.Model("Software Developer");
+        joblevel.Controller.controller.add(cjl);
+
+        jobtype.Model cjt = new jobtype.Model("Software Developer");
+        jobtype.Controller.controller.add(cjt);
+
+        skill.Model cski = new skill.Model("C/C++");
+        skill.Controller.controller.add(cski);
 
         company.Model ind = company.Controller.controller.getModels().get(0);
         jobfunction.Model jf = jobfunction.Controller.controller.getModels().get(0);
@@ -31,7 +31,23 @@ public class Test {
         Controller.controller.addModel(j);
     }
 
-    public static void printModel() {
+    public static void applyJob() {
+        user.Model u = user.Controller.controller.getModels().get(0);
+        Model j = Controller.controller.getModels().get(0);
+        Controller.controller.applyJob(j, u);
+
+        System.out.println(Controller.controller.getModels().get(0).getApply());
+    }
+
+    public static void approveJob() {
+        user.Model u = user.Controller.controller.getModels().get(0);
+        Model j = Controller.controller.getModels().get(0);
+        Controller.controller.approveJob(j, u);
+
+        System.out.println(Controller.controller.getModels().get(0).getApprove());
+    }
+
+    public static void print() {
         System.out.println(Controller.controller.getModels().get(0));
     }
 }

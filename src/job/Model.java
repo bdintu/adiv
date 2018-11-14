@@ -31,6 +31,9 @@ public class Model implements Serializable {
         this.skill = skill;
         this.salaryBegin = salaryBegin;
         this.salaryEnd = salaryEnd;
+
+        this.apply = new ArrayList<user.Model>();
+        this.approve = new user.Model();
     }
 
     public String getName() {

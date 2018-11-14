@@ -2,12 +2,11 @@ package seeker;
 
 public class Test {
 
-    public static void createSeeker() {
-//        location.Model loc = new location.Model("Latkrabang");
-//        location.Controller.controller.add(loc);
+    public static void init() {
+        location.Model cloc = new location.Model("Latkrabang");
+        location.Controller.controller.add(cloc);
 
         location.Model loc = location.Controller.controller.getModels().get(0);
-
         Model seeker = new Model(user.Controller.controller.getSession(), location.Controller.controller.getModels().get(0),"Bundit", "Seedao", "0998061524", "3D KMITL", "-");
         Controller.controller.addModel(seeker);
     }
@@ -19,7 +18,7 @@ public class Test {
         }
     }
 
-    public static void printModel() {
+    public static void print() {
         System.out.println("\t"+Controller.controller.getModels().get(0));
     }
 }

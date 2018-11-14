@@ -29,16 +29,31 @@ public class Controller {
         return false;
     }
 
-    public void postJob() {
+    public boolean hasApplyJob(Model job_input, user.Model user_input) {
+        for (user.Model user: job_input.getApply()) {
+            if (user.equals(user_input)) {
+                return true;
+            }
+        }
 
+        return false;
     }
 
-    public void approveJob() {
+    public void applyJob(Model job_input, user.Model user_input) {
+        if (hasApplyJob(job_input, user_input)) {
+            System.out.println("Error: duplicate apply job");
+            return;
+        }
 
+        job_input.getApply().add(user_input);
     }
 
-    public void applyJob() {
-
+    public void approveJob(Model job_input, user.Model user_input) {
+        if (hasApplyJob(job_input, user_input)) {
+            job_input.setApprove(user_input);
+        } else {
+            System.out.println("Error: user not yet apply");
+        }
     }
 
     public ArrayList<Model> getModels() {

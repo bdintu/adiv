@@ -32,10 +32,17 @@ public class Main extends Application {
         Serialize.Serialize();
         Serialize.serialize.objRead();
 
-        user.Test.printModel();
-        seeker.Test.printModel();
-        company.Test.printModel();
-        job.Test.printModel();
+//        user.Test.init();
+//        user.Test.print();
+//
+//        seeker.Test.init();
+//        seeker.Test.print();
+//
+//        company.Test.init();
+//        company.Test.print();
+//
+//        job.Test.init();
+//        job.Test.print();
 
         launch(args);
         Serialize.serialize.objWrite();

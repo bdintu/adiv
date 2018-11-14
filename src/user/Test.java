@@ -3,10 +3,9 @@ package user;
 import java.util.ArrayList;
 
 public class Test {
-    public static void createUser() {
+    public static void init() {
         Model user = new Model("j@adiv.com", "j");
         Controller.controller.addModel(user);
-        System.out.println("\tcreateUser" + user);
     }
 
     public static void login() {
@@ -19,7 +18,7 @@ public class Test {
         }
     }
 
-    public static void printModel() {
+    public static void print() {
         System.out.println("\t" + Controller.controller.getModels().get(0));
     }
 }

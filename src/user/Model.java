@@ -8,6 +8,9 @@ public class Model implements Serializable {
     private String email;
     private String password;
 
+    public Model() {
+    }
+
     public Model(String email, String password) {
         this.email = email;
         this.password = password;
