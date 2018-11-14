@@ -8,7 +8,7 @@ public class Controller {
     private static Model session;
 
     public static void Controller() {
-//        models = new ArrayList<Model>();
+        models = new ArrayList<Model>();
 
         Test.createCompany();
         Test.login();
@@ -25,8 +25,8 @@ public class Controller {
     }
 
     public static void login() {
-        if (isCompany(user.Controller.getSession())) {
-            setSession(user.Controller.getSession());
+        if (isCompany(user.Controller.controller.getSession())) {
+            setSession(user.Controller.controller.getSession());
         }
     }
 

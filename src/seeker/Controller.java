@@ -25,8 +25,8 @@ public class Controller {
     }
 
     public static void login() {
-        if (isSeeker(user.Controller.getSession())) {
-            setSession(user.Controller.getSession());
+        if (isSeeker(user.Controller.controller.getSession())) {
+            setSession(user.Controller.controller.getSession());
         }
     }
 

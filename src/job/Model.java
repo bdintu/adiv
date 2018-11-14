@@ -12,20 +12,25 @@ public class Model implements Serializable {
     private jobfunction.Model jobFunction;
     private joblevel.Model jobLevel;
     private jobtype.Model jobType;
+    private location.Model location;
     private ArrayList<skill.Model> skill;
 
-    int salary_begin;
-    int salary_end;
+    private int salaryBegin;
+    private int salaryEnd;
 
-    public Model(String name, company.Model company, jobfunction.Model jobFunction, joblevel.Model jobLevel, jobtype.Model jobType, ArrayList<skill.Model> skill, int salary_begin, int salary_end) {
+    private ArrayList<user.Model> apply;
+    private user.Model approve;
+
+    public Model(String name, company.Model company, jobfunction.Model jobFunction, joblevel.Model jobLevel, jobtype.Model jobType, location.Model location, ArrayList<skill.Model> skill, int salaryBegin, int salaryEnd) {
         this.name = name;
         this.company = company;
         this.jobFunction = jobFunction;
         this.jobLevel = jobLevel;
         this.jobType = jobType;
+        this.location = location;
         this.skill = skill;
-        this.salary_begin = salary_begin;
-        this.salary_end = salary_end;
+        this.salaryBegin = salaryBegin;
+        this.salaryEnd = salaryEnd;
     }
 
     public String getName() {
@@ -68,6 +73,14 @@ public class Model implements Serializable {
         this.jobType = jobType;
     }
 
+    public location.Model getLocation() {
+        return location;
+    }
+
+    public void setLocation(location.Model location) {
+        this.location = location;
+    }
+
     public ArrayList<skill.Model> getSkill() {
         return skill;
     }
@@ -76,20 +89,36 @@ public class Model implements Serializable {
         this.skill = skill;
     }
 
-    public int getSalary_begin() {
-        return salary_begin;
+    public int getSalaryBegin() {
+        return salaryBegin;
     }
 
-    public void setSalary_begin(int salary_begin) {
-        this.salary_begin = salary_begin;
+    public void setSalaryBegin(int salaryBegin) {
+        this.salaryBegin = salaryBegin;
     }
 
-    public int getSalary_end() {
-        return salary_end;
+    public int getSalaryEnd() {
+        return salaryEnd;
     }
 
-    public void setSalary_end(int salary_end) {
-        this.salary_end = salary_end;
+    public void setSalaryEnd(int salaryEnd) {
+        this.salaryEnd = salaryEnd;
+    }
+
+    public ArrayList<user.Model> getApply() {
+        return apply;
+    }
+
+    public void setApply(ArrayList<user.Model> apply) {
+        this.apply = apply;
+    }
+
+    public user.Model getApprove() {
+        return approve;
+    }
+
+    public void setApprove(user.Model approve) {
+        this.approve = approve;
     }
 
     @Override
@@ -108,15 +137,6 @@ public class Model implements Serializable {
 
     @Override
     public String toString() {
-        return "Job{" +
-                "name='" + name + '\'' +
-                ", company=" + company +
-                ", jobFunction=" + jobFunction +
-                ", jobLevel=" + jobLevel +
-                ", jobType=" + jobType +
-                ", skill=" + skill +
-                ", salary_begin=" + salary_begin +
-                ", salary_end=" + salary_end +
-                '}';
+        return name;
     }
 }

@@ -36,7 +36,16 @@ public class FXMLLogin implements Initializable {
         loginButton.setOnMouseClicked((MouseEvent event) -> {
 
             try {
-                Stage.stage.changeStage("homeSeeker");
+                Model user = new Model(email.getText(), password.getText());
+                Controller.controller.login(user);
+
+                if (Controller.controller.isLogin()) {
+                    Stage.stage.changeStage("homeSeeker");
+                } else {
+                    int i=0;
+                    // show label error
+                }
+
             } catch (Exception e) {
                 e.printStackTrace();
             }

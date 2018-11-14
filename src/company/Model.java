@@ -8,21 +8,21 @@ public class Model implements Serializable {
 
     user.Model user;
     industry.Model industry;
+    location.Model location;
 
     String name;
     String phone;
-    String address;
-    String biography;
     String website;
+    String biography;
 
-    public Model(user.Model user, industry.Model industry, String name, String phone, String address, String biography, String website) {
+    public Model(user.Model user, industry.Model industry, location.Model location, String name, String phone, String website, String biography) {
         this.user = user;
         this.industry = industry;
-        this.phone = phone;
+        this.location = location;
         this.name = name;
-        this.address = address;
-        this.biography = biography;
+        this.phone = phone;
         this.website = website;
+        this.biography = biography;
     }
 
     public user.Model getUser() {
@@ -41,12 +41,12 @@ public class Model implements Serializable {
         this.industry = industry;
     }
 
-    public String getPhone() {
-        return phone;
+    public location.Model getLocation() {
+        return location;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setLocation(location.Model location) {
+        this.location = location;
     }
 
     public String getName() {
@@ -57,20 +57,12 @@ public class Model implements Serializable {
         this.name = name;
     }
 
-    public String getAddress() {
-        return address;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setAddress(String address) {
-        address = address;
-    }
-
-    public String getBiography() {
-        return biography;
-    }
-
-    public void setBiography(String biography) {
-        this.biography = biography;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getWebsite() {
@@ -79,6 +71,14 @@ public class Model implements Serializable {
 
     public void setWebsite(String website) {
         this.website = website;
+    }
+
+    public String getBiography() {
+        return biography;
+    }
+
+    public void setBiography(String biography) {
+        this.biography = biography;
     }
 
     @Override

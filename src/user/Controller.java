@@ -4,44 +4,34 @@ import java.util.ArrayList;
 
 public class Controller {
 
-    private static ArrayList<Model> models;
-    private static Model session;
+    public static Controller controller;
+
+    private ArrayList<Model> models;
+    private Model session;
 
     public static void Controller() {
-//        models = new ArrayList<Model>();
-
-        Test.createUser();
-        Test.login();
-        Test.printModel();
+        controller = new Controller();
+//        controller.models = new ArrayList<Model>();
     }
 
-    public static void add(Model user) {
-        if (!isDuplicate(user)) {
+    public void addModel(Model user) {
+        if (hasModel(user) == false) {
             models.add(user);
         }
 
         System.out.println("Error: duplicate email");
     }
 
-    public static boolean login(Model user_input) {
-        Model user = getUser(user_input);
-        if (user == null) {
-            System.out.println("Error: user not in system");
-            return false;
-        }
+    public void login(Model user_input) {
 
-        boolean is_login = checkPassword(user, user_input);
-        if (is_login == false) {
-            System.out.println("Error: password is wrong");
+        if (hasModel(user_input) && checkPassword(user_input)) {
+            session = getModel(user_input);
         }
-
-        session = user;
-        return true;
     }
 
-    private static Model getUser(Model user_input) {
+    private Model getModel(Model user_input) {
         for (Model user : models) {
-            if (user.getEmail().equals(user_input.getEmail())) {
+            if (user.equals(user_input)) {
                 return user;
             }
         }
@@ -49,7 +39,7 @@ public class Controller {
         return null;
     }
 
-    private static boolean isDuplicate(Model user_input) {
+    private boolean hasModel(Model user_input) {
         for (Model user : models) {
             if (user.equals(user_input)) {
                 return true;
@@ -59,27 +49,28 @@ public class Controller {
         return false;
     }
 
-    private static boolean checkPassword(Model user, Model user_input) {
+    private boolean checkPassword(Model user_input) {
+        Model user = getModel(user_input);
         return user.getPassword().equals(user_input.getPassword());
     }
 
-    public static boolean isLogin() {
+    public boolean isLogin() {
         return session != null;
     }
 
-    public static ArrayList<Model> getModels() {
+    public ArrayList<Model> getModels() {
         return models;
     }
 
-    public static void setModels(ArrayList<Model> models) {
-        Controller.models = models;
+    public void setModels(ArrayList<Model> models) {
+        this.models = models;
     }
 
-    public static Model getSession() {
+    public Model getSession() {
         return session;
     }
 
-    public static void setSession(Model session) {
-        Controller.session = session;
+    public void setSession(Model session) {
+        this.session = session;
     }
 }

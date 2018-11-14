@@ -1,4 +1,4 @@
-package job;
+package location;
 
 import java.util.ArrayList;
 
@@ -9,24 +9,10 @@ public class Controller {
     public static void Controller() {
         models = new ArrayList<Model>();
 
-//        Test.createJob();
-//        Test.printModel();
     }
 
-    public static void add(Model job) {
-        models.add(job);
-    }
-
-    public static void postJob() {
-
-    }
-
-    public static void approveJob() {
-
-    }
-
-    public static void applyJob() {
-
+    public static void add(Model jobType) {
+        models.add(jobType);
     }
 
     public static ArrayList<Model> getModels() {
