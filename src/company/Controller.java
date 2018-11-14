@@ -14,16 +14,25 @@ public class Controller {
         controller.models = new ArrayList<Model>();
     }
 
-    public void add(Model company) {
-        if (!isDuplicate(company)) {
+    public void addModel(Model company) {
+        if (hasModel(company) == false) {
             models.add(company);
         }
 
         System.out.println("Error: duplicate company");
-
     }
 
-    public void login() {
+    private boolean hasModel(Model company_input) {
+        for (Model company : models) {
+            if (company.equals(company_input)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public void syncSession() {
         if (isCompany(user.Controller.controller.getSession())) {
             setSession(user.Controller.controller.getSession());
         }
@@ -47,16 +56,6 @@ public class Controller {
         }
 
         return null;
-    }
-
-    private boolean isDuplicate(Model company_input) {
-        for (Model company : models) {
-            if (company.equals(company_input)) {
-                return true;
-            }
-        }
-
-        return false;
     }
 
     public ArrayList<Model> getModels() {

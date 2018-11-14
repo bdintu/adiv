@@ -13,8 +13,20 @@ public class Controller {
         controller.models = new ArrayList<Model>();
     }
 
-    public void add(Model job) {
-        models.add(job);
+    public void addModel(Model job) {
+        if (hasModel(job) == false) {
+            models.add(job);
+        }
+    }
+
+    private boolean hasModel(Model job_input) {
+        for (Model job : models) {
+            if (job.equals(job_input)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public void postJob() {

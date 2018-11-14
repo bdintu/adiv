@@ -22,13 +22,6 @@ public class Controller {
         System.out.println("Error: duplicate email");
     }
 
-    public void login(Model user_input) {
-
-        if (hasModel(user_input) && checkPassword(user_input)) {
-            session = getModel(user_input);
-        }
-    }
-
     private Model getModel(Model user_input) {
         for (Model user : models) {
             if (user.equals(user_input)) {
@@ -47,6 +40,13 @@ public class Controller {
         }
 
         return false;
+    }
+
+    public void login(Model user_input) {
+
+        if (hasModel(user_input) && checkPassword(user_input)) {
+            session = getModel(user_input);
+        }
     }
 
     private boolean checkPassword(Model user_input) {

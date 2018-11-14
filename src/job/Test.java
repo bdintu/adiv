@@ -28,7 +28,7 @@ public class Test {
         skill.add(ski);
 
         job.Model j = new job.Model("Computer Vision", ind, jf, jl, jt, loc, skill, 30000, 50000);
-        Controller.controller.add(j);
+        Controller.controller.addModel(j);
     }
 
     public static void printModel() {

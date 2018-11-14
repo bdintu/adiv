@@ -10,12 +10,12 @@ public class Test {
         location.Model loc = location.Controller.controller.getModels().get(0);
 
         Model seeker = new Model(user.Controller.controller.getSession(), ind, loc,"Kbank", "0998061524","kbank.com", "-");
-        Controller.controller.add(seeker);
+        Controller.controller.addModel(seeker);
     }
 
     public static void login() {
         if (user.Controller.controller.isLogin()) {
-            Controller.controller.login();
+            Controller.controller.syncSession();
             System.out.println("\tcompanySession"+Controller.controller.getSession());
         }
     }

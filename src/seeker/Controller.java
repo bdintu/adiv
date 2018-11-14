@@ -14,24 +14,25 @@ public class Controller {
         controller.models = new ArrayList<Model>();
     }
 
-    public void add(Model seeker) {
-        if (!isDuplicate(seeker)) {
+    public void addModel(Model seeker) {
+        if (hasModel(seeker) == false) {
             models.add(seeker);
         }
-
-        System.out.println("Error: duplicate seeker");
-
     }
 
-    public void login() {
-        if (isSeeker(user.Controller.controller.getSession())) {
-            setSession(user.Controller.controller.getSession());
-        }
-    }
-
-    public boolean isSeeker(user.Model user) {
+    private Model getModel(Model seeker_input) {
         for (Model seeker : models) {
-            if (seeker.getUser().getEmail().equals(user.getEmail())) {
+            if (seeker.equals(seeker_input)) {
+                return seeker;
+            }
+        }
+
+        return null;
+    }
+
+    private boolean hasModel(Model seeker_input) {
+        for (Model seeker : models) {
+            if (seeker.equals(seeker_input)) {
                 return true;
             }
         }
@@ -39,7 +40,7 @@ public class Controller {
         return false;
     }
 
-    private Model getSeeker(user.Model user) {
+    private Model getUserSeeker(user.Model user) {
         for (Model seeker : models) {
             if (seeker.getUser().getEmail().equals(user.getEmail())) {
                 return seeker;
@@ -49,14 +50,20 @@ public class Controller {
         return null;
     }
 
-    private boolean isDuplicate(Model seeker_input) {
+    private boolean isUserSeeker(user.Model user) {
         for (Model seeker : models) {
-            if (seeker.equals(seeker_input)) {
+            if (seeker.getUser().getEmail().equals(user.getEmail())) {
                 return true;
             }
         }
 
         return false;
+    }
+
+    public void syncSession() {
+        if (isUserSeeker(user.Controller.controller.getSession())) {
+            setSession(user.Controller.controller.getSession());
+        }
     }
 
     public ArrayList<Model> getModels() {
@@ -72,6 +79,6 @@ public class Controller {
     }
 
     public void setSession(user.Model user) {
-        this.session = getSeeker(user);
+        this.session = getUserSeeker(user);
     }
 }
