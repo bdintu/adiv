@@ -60,21 +60,29 @@ public class FXMLCreateUser implements Initializable {
 
             try {
 
+                // check null field
+
                 if (password.getText().equals(confirmPassword.getText()) == false) {
-                    return;
-                }
+                    System.out.println("Error: password mai tong kun");
+                } else if (seeker.isSelected() && company.isSelected()) {
+                    System.out.println("Error: not select");
+                } else if (!seeker.isSelected() && !company.isSelected()) {
+                    System.out.println("Error: pess select one type");
+                } else if (seeker.isSelected()) {
 
-                if (seeker.isSelected() && company.isSelected()) {
-                    int i=0;
-                }
+                    System.out.println(email.getText() + password.getText());
 
-                if (seeker.isSelected()) {
                     Model user = new Model(email.getText(), password.getText());
                     Controller.controller.addModel(user);
+                    Controller.controller.login(user);
+
                     Stage.stage.changeStage("CreateSeeker");
                 } else if (company.isSelected()) {
+
                     Model user = new Model(email.getText(), password.getText());
                     Controller.controller.addModel(user);
+                    Controller.controller.login(user);
+
                     Stage.stage.changeStage("CreateCompany");
                 }
 

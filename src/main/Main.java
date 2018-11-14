@@ -40,9 +40,6 @@ public class Main extends Application {
 //
 //        company.Test.init();
 //        company.Test.print();
-//
-//        job.Test.init();
-//        job.Test.print();
 
         launch(args);
         Serialize.serialize.objWrite();

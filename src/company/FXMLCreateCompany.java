@@ -30,7 +30,7 @@ public class FXMLCreateCompany implements Initializable {
 
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL url, ResourceBundle resources) {
 
         backButton.setPickOnBounds(true);
         backButton.setOnMouseClicked((MouseEvent event) -> {
@@ -53,6 +53,11 @@ public class FXMLCreateCompany implements Initializable {
 
             try {
 
+                industry.Model ind = industry.Controller.controller.getModels().get(0);
+                location.Model loc = location.Controller.controller.getModels().get(0);
+                Model seeker = new Model(user.Controller.controller.getSession(), ind, loc, name.getText(), phone.getText(),website.getText(), biography.getText());
+                Controller.controller.addModel(seeker);
+                Controller.controller.syncSession();
 
                 Stage.stage.changeStage("homeCompany");
 

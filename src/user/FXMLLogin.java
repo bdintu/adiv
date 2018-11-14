@@ -42,8 +42,7 @@ public class FXMLLogin implements Initializable {
                 if (Controller.controller.isLogin()) {
                     Stage.stage.changeStage("homeSeeker");
                 } else {
-                    int i=0;
-                    // show label error
+                    System.out.println("Error: email or password incorrect");
                 }
 
             } catch (Exception e) {

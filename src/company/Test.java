@@ -6,9 +6,10 @@ public class Test {
         industry.Model asd = new industry.Model("Mobile Dev");
         industry.Controller.controller.add(asd);
 
+        user.Model userrr = user.Controller.controller.getModels().get(0);
         industry.Model ind = industry.Controller.controller.getModels().get(0);
         location.Model loc = location.Controller.controller.getModels().get(0);
-        Model seeker = new Model(user.Controller.controller.getSession(), ind, loc,"Kbank", "0998061524","kbank.com", "-");
+        Model seeker = new Model(userrr, ind, loc,"Kbank", "0998061524","kbank.com", "-");
         Controller.controller.addModel(seeker);
     }
 

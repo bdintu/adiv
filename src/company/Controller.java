@@ -15,11 +15,12 @@ public class Controller {
     }
 
     public void addModel(Model company) {
-        if (hasModel(company) == false) {
+
+        if (hasModel(company)) {
+            System.out.println("Error: duplicate company");
+        } else {
             models.add(company);
         }
-
-        System.out.println("Error: duplicate company");
     }
 
     private boolean hasModel(Model company_input) {
@@ -38,9 +39,10 @@ public class Controller {
         }
     }
 
-    public boolean isCompany(user.Model user) {
+    public boolean isCompany(user.Model user_input) {
+
         for (Model company : models) {
-            if (company.getUser().getEmail().equals(user.getEmail())) {
+            if (company.getUser().getEmail().equals(user_input.getEmail())) {
                 return true;
             }
         }

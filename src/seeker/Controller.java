@@ -15,7 +15,10 @@ public class Controller {
     }
 
     public void addModel(Model seeker) {
-        if (hasModel(seeker) == false) {
+
+        if (hasModel(seeker)) {
+            System.out.println("Error: duplicate seeker");
+        } else {
             models.add(seeker);
         }
     }

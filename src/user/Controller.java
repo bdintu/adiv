@@ -15,11 +15,12 @@ public class Controller {
     }
 
     public void addModel(Model user) {
-        if (hasModel(user) == false) {
+
+        if (hasModel(user)) {
+            System.out.println("Error: duplicate email");
+        } else {
             models.add(user);
         }
-
-        System.out.println("Error: duplicate email");
     }
 
     private Model getModel(Model user_input) {
