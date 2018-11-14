@@ -4,36 +4,36 @@ import java.util.ArrayList;
 
 public class Controller {
 
-    private static ArrayList<Model> models;
+    public static Controller controller;
+
+    private ArrayList<Model> models;
 
     public static void Controller() {
-        models = new ArrayList<Model>();
-
-//        Test.createJob();
-//        Test.printModel();
+        controller = new Controller();
+        controller.models = new ArrayList<Model>();
     }
 
-    public static void add(Model job) {
+    public void add(Model job) {
         models.add(job);
     }
 
-    public static void postJob() {
+    public void postJob() {
 
     }
 
-    public static void approveJob() {
+    public void approveJob() {
 
     }
 
-    public static void applyJob() {
+    public void applyJob() {
 
     }
 
-    public static ArrayList<Model> getModels() {
+    public ArrayList<Model> getModels() {
         return models;
     }
 
-    public static void setModels(ArrayList<Model> models) {
-        Controller.models = models;
+    public void setModels(ArrayList<Model> models) {
+        this.models = models;
     }
 }

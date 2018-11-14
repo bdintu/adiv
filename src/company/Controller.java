@@ -4,18 +4,17 @@ import java.util.ArrayList;
 
 public class Controller {
 
-    private static ArrayList<Model> models;
-    private static Model session;
+    public static Controller controller;
+
+    private ArrayList<Model> models;
+    private Model session;
 
     public static void Controller() {
-        models = new ArrayList<Model>();
-
-        Test.createCompany();
-        Test.login();
-        Test.printModel();
+        controller = new Controller();
+        controller.models = new ArrayList<Model>();
     }
 
-    public static void add(Model company) {
+    public void add(Model company) {
         if (!isDuplicate(company)) {
             models.add(company);
         }
@@ -24,13 +23,13 @@ public class Controller {
 
     }
 
-    public static void login() {
+    public void login() {
         if (isCompany(user.Controller.controller.getSession())) {
             setSession(user.Controller.controller.getSession());
         }
     }
 
-    public static boolean isCompany(user.Model user) {
+    public boolean isCompany(user.Model user) {
         for (Model company : models) {
             if (company.getUser().getEmail().equals(user.getEmail())) {
                 return true;
@@ -40,7 +39,7 @@ public class Controller {
         return false;
     }
 
-    private static Model getCompany(user.Model user) {
+    private Model getCompany(user.Model user) {
         for (Model company : models) {
             if (company.getUser().getEmail().equals(user.getEmail())) {
                 return company;
@@ -50,7 +49,7 @@ public class Controller {
         return null;
     }
 
-    private static boolean isDuplicate(Model company_input) {
+    private boolean isDuplicate(Model company_input) {
         for (Model company : models) {
             if (company.equals(company_input)) {
                 return true;
@@ -60,19 +59,19 @@ public class Controller {
         return false;
     }
 
-    public static ArrayList<Model> getModels() {
+    public ArrayList<Model> getModels() {
         return models;
     }
 
-    public static void setModels(ArrayList<Model> models) {
-        Controller.models = models;
+    public void setModels(ArrayList<Model> models) {
+        this.models = models;
     }
 
-    public static Model getSession() {
+    public Model getSession() {
         return session;
     }
 
-    public static void setSession(user.Model user) {
-        Controller.session = getCompany(user);
+    public void setSession(user.Model user) {
+        this.session = getCompany(user);
     }
 }

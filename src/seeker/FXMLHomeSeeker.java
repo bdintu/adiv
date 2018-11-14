@@ -10,7 +10,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import job.Model;
+import job.Controller;
 import stage.Stage;
 
 import java.net.URL;
@@ -87,7 +87,7 @@ public class FXMLHomeSeeker implements Initializable {
 
 
         ObservableList<job.Model> list = FXCollections.observableArrayList();
-        for(job.Model i: job.Controller.getModels())
+        for(job.Model i: Controller.controller.getModels())
             list.add(i);
 
         return list;

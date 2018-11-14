@@ -3,24 +3,25 @@ package company;
 public class Test {
 
     public static void createCompany() {
-        System.out.println("------------------------------------------------\ncreateCompany:");
-        industry.Model ind = industry.Controller.getModels().get(0);
+//        industry.Model asd = new industry.Model("Mobile Dev");
+//        industry.Controller.controller.add(asd);
 
-//        Model seeker = new Model(user.Controller.getSession(), ind,"Kbank", "0998061524", "Nontraburi", "-", "kbank.com");
-//        Controller.add(seeker);
+        industry.Model ind = industry.Controller.controller.getModels().get(0);
+        location.Model loc = location.Controller.controller.getModels().get(0);
+
+        Model seeker = new Model(user.Controller.controller.getSession(), ind, loc,"Kbank", "0998061524","kbank.com", "-");
+        Controller.controller.add(seeker);
     }
 
     public static void login() {
-        System.out.println("------------------------------------------------\nisSeeker:");
         if (user.Controller.controller.isLogin()) {
-            Controller.login();
-            System.out.println("\tcompanySession"+Controller.getSession());
+            Controller.controller.login();
+            System.out.println("\tcompanySession"+Controller.controller.getSession());
         }
     }
 
     public static void printModel() {
-        System.out.println("------------------------------------------------\nprintModel:");
-        System.out.println(Controller.getModels().get(0));
+        System.out.println(Controller.controller.getModels().get(0));
     }
 
 }

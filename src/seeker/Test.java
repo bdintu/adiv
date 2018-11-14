@@ -3,22 +3,23 @@ package seeker;
 public class Test {
 
     public static void createSeeker() {
-        System.out.println("------------------------------------------------\ncreateSeeker:");
-        Model seeker = new Model(user.Controller.controller.getSession(), "Bundit", "Seedao", "0998061524", "Bangkok", "3D", "-");
-        Controller.add(seeker);
+//        location.Model loc = new location.Model("Latkrabang");
+//        location.Controller.controller.add(loc);
+
+        location.Model loc = location.Controller.controller.getModels().get(0);
+
+        Model seeker = new Model(user.Controller.controller.getSession(), location.Controller.controller.getModels().get(0),"Bundit", "Seedao", "0998061524", "3D KMITL", "-");
+        Controller.controller.add(seeker);
     }
 
     public static void login() {
-        System.out.println("------------------------------------------------\nisSeeker:");
         if (user.Controller.controller.isLogin()) {
-            Controller.login();
-            System.out.println("\tseekerSession"+Controller.getSession());
+            Controller.controller.login();
+            System.out.println("\tseekerSession"+Controller.controller.getSession());
         }
     }
 
     public static void printModel() {
-
-        System.out.println("------------------------------------------------\nprintModel:");
-        System.out.println("\t"+Controller.getModels().get(0));
+        System.out.println("\t"+Controller.controller.getModels().get(0));
     }
 }

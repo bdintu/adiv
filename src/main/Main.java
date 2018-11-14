@@ -19,17 +19,23 @@ public class Main extends Application {
     public static void main(String[] args) {
 
         user.Controller.Controller();
-//        location.Controller.Controller();
-//        seeker.Controller.Controller();
-//        industry.Controller.Controller();
-//        company.Controller.Controller();
-//        skill.Controller.Controller();
-//        jobfunction.Controller.Controller();
-//        joblevel.Controller.Controller();
-//        job.Controller.Controller();
+        location.Controller.Controller();
+        seeker.Controller.Controller();
+        industry.Controller.Controller();
+        company.Controller.Controller();
+        skill.Controller.Controller();
+        jobfunction.Controller.Controller();
+        joblevel.Controller.Controller();
+        jobtype.Controller.Controller();
+        job.Controller.Controller();
 
         Serialize.Serialize();
         Serialize.serialize.objRead();
+
+        user.Test.printModel();
+        seeker.Test.printModel();
+        company.Test.printModel();
+        job.Test.printModel();
 
         launch(args);
         Serialize.serialize.objWrite();

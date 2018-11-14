@@ -4,22 +4,24 @@ import java.util.ArrayList;
 
 public class Controller {
 
-    private static ArrayList<Model> models;
+    public static Controller controller;
+
+    private ArrayList<Model> models;
 
     public static void Controller() {
-//        models = new ArrayList<Model>();
-
+        controller = new Controller();
+        controller.models = new ArrayList<Model>();
     }
 
-    public static void add(Model jobFunction) {
+    public void add(Model jobFunction) {
         models.add(jobFunction);
     }
 
-    public static ArrayList<Model> getModels() {
+    public ArrayList<Model> getModels() {
         return models;
     }
 
-    public static void setModels(ArrayList<Model> models) {
-        Controller.models = models;
+    public void setModels(ArrayList<Model> models) {
+        this.models = models;
     }
 }
