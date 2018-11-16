@@ -13,22 +13,19 @@ import java.util.ResourceBundle;
 
 public class FXMLViewJob implements Initializable {
     @FXML
-    private TextField jobFunction;
+    private TextField jobNameField;
     @FXML
-    private TextField salary;
+    private TextField jobTypeField;
     @FXML
-    private TextField jobType;
+    private TextField locationField;
     @FXML
-    private  TextField skill;
+    private  TextField jobLevelField;
     @FXML
-    private  TextField educationLevel;
+    private  TextField salaryField;
     @FXML
-    private  TextField location;
+    private  TextField skillField;
     @FXML
-    private TextField jobLevel;
-
-    @FXML
-    private  TextArea detail;
+    private TextArea detailField;
 
     @FXML
     private ImageView backButton;
@@ -39,37 +36,33 @@ public class FXMLViewJob implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        Model sel = Controller.controller.getSelect();
+
+        jobNameField.setText(sel.getName());
+        jobTypeField.setText(sel.getJobType().getName());
+        jobLevelField.setText(sel.getJobLevel().getName());
+        locationField.setText(sel.getLocation().getName());
+        salaryField.setText(sel.getSalary().getName());
+        skillField.setText(sel.getSkill().toString());
+
         backButton.setPickOnBounds(true);
         backButton.setOnMouseClicked((MouseEvent event) -> {
 
             try {
-
-
                 Stage.stage.changeStage("homeSeeker");
-
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-
         });
 
         okButton.setPickOnBounds(true);
         okButton.setOnMouseClicked((MouseEvent event) -> {
 
             try {
-
-
                 Stage.stage.changeStage("viewApplySeeker");
-
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-
         });
-
     }
 }

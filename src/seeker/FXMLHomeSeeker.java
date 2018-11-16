@@ -1,5 +1,7 @@
 package seeker;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -12,6 +14,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import job.Controller;
+import job.Model;
 import stage.Stage;
 
 import java.net.URL;
@@ -62,6 +65,7 @@ public class FXMLHomeSeeker implements Initializable {
         addJobLevelField();
         addLocationField();
         addSkillField();
+        addSalaryField();
 
         jobNameTable.setCellValueFactory(new PropertyValueFactory<>("name"));
         companyTable.setCellValueFactory(new PropertyValueFactory<>("company"));
@@ -69,6 +73,7 @@ public class FXMLHomeSeeker implements Initializable {
         jobFunctionTable.setCellValueFactory(new PropertyValueFactory<>("jobFunction"));
         jobLevelTable.setCellValueFactory(new PropertyValueFactory<>("jobLevel"));
         locationTable.setCellValueFactory(new PropertyValueFactory<>("location"));
+        salaryTable.setCellValueFactory(new PropertyValueFactory<>("salary"));
 
         ObservableList<job.Model> list = getJobModelList();
         table.setItems(list);
@@ -92,6 +97,19 @@ public class FXMLHomeSeeker implements Initializable {
                 e.printStackTrace();
             }
         });
+
+        table.getSelectionModel().selectedItemProperty()
+                .addListener(new ChangeListener<Model>() {
+
+                    @Override
+                    public void changed(
+                            ObservableValue<? extends Model> observable,
+                            Model oldValue, Model newValue ) {
+
+                        Controller.controller.setSelect(newValue);
+                        System.out.println(newValue);
+                    }
+                });
 
 
     }
@@ -128,6 +146,13 @@ public class FXMLHomeSeeker implements Initializable {
         for(skill.Model i: skill.Controller.controller.getModels()) {
             MenuItem mi = new MenuItem(i.getName());
             skillField.getItems().add(mi);
+        }
+    }
+
+    private void addSalaryField() {
+        for(salary.Model i: salary.Controller.controller.getModels()) {
+            MenuItem mi = new MenuItem(i.getName());
+            salaryField.getItems().add(mi);
         }
     }
 

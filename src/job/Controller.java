@@ -7,6 +7,7 @@ public class Controller {
     public static Controller controller;
 
     private ArrayList<Model> models;
+    private Model select;
 
     public static void Controller() {
         controller = new Controller();
@@ -62,5 +63,13 @@ public class Controller {
 
     public void setModels(ArrayList<Model> models) {
         this.models = models;
+    }
+
+    public Model getSelect() {
+        return select;
+    }
+
+    public void setSelect(Model select) {
+        this.select = select;
     }
 }
