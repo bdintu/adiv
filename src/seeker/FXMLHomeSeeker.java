@@ -110,14 +110,15 @@ public class FXMLHomeSeeker implements Initializable {
                         System.out.println(newValue);
                     }
                 });
-
-
     }
 
     private void addJobTypeField() {
         for(jobtype.Model i: jobtype.Controller.controller.getModels()) {
-            MenuItem mi = new MenuItem(i.getName());
-            jobTypeField.getItems().add(mi);
+            MenuItem item = new MenuItem(i.getName());
+            item.setOnAction(a->{
+                jobTypeField.setText(i.getName());
+            });
+            jobTypeField.getItems().add(item);
         }
     }
 
@@ -157,7 +158,6 @@ public class FXMLHomeSeeker implements Initializable {
     }
 
     private ObservableList<job.Model> getJobModelList() {
-
 
         ObservableList<job.Model> list = FXCollections.observableArrayList();
         for(job.Model i: Controller.controller.getModels()) {
