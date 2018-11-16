@@ -28,6 +28,7 @@ public class Serialize {
         industry.Controller.controller.setModels(map.get("industry"));
         company.Controller.controller.setModels(map.get("company"));
         skill.Controller.controller.setModels(map.get("skill"));
+        salary.Controller.controller.setModels(map.get("salary"));
         jobfunction.Controller.controller.setModels(map.get("jobfunction"));
         joblevel.Controller.controller.setModels(map.get("joblevel"));
         jobtype.Controller.controller.setModels(map.get("jobtype"));
@@ -42,6 +43,7 @@ public class Serialize {
         map.put("industry", industry.Controller.controller.getModels());
         map.put("company", company.Controller.controller.getModels());
         map.put("skill", skill.Controller.controller.getModels());
+        map.put("salary", salary.Controller.controller.getModels());
         map.put("jobfunction", jobfunction.Controller.controller.getModels());
         map.put("joblevel", joblevel.Controller.controller.getModels());
         map.put("jobtype", jobtype.Controller.controller.getModels());

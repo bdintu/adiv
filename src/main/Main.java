@@ -4,7 +4,6 @@ import javafx.application.Application;
 
 import serialize.Serialize;
 import stage.Stage;
-import user.Controller;
 
 public class Main extends Application {
 
@@ -24,6 +23,7 @@ public class Main extends Application {
         industry.Controller.Controller();
         company.Controller.Controller();
         skill.Controller.Controller();
+        salary.Controller.Controller();
         jobfunction.Controller.Controller();
         joblevel.Controller.Controller();
         jobtype.Controller.Controller();
