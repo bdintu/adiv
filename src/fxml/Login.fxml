@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -23,8 +24,8 @@
                   <Image url="@icons8-name-filled-50.png" />
                </image>
             </ImageView>
-            <TextField fx:id="email" layoutX="288.0" layoutY="268.0" prefHeight="58.0" prefWidth="337.0" promptText="example@adiv.com" />
-            <PasswordField fx:id="password" layoutX="288.0" layoutY="368.0" prefHeight="58.0" prefWidth="337.0" promptText="●●●●●●●●" />
+            <TextField fx:id="emailField" layoutX="288.0" layoutY="268.0" prefHeight="58.0" prefWidth="337.0" promptText="example@adiv.com" />
+            <PasswordField fx:id="passwordField" layoutX="288.0" layoutY="368.0" prefHeight="58.0" prefWidth="337.0" promptText="●●●●●●●●" />
             <Hyperlink fx:id="createUserButton" layoutX="693.0" layoutY="546.0" text="Don't have Account?">
                <font>
                   <Font size="18.0" />
@@ -40,6 +41,7 @@
                   <Image url="@icons8-forward-button-filled-50.png" />
                </image>
             </ImageView>
+            <Label fx:id="label" layoutX="362.0" layoutY="573.0" text="" textFill="RED" />
          </children>
       </AnchorPane>
    </children>

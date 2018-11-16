@@ -12,7 +12,7 @@ public class Main extends Application {
     public void start(javafx.stage.Stage primaryStage) throws Exception {
         Stage.Stage(primaryStage);
         Stage.stage.changeStage("Login");
-        Stage.stage.setTitle("ADIV");
+        Stage.stage.setTitle("Login");
         Stage.stage.show();
     }
 
@@ -40,6 +40,9 @@ public class Main extends Application {
 //
 //        company.Test.init();
 //        company.Test.print();
+//
+//        job.Test.init();
+//        job.Test.print();
 
         launch(args);
         Serialize.serialize.objWrite();

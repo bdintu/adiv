@@ -4,10 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import stage.Stage;
@@ -20,19 +17,21 @@ import java.util.ResourceBundle;
 public class FXMLCreateUser implements Initializable {
 
     @FXML
-    private TextField email;
+    private TextField emailField;
     @FXML
-    private PasswordField password;
+    private PasswordField passwordField;
     @FXML
-    private PasswordField confirmPassword;
+    private PasswordField confirmPasswordField;
     @FXML
-    private CheckBox seeker;
+    private CheckBox chooseSeeker;
     @FXML
-    private CheckBox company;
+    private CheckBox chooseCompany;
     @FXML
     private ImageView backButton;
     @FXML
     private ImageView nextButton;
+    @FXML
+    private Label label;
 
 
     @Override
@@ -41,18 +40,10 @@ public class FXMLCreateUser implements Initializable {
         backButton.setOnMouseClicked((MouseEvent event) -> {
 
             try {
-
-
                 Stage.stage.changeStage("Login");
-
-
-                //Stage.stage.changeStage("homeSeeker");
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-
         });
 
         nextButton.setPickOnBounds(true);
@@ -60,30 +51,34 @@ public class FXMLCreateUser implements Initializable {
 
             try {
 
-                // check null field
+                if (emailField.getText().trim().isEmpty()) {
+                    label.setText("Error: email is empty");
+                } else if (passwordField.getText().trim().isEmpty()) {
+                    label.setText("Error: password is empty");
+                } else if (confirmPasswordField.getText().trim().isEmpty()) {
+                    label.setText("Error: confrime password is empty");
+                } else if (passwordField.getText().equals(confirmPasswordField.getText()) == false) {
+                    label.setText("Error: password mai tong kun");
+                } else if (chooseSeeker.isSelected() && chooseCompany.isSelected()) {
+                    label.setText("Error: not select");
+                } else if (!chooseSeeker.isSelected() && !chooseCompany.isSelected()) {
+                    label.setText("Error: pess select one type");
+                } else if (chooseSeeker.isSelected()) {
 
-                if (password.getText().equals(confirmPassword.getText()) == false) {
-                    System.out.println("Error: password mai tong kun");
-                } else if (seeker.isSelected() && company.isSelected()) {
-                    System.out.println("Error: not select");
-                } else if (!seeker.isSelected() && !company.isSelected()) {
-                    System.out.println("Error: pess select one type");
-                } else if (seeker.isSelected()) {
-
-                    System.out.println(email.getText() + password.getText());
-
-                    Model user = new Model(email.getText(), password.getText());
+                    Model user = new Model(emailField.getText(), passwordField.getText());
                     Controller.controller.addModel(user);
                     Controller.controller.login(user);
 
                     Stage.stage.changeStage("CreateSeeker");
-                } else if (company.isSelected()) {
+                    Stage.stage.setTitle("New Seeker Profile");
+                } else if (chooseCompany.isSelected()) {
 
-                    Model user = new Model(email.getText(), password.getText());
+                    Model user = new Model(emailField.getText(), passwordField.getText());
                     Controller.controller.addModel(user);
                     Controller.controller.login(user);
 
                     Stage.stage.changeStage("CreateCompany");
+                    Stage.stage.setTitle("New Company Profile");
                 }
 
             } catch (Exception e) {

@@ -27,20 +27,41 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="email" layoutX="288.0" layoutY="182.0" prefHeight="58.0" prefWidth="337.0" promptText="example@adiv.com" />
+                  <TextField fx:id="emailField" layoutX="288.0" layoutY="182.0" prefHeight="58.0" prefWidth="337.0" promptText="example@adiv.com">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
                   <Label layoutX="288.0" layoutY="258.0" text="Password">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <PasswordField fx:id="password" layoutX="288.0" layoutY="282.0" prefHeight="58.0" prefWidth="337.0" promptText="●●●●●●●●" />
+                  <PasswordField fx:id="passwordField" layoutX="288.0" layoutY="282.0" prefHeight="58.0" prefWidth="337.0" promptText="●●●●●●●●">
+                     <font>
+                        <Font size="16.0" />
+                     </font></PasswordField>
                   <Label layoutX="288.0" layoutY="358.0" text="Confirm Password">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <PasswordField fx:id="confirmPassword" layoutX="288.0" layoutY="382.0" prefHeight="58.0" prefWidth="337.0" promptText="●●●●●●●●" />
-                  <ImageView fx:id="nextButton" fitHeight="50.0" fitWidth="50.0" layoutX="834.0" layoutY="539.0" pickOnBounds="true" preserveRatio="true">
+                  <PasswordField fx:id="confirmPasswordField" layoutX="288.0" layoutY="382.0" prefHeight="58.0" prefWidth="337.0" promptText="●●●●●●●●">
+                     <font>
+                        <Font size="16.0" />
+                     </font></PasswordField>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="351.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons8-account-filled-50.png" />
+                     </image>
+                  </ImageView>
+                  <CheckBox fx:id="chooseSeeker" layoutX="340.0" layoutY="531.0" mnemonicParsing="false" text="For Seeker" />
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="498.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons8-user-groups-filled-50.png" />
+                     </image>
+                  </ImageView>
+                  <CheckBox fx:id="chooseCompany" layoutX="477.0" layoutY="531.0" mnemonicParsing="false" text="For Company" />
+                  <ImageView fx:id="nextButton" fitHeight="50.0" fitWidth="50.0" layoutX="840.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@icons8-forward-button-filled-50.png" />
                      </image>
@@ -55,7 +76,7 @@
                         <Image url="@icons8-password-filled-50.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="backButton" fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="539.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="backButton" fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@icons8-go-back-filled-50.png" />
                      </image>
@@ -65,23 +86,7 @@
                         <Image url="@icons8-password-filled-50.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="seekerButton" fitHeight="50.0" fitWidth="50.0" layoutX="351.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@icons8-account-filled-50.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="companyButton" fitHeight="50.0" fitWidth="50.0" layoutX="498.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@icons8-user-groups-filled-50.png" />
-                     </image>
-                  </ImageView>
-                  <CheckBox fx:id="seeker" layoutX="340.0" layoutY="531.0" mnemonicParsing="false" text="For Seeker" />
-                  <CheckBox fx:id="company" layoutX="477.0" layoutY="531.0" mnemonicParsing="false" text="For Company" />
-                  <Label layoutX="404.0" layoutY="564.0" text="Please choose only one.">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                  </Label>
+                  <Label fx:id="label" layoutX="377.0" layoutY="567.0" text="" textFill="RED" />
                </children>
             </Pane>
          </children>

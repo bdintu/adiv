@@ -24,7 +24,7 @@ public class Stage {
     }
 
     public void setTitle(String name) {
-        primaryStage.setTitle("ADIV " + name);
+        primaryStage.setTitle("ADIV: " + name);
     }
 
     public void show() {

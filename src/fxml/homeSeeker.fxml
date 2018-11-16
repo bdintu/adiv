@@ -21,141 +21,37 @@
                         <Image url="@logo.png" />
                      </image>
                   </ImageView>
-                  <MenuButton fx:id="jobType" layoutX="5.0" layoutY="180.0" mnemonicParsing="false" text="Employment type">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Full time" />
-                        <MenuItem mnemonicParsing="false" text="Part time" />
-                        <MenuItem mnemonicParsing="false" text="Contract" />
-                        <MenuItem mnemonicParsing="false" text="Internship" />
-                        <MenuItem mnemonicParsing="false" text="Freelance" />
-                     </items>
+                  <MenuButton fx:id="jobTypeField" layoutX="10.0" layoutY="180.0" mnemonicParsing="false" text="Employment type">
                   </MenuButton>
-                  <MenuButton fx:id="educationLevel" layoutX="5.0" layoutY="245.0" mnemonicParsing="false" text="Education level">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="High School" />
-                        <MenuItem mnemonicParsing="false" text="Vocational" />
-                        <MenuItem mnemonicParsing="false" text="High Vocational" />
-                        <MenuItem mnemonicParsing="false" text="Bachelor Degrees" />
-                        <MenuItem mnemonicParsing="false" text="Master Degrees" />
-                        <MenuItem mnemonicParsing="false" text="Doctor Degrees" />
-                     </items>
+                  <MenuButton fx:id="locationField" layoutX="10.0" layoutY="245.0" mnemonicParsing="false" text="Location">
                   </MenuButton>
-                  <MenuButton fx:id="location" layoutX="5.0" layoutY="310.0" mnemonicParsing="false" text="Location">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Phra Nakhon" />
-                        <MenuItem mnemonicParsing="false" text="Bang Bon" />
-                        <MenuItem mnemonicParsing="false" text="Bang Kapi" />
-                        <MenuItem mnemonicParsing="false" text="Bang Khae" />
-                        <MenuItem mnemonicParsing="false" text="Bang Khen" />
-                        <MenuItem mnemonicParsing="false" text="Bang Kho Laem" />
-                        <MenuItem mnemonicParsing="false" text="Bang Khun Thian" />
-                        <MenuItem mnemonicParsing="false" text="Bang Na" />
-                        <MenuItem mnemonicParsing="false" text="Bang Phlat" />
-                        <MenuItem mnemonicParsing="false" text="Bang Rak" />
-                        <MenuItem mnemonicParsing="false" text="Bang Sue" />
-                        <MenuItem mnemonicParsing="false" text="Bangkok Noi" />
-                        <MenuItem mnemonicParsing="false" text="Bangkok Yai" />
-                        <MenuItem mnemonicParsing="false" text="Bueng Kum" />
-                        <MenuItem mnemonicParsing="false" text="Chatuchak" />
-                        <MenuItem mnemonicParsing="false" text="Chom Thong" />
-                        <MenuItem mnemonicParsing="false" text="Din Daeng" />
-                        <MenuItem mnemonicParsing="false" text="Don Mueang" />
-                        <MenuItem mnemonicParsing="false" text="Dusit" />
-                        <MenuItem mnemonicParsing="false" text="Huai Khwang" />
-                        <MenuItem mnemonicParsing="false" text="Khan Na Yao" />
-                        <MenuItem mnemonicParsing="false" text="Khlong Sam Wa" />
-                        <MenuItem mnemonicParsing="false" text="Khlong San" />
-                        <MenuItem mnemonicParsing="false" text="Khlong Toei" />
-                        <MenuItem mnemonicParsing="false" text="Lak Si" />
-                        <MenuItem mnemonicParsing="false" text="Lat Krabang" />
-                        <MenuItem mnemonicParsing="false" text="Lat Phrao" />
-                        <MenuItem mnemonicParsing="false" text="Min Buri" />
-                        <MenuItem mnemonicParsing="false" text="Nong Chok" />
-                        <MenuItem mnemonicParsing="false" text="Nong Khaem" />
-                        <MenuItem mnemonicParsing="false" text="Pathum Wan" />
-                        <MenuItem mnemonicParsing="false" text="Phasi Charoen" />
-                        <MenuItem mnemonicParsing="false" text="Phaya Thai" />
-                        <MenuItem mnemonicParsing="false" text="Phra Khanong" />
-                        <MenuItem mnemonicParsing="false" text="Pom Prap Sattru" />
-                        <MenuItem mnemonicParsing="false" text="Prawet" />
-                        <MenuItem mnemonicParsing="false" text="Rat Burana" />
-                        <MenuItem mnemonicParsing="false" text="Ratchathewi" />
-                        <MenuItem mnemonicParsing="false" text="Sai Mai" />
-                        <MenuItem mnemonicParsing="false" text="Samphanthawong" />
-                        <MenuItem mnemonicParsing="false" text="Saphan Sung" />
-                        <MenuItem mnemonicParsing="false" text="Sathon" />
-                        <MenuItem mnemonicParsing="false" text="Suan Luang" />
-                        <MenuItem mnemonicParsing="false" text="Taling Chan" />
-                        <MenuItem mnemonicParsing="false" text="Thawi Watthana" />
-                        <MenuItem mnemonicParsing="false" text="Thon Buri" />
-                        <MenuItem mnemonicParsing="false" text="Thung Khru" />
-                        <MenuItem mnemonicParsing="false" text="Wang Thonglang" />
-                        <MenuItem mnemonicParsing="false" text="Vadhana" />
-                        <MenuItem mnemonicParsing="false" text="Yan Nawa" />
-                     </items>
+                  <MenuButton fx:id="jobLevelField" layoutX="10.0" layoutY="310.0" mnemonicParsing="false" text="Career level">
                   </MenuButton>
-                  <MenuButton fx:id="jobLevel" layoutX="5.0" layoutY="375.0" mnemonicParsing="false" text="Career level">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Entry" />
-                        <MenuItem mnemonicParsing="false" text="Middle" />
-                        <MenuItem mnemonicParsing="false" text="Senior" />
-                     </items>
+                  <MenuButton fx:id="salaryField" layoutX="10.0" layoutY="375.0" mnemonicParsing="false" text="Salary">
                   </MenuButton>
-                  <MenuButton fx:id="salary" layoutX="5.0" layoutY="440.0" mnemonicParsing="false" text="Salary">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Under 20000 THB" />
-                        <MenuItem mnemonicParsing="false" text="20001-30000 THB" />
-                        <MenuItem mnemonicParsing="false" text="30001-40000 THB" />
-                        <MenuItem mnemonicParsing="false" text="40001-50000 THB" />
-                        <MenuItem mnemonicParsing="false" text="Upper 50000 THB" />
-                     </items>
+                  <MenuButton fx:id="skillField" layoutX="10.0" layoutY="440.0" mnemonicParsing="false" text="Skill">
                   </MenuButton>
-                  <MenuButton fx:id="skill" layoutX="5.0" layoutY="505.0" mnemonicParsing="false" text="Skill">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Java/JavaScript" />
-                        <MenuItem mnemonicParsing="false" text="Python" />
-                        <MenuItem mnemonicParsing="false" text="C/C#/C++" />
-                        <MenuItem mnemonicParsing="false" text="PHP/HTML" />
-                        <MenuItem mnemonicParsing="false" text="Web Development" />
-                        <MenuItem mnemonicParsing="false" text="React" />
-                        <MenuItem mnemonicParsing="false" text="Mobile Application" />
-                        <MenuItem mnemonicParsing="false" text="Electronics" />
-                        <MenuItem mnemonicParsing="false" text="Network" />
-                        <MenuItem mnemonicParsing="false" text="Testing" />
-                        <MenuItem mnemonicParsing="false" text="Others" />
-                     </items>
-                  </MenuButton>
-                  <MenuButton fx:id="jobFunction" layoutX="5.0" layoutY="115.0" mnemonicParsing="false" text="Job">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Business Development" />
-                        <MenuItem mnemonicParsing="false" text="Content Creator" />
-                        <MenuItem mnemonicParsing="false" text="Data &amp; Analytics" />
-                        <MenuItem mnemonicParsing="false" text="Graphic Designer" />
-                        <MenuItem mnemonicParsing="false" text="Project &amp; Product Manager" />
-                        <MenuItem mnemonicParsing="false" text="QA &amp; Tester" />
-                        <MenuItem mnemonicParsing="false" text="Sales &amp; Marketing" />
-                        <MenuItem mnemonicParsing="false" text="Software Developer" />
-                        <MenuItem mnemonicParsing="false" text="System Administrator" />
-                        <MenuItem mnemonicParsing="false" text="UI/UX Designer" />
-                        <MenuItem mnemonicParsing="false" text="Others" />
-                     </items>
+                  <MenuButton fx:id="jobFunctionField" layoutX="10.0" layoutY="115.0" mnemonicParsing="false" text="Job Function">
                   </MenuButton>
                   <ImageView fx:id="viewButton" fitHeight="50.0" fitWidth="50.0" layoutX="840.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@icons8-view-filled-50.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="logoutButton" fitHeight="64.0" fitWidth="64.0" layoutX="828.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="logoutButton" fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@icons8-shutdown-64.png" />
+                        <Image url="@icons8-cancel-filled-50.png" />
                      </image>
                   </ImageView>
-                  <TableView fx:id="table" layoutX="142.0" layoutY="115.0" prefHeight="413.0" prefWidth="735.0">
+                  <TableView fx:id="table" layoutX="149.0" layoutY="115.0" prefHeight="413.0" prefWidth="731.0">
                      <columns>
-                        <TableColumn fx:id="jobFunction1" prefWidth="150.0" resizable="false" text="Job" />
-                        <TableColumn fx:id="company1" minWidth="0.0" prefWidth="150.0" text="Company" />
-                        <TableColumn fx:id="jobLevel1" prefWidth="110.0" text="Career level" />
-                        <TableColumn fx:id="salary1" prefWidth="114.0" text="Salary" />
+                        <TableColumn fx:id="jobNameTable" prefWidth="120.0" resizable="false" text="Job" />
+                        <TableColumn fx:id="companyTable" minWidth="0.0" prefWidth="110.0" text="Company" />
+                        <TableColumn fx:id="jobTypeTable" prefWidth="110.0" text="Employment type" />
+                        <TableColumn fx:id="jobFunctionTable" prefWidth="100.0" text="Job Function" />
+                        <TableColumn fx:id="jobLevelTable" prefWidth="100.0" text="Career level" />
+                        <TableColumn fx:id="locationTable" prefWidth="95.0" text="Location" />
+                        <TableColumn fx:id="salaryTable" prefWidth="95.0" text="Salary" />
                      </columns>
                   </TableView>
                </children>
