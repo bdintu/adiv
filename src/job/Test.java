@@ -5,20 +5,25 @@ import java.util.ArrayList;
 public class Test {
 
     public static void init() {
-        jobfunction.Model cjf = new jobfunction.Model("Software Developer");
-        jobfunction.Controller.controller.add(cjf);
+        String[] jfs = {"Software Developer", "System Administrator", "Data & Analytics", "Content Creator", "UI/UX Designer", "Graphic Designer", "QA & Tester", "Project Manager"};
+        for (String i : jfs)
+            jobfunction.Controller.controller.add(new jobfunction.Model(i));
 
-        joblevel.Model cjl = new joblevel.Model("Software Developer");
-        joblevel.Controller.controller.add(cjl);
+        String[] jls = {"Entry", "Middle", "Senior"};
+        for (String i : jls)
+            joblevel.Controller.controller.add(new joblevel.Model(i));
 
-        jobtype.Model cjt = new jobtype.Model("Software Developer");
-        jobtype.Controller.controller.add(cjt);
+        String[] jts = {"Full time", "Part time", "Freelance", "Internship"};
+        for (String i : jts)
+            jobtype.Controller.controller.add(new jobtype.Model(i));
 
-        skill.Model cski = new skill.Model("C/C++");
-        skill.Controller.controller.add(cski);
+        String[] sas = {"Under 20000", "20000-30000", "30000-40000", "40000-50000", "50000-60000", "60000-70000", "70000-80000", "Upper 80000"};
+        for (String i : sas)
+            salary.Controller.controller.add(new salary.Model(i));
 
-        salary.Model csa = new salary.Model("10000-20000");
-        salary.Controller.controller.add(csa);
+        String[] sks = {"Andriod", "C/C++", "CSS", "Java", "Javascript", "Python", "Tensorflow","React", "SQL", "Swift", "Vue"};
+        for (String i : sks)
+            skill.Controller.controller.add(new skill.Model(i));
 
         company.Model ind = company.Controller.controller.getModels().get(0);
         jobfunction.Model jf = jobfunction.Controller.controller.getModels().get(0);
@@ -31,7 +36,7 @@ public class Test {
         ArrayList<skill.Model> skill = new ArrayList<skill.Model>();
         skill.add(ski);
 
-        job.Model j = new job.Model("Computer Vision", ind, jf, jl, jt, loc, sa, skill);
+        job.Model j = new job.Model("Computer Vision App", "Ba ba ba",ind, jf, jl, jt, loc, sa, skill);
         Controller.controller.addModel(j);
     }
 

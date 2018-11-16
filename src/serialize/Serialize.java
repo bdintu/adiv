@@ -24,11 +24,11 @@ public class Serialize {
 
         user.Controller.controller.setModels(map.get("user"));
         location.Controller.controller.setModels(map.get("location"));
-        seeker.Controller.controller.setModels( map.get("seeker"));
         industry.Controller.controller.setModels(map.get("industry"));
         company.Controller.controller.setModels(map.get("company"));
-        skill.Controller.controller.setModels(map.get("skill"));
+        seeker.Controller.controller.setModels( map.get("seeker"));
         salary.Controller.controller.setModels(map.get("salary"));
+        skill.Controller.controller.setModels(map.get("skill"));
         jobfunction.Controller.controller.setModels(map.get("jobfunction"));
         joblevel.Controller.controller.setModels(map.get("joblevel"));
         jobtype.Controller.controller.setModels(map.get("jobtype"));
@@ -39,11 +39,11 @@ public class Serialize {
         HashMap<String, ArrayList> map = new HashMap<String, ArrayList>();
         map.put("user", user.Controller.controller.getModels());
         map.put("location", location.Controller.controller.getModels());
-        map.put("seeker", seeker.Controller.controller.getModels());
         map.put("industry", industry.Controller.controller.getModels());
         map.put("company", company.Controller.controller.getModels());
-        map.put("skill", skill.Controller.controller.getModels());
+        map.put("seeker", seeker.Controller.controller.getModels());
         map.put("salary", salary.Controller.controller.getModels());
+        map.put("skill", skill.Controller.controller.getModels());
         map.put("jobfunction", jobfunction.Controller.controller.getModels());
         map.put("joblevel", joblevel.Controller.controller.getModels());
         map.put("jobtype", jobtype.Controller.controller.getModels());

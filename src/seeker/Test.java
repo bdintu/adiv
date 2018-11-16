@@ -3,11 +3,9 @@ package seeker;
 public class Test {
 
     public static void init() {
-        location.Model cloc = new location.Model("Latkrabang");
-        location.Controller.controller.add(cloc);
-
-        location.Model loc = location.Controller.controller.getModels().get(0);
-        Model seeker = new Model(user.Controller.controller.getSession(), location.Controller.controller.getModels().get(0),"Bundit", "Seedao", "0998061524", "3D KMITL", "-");
+        user.Model us = user.Controller.controller.getModels().get(0);
+        location.Model lo = location.Controller.controller.getModels().get(0);
+        Model seeker = new Model(us, lo,"Bundit", "Seedao", "0998061524", "3D KMITL", "-");
         Controller.controller.addModel(seeker);
     }
 

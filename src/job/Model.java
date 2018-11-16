@@ -7,6 +7,7 @@ import java.util.Objects;
 public class Model implements Serializable {
 
     private String name;
+    private String detail;
 
     private company.Model company;
     private jobfunction.Model jobFunction;
@@ -19,8 +20,9 @@ public class Model implements Serializable {
     private ArrayList<user.Model> apply;
     private user.Model approve;
 
-    public Model(String name, company.Model company, jobfunction.Model jobFunction, joblevel.Model jobLevel, jobtype.Model jobType, location.Model location, salary.Model salary, ArrayList<skill.Model> skill) {
+    public Model(String name, String detail, company.Model company, jobfunction.Model jobFunction, joblevel.Model jobLevel, jobtype.Model jobType, location.Model location, salary.Model salary, ArrayList<skill.Model> skill) {
         this.name = name;
+        this.detail = detail;
         this.company = company;
         this.jobFunction = jobFunction;
         this.jobLevel = jobLevel;
@@ -39,6 +41,14 @@ public class Model implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
     }
 
     public company.Model getCompany() {

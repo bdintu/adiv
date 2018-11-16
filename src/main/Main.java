@@ -19,11 +19,11 @@ public class Main extends Application {
 
         user.Controller.Controller();
         location.Controller.Controller();
-        seeker.Controller.Controller();
         industry.Controller.Controller();
         company.Controller.Controller();
-        skill.Controller.Controller();
+        seeker.Controller.Controller();
         salary.Controller.Controller();
+        skill.Controller.Controller();
         jobfunction.Controller.Controller();
         joblevel.Controller.Controller();
         jobtype.Controller.Controller();
@@ -35,11 +35,11 @@ public class Main extends Application {
 //        user.Test.init();
 //        user.Test.print();
 //
-//        seeker.Test.init();
-//        seeker.Test.print();
-//
 //        company.Test.init();
 //        company.Test.print();
+//
+//        seeker.Test.init();
+//        seeker.Test.print();
 //
 //        job.Test.init();
 //        job.Test.print();
