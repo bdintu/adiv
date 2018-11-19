@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seeker.FXMLCreateSeeker">
+  <children>
+      <AnchorPane prefHeight="603.0" prefWidth="900.0">
+         <children>
+            <Pane prefHeight="597.0" prefWidth="898.0">
+               <children>
+                  <ImageView fitHeight="132.0" fitWidth="253.0" layoutX="324.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@logo.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="78.0" layoutY="148.0" text="First Name">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="firstNameField" layoutX="78.0" layoutY="176.0" prefHeight="58.0" prefWidth="337.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+                  <Label layoutX="488.0" layoutY="148.0" text="Last Name">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="lastNameField" layoutX="488.0" layoutY="176.0" prefHeight="58.0" prefWidth="337.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+                  <Label layoutX="78.0" layoutY="249.0" text="Telephone Number">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="phoneField" layoutX="78.0" layoutY="277.0" prefHeight="58.0" prefWidth="337.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="488.0" layoutY="249.0" text="Education Level">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="educationLevelField" layoutX="488.0" layoutY="277.0" prefHeight="58.0" prefWidth="337.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="78.0" layoutY="343.0" text="Address">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="addressField" layoutX="78.0" layoutY="371.0" prefHeight="120.0" prefWidth="337.0" wrapText="true">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextArea>
+                  <Label layoutX="488.0" layoutY="343.0" text="Biography">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="biographyField" layoutX="488.0" layoutY="371.0" prefHeight="120.0" prefWidth="337.0" wrapText="true">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextArea>
+                  <ImageView fx:id="nextButton" fitHeight="50.0" fitWidth="50.0" layoutX="840.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons8-forward-button-filled-50.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="backButton" fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons8-go-back-filled-50.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+  </children>
+</VBox>
