@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -11,49 +12,38 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="job.FXMLPostJob">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="job.FXMLPostJob">
   <children>
       <AnchorPane prefHeight="612.0" prefWidth="900.0">
          <children>
             <Pane prefHeight="606.0" prefWidth="903.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <ImageView fitHeight="180.0" fitWidth="180.0" layoutX="26.0" layoutY="-20.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="328.0" fitWidth="328.0" layoutX="284.0" layoutY="-80.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@postjob.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="okButton" fitHeight="50.0" fitWidth="50.0" layoutX="830.0" layoutY="530.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="okButton" fitHeight="50.0" fitWidth="50.0" layoutX="840.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@icons8-checked-filled-50.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="backButton" fitHeight="50.0" fitWidth="50.0" layoutX="24.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="backButton" fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@icons8-go-back-filled-50.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="182.0" layoutY="108.0" text="Position title">
+                  <Label layoutX="192.0" layoutY="141.0" text="Job Name">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="name" layoutX="184.0" layoutY="135.0" prefHeight="58.0" prefWidth="337.0" />
-                  <Label layoutX="355.0" layoutY="455.0" text="Detail">
+                  <TextField fx:id="nameField" layoutX="192.0" layoutY="165.0" prefHeight="37.0" prefWidth="521.0">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="16.0" />
                      </font>
-                  </Label>
-                  <TextField fx:id="detail" alignment="TOP_LEFT" layoutX="416.0" layoutY="448.0" prefHeight="109.0" prefWidth="331.0" />
-                  <MenuButton fx:id="jobType" layoutX="184.0" layoutY="215.0" mnemonicParsing="false" text="Employment type">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Full time" />
-                        <MenuItem mnemonicParsing="false" text="Part time" />
-                        <MenuItem mnemonicParsing="false" text="Contract" />
-                        <MenuItem mnemonicParsing="false" text="Internship" />
-                        <MenuItem mnemonicParsing="false" text="Freelance" />
-                    </items>
-                  </MenuButton>
-                  <MenuButton fx:id="educationLevel" layoutX="184.0" layoutY="295.0" mnemonicParsing="false" text="Education level">
+                  </TextField>
+                  <MenuButton fx:id="jobTypeField" layoutX="192.0" layoutY="250.0" mnemonicParsing="false" text="Employment type">
                     <items>
                         <MenuItem mnemonicParsing="false" text="High School" />
                         <MenuItem mnemonicParsing="false" text="Vocational" />
@@ -62,8 +52,11 @@
                         <MenuItem mnemonicParsing="false" text="Master Degrees" />
                         <MenuItem mnemonicParsing="false" text="Doctor Degrees" />
                     </items>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
                   </MenuButton>
-                  <MenuButton fx:id="location" layoutX="184.0" layoutY="375.0" mnemonicParsing="false" text="Location">
+                  <MenuButton fx:id="locationField" layoutX="192.0" layoutY="330.0" mnemonicParsing="false" text="Location">
                     <items>
                       <MenuItem mnemonicParsing="false" text="Phra Nakhon" />
                       <MenuItem mnemonicParsing="false" text="Bang Bon" />
@@ -116,39 +109,11 @@
                         <MenuItem mnemonicParsing="false" text="Vadhana" />
                         <MenuItem mnemonicParsing="false" text="Yan Nawa" />
                     </items>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
                   </MenuButton>
-                  <MenuButton fx:id="jobLevel" layoutX="195.0" layoutY="453.0" mnemonicParsing="false" text="Career level">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Entry" />
-                        <MenuItem mnemonicParsing="false" text="Middle" />
-                        <MenuItem mnemonicParsing="false" text="Senior" />
-                     </items>
-                  </MenuButton>
-                  <MenuButton fx:id="salary" layoutX="475.0" layoutY="215.0" mnemonicParsing="false" text="Salary">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Under 20000 THB" />
-                        <MenuItem mnemonicParsing="false" text="20001-30000 THB" />
-                        <MenuItem mnemonicParsing="false" text="30001-40000 THB" />
-                        <MenuItem mnemonicParsing="false" text="40001-50000 THB" />
-                        <MenuItem mnemonicParsing="false" text="Upper 50000 THB" />
-                     </items>
-                  </MenuButton>
-                  <MenuButton fx:id="skill" layoutX="475.0" layoutY="295.0" mnemonicParsing="false" text="Skill">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Java/JavaScript" />
-                        <MenuItem mnemonicParsing="false" text="Python" />
-                        <MenuItem mnemonicParsing="false" text="C/C#/C++" />
-                        <MenuItem mnemonicParsing="false" text="PHP/HTML" />
-                        <MenuItem mnemonicParsing="false" text="Web Development" />
-                        <MenuItem mnemonicParsing="false" text="React" />
-                        <MenuItem mnemonicParsing="false" text="Mobile Application" />
-                        <MenuItem mnemonicParsing="false" text="Electronics" />
-                        <MenuItem mnemonicParsing="false" text="Network" />
-                        <MenuItem mnemonicParsing="false" text="Testing" />
-                        <MenuItem mnemonicParsing="false" text="Others" />
-                     </items>
-                  </MenuButton>
-                  <MenuButton fx:id="jobFunction" layoutX="475.0" layoutY="375.0" mnemonicParsing="false" text="Job function">
+                  <MenuButton fx:id="jobFunctionField" layoutX="579.0" layoutY="250.0" mnemonicParsing="false" text="Job Function">
                      <items>
                         <MenuItem mnemonicParsing="false" text="Business Development" />
                         <MenuItem mnemonicParsing="false" text="Content Creator" />
@@ -162,7 +127,61 @@
                         <MenuItem mnemonicParsing="false" text="UI/UX Designer" />
                         <MenuItem mnemonicParsing="false" text="Others" />
                      </items>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
                   </MenuButton>
+                  <MenuButton fx:id="jobLevelField" layoutX="579.0" layoutY="335.0" mnemonicParsing="false" text="Career level">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Entry" />
+                        <MenuItem mnemonicParsing="false" text="Middle" />
+                        <MenuItem mnemonicParsing="false" text="Senior" />
+                     </items>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </MenuButton>
+                  <MenuButton fx:id="salaryField" layoutX="579.0" layoutY="415.0" mnemonicParsing="false" text="Salary">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Under 20000 THB" />
+                        <MenuItem mnemonicParsing="false" text="20001-30000 THB" />
+                        <MenuItem mnemonicParsing="false" text="30001-40000 THB" />
+                        <MenuItem mnemonicParsing="false" text="40001-50000 THB" />
+                        <MenuItem mnemonicParsing="false" text="Upper 50000 THB" />
+                     </items>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </MenuButton>
+                  <MenuButton fx:id="skillField" layoutX="192.0" layoutY="410.0" mnemonicParsing="false" text="Skill">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Java/JavaScript" />
+                        <MenuItem mnemonicParsing="false" text="Python" />
+                        <MenuItem mnemonicParsing="false" text="C/C#/C++" />
+                        <MenuItem mnemonicParsing="false" text="PHP/HTML" />
+                        <MenuItem mnemonicParsing="false" text="Web Development" />
+                        <MenuItem mnemonicParsing="false" text="React" />
+                        <MenuItem mnemonicParsing="false" text="Mobile Application" />
+                        <MenuItem mnemonicParsing="false" text="Electronics" />
+                        <MenuItem mnemonicParsing="false" text="Network" />
+                        <MenuItem mnemonicParsing="false" text="Testing" />
+                        <MenuItem mnemonicParsing="false" text="Others" />
+                     </items>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </MenuButton>
+                  <Label layoutX="192.0" layoutY="490.0" text="Detail">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="detailField" layoutX="244.0" layoutY="492.0" prefHeight="37.0" prefWidth="461.0" wrapText="true">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextArea>
+                  <Label fx:id="label" layoutX="377.0" layoutY="567.0" text="" textFill="RED" />
                </children>
             </Pane>
          </children>
