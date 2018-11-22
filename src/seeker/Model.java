@@ -6,20 +6,20 @@ import java.util.Objects;
 public class Model implements Serializable {
 
     private user.Model user;
-    private location.Model location;
 
     private String firstName;
     private String lastName;
     private String phone;
+    private String address;
     private String educationLevel;
     private String biography;
 
-    public Model(user.Model user, location.Model location, String firstName, String lastName, String phone, String educationLevel, String biography) {
+    public Model(user.Model user, String firstName, String lastName, String phone, String address, String educationLevel, String biography) {
         this.user = user;
-        this.location = location;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
+        this.address = address;
         this.educationLevel = educationLevel;
         this.biography = biography;
     }
@@ -30,14 +30,6 @@ public class Model implements Serializable {
 
     public void setUser(user.Model user) {
         this.user = user;
-    }
-
-    public location.Model getLocation() {
-        return location;
-    }
-
-    public void setLocation(location.Model location) {
-        this.location = location;
     }
 
     public String getFirstName() {
@@ -62,6 +54,14 @@ public class Model implements Serializable {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getEducationLevel() {

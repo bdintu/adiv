@@ -8,19 +8,19 @@ public class Model implements Serializable {
 
     user.Model user;
     industry.Model industry;
-    location.Model location;
 
     String name;
     String phone;
+    String address;
     String website;
     String biography;
 
-    public Model(user.Model user, industry.Model industry, location.Model location, String name, String phone, String website, String biography) {
+    public Model(user.Model user, industry.Model industry, String name, String phone, String address, String website, String biography) {
         this.user = user;
         this.industry = industry;
-        this.location = location;
         this.name = name;
         this.phone = phone;
+        this.address = address;
         this.website = website;
         this.biography = biography;
     }
@@ -41,14 +41,6 @@ public class Model implements Serializable {
         this.industry = industry;
     }
 
-    public location.Model getLocation() {
-        return location;
-    }
-
-    public void setLocation(location.Model location) {
-        this.location = location;
-    }
-
     public String getName() {
         return name;
     }
@@ -63,6 +55,14 @@ public class Model implements Serializable {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getWebsite() {

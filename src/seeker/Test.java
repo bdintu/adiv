@@ -4,8 +4,7 @@ public class Test {
 
     public static void init() {
         user.Model us = user.Controller.controller.getModels().get(0);
-        location.Model lo = location.Controller.controller.getModels().get(0);
-        Model seeker = new Model(us, lo,"Bundit", "Seedao", "0998061524", "3D KMITL", "-");
+        Model seeker = new Model(us,"Bundit", "Seedao", "0998061524", "11/4", "3D KMITL", "-");
         Controller.controller.addModel(seeker);
     }
 
