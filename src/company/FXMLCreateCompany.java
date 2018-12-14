@@ -2,6 +2,7 @@ package company;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -13,59 +14,51 @@ import java.util.ResourceBundle;
 
 public class FXMLCreateCompany implements Initializable {
     @FXML
-    private TextField name;
+    private TextField nameField;
     @FXML
-    private  TextField phone;
+    private TextField phoneField;
     @FXML
-    private TextField website;
+    private TextField websiteField;
     @FXML
-    private TextArea address;
+    private TextArea addressField;
     @FXML
-    private  TextArea biography;
+    private TextArea biographyField;
     @FXML
-    private ImageView backButton;
+    private ImageView okButton;
     @FXML
-    private  ImageView okButton;
-
+    private Label label;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resources) {
 
-        backButton.setPickOnBounds(true);
-        backButton.setOnMouseClicked((MouseEvent event) -> {
-
-            try {
-
-
-                Stage.stage.changeStage("Login");
-
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-
-        });
-
         okButton.setPickOnBounds(true);
         okButton.setOnMouseClicked((MouseEvent event) -> {
+            if (nameField.getText().trim().isEmpty() && phoneField.getText().trim().isEmpty() && addressField.getText().trim().isEmpty()) {
+                label.setText("Please fill your detail");
+            } else if (nameField.getText().trim().isEmpty()) {
+                label.setText("Please fill your name");
+            } else if (phoneField.getText().trim().isEmpty()) {
+                label.setText("Please fill your telephone number");
+            } else if (addressField.getText().trim().isEmpty()) {
+                label.setText("Please fill your Address");
+            } else {
 
-            try {
+                try {
 
-                industry.Model ind = industry.Controller.controller.getModels().get(0);
-                Model seeker = new Model(user.Controller.controller.getSession(), ind, name.getText(), phone.getText(), address.getText(), website.getText(), biography.getText());
-                Controller.controller.addModel(seeker);
-                Controller.controller.syncSession();
+                    industry.Model ind = industry.Controller.controller.getModels().get(0);
+                    Model seeker = new Model(user.Controller.controller.getSession(), ind, nameField.getText(), phoneField.getText(), addressField.getText(), websiteField.getText(), biographyField.getText());
+                    Controller.controller.addModel(seeker);
+                    Controller.controller.syncSession();
 
-                Stage.stage.changeStage("homeCompany");
+                    Stage.stage.changeStage("homeCompany");
 
 
-            } catch (Exception e) {
-                e.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
             }
-
-
         });
     }
 }

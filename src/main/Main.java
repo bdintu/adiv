@@ -10,7 +10,7 @@ public class Main extends Application {
     @Override
     public void start(javafx.stage.Stage primaryStage) throws Exception {
         Stage.Stage(primaryStage);
-        Stage.stage.changeStage("Login");
+        Stage.stage.changeStage("CreateCompany");
         Stage.stage.setTitle("Login");
         Stage.stage.show();
     }

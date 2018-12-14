@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="user.FXMLLogin">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="user.FXMLLogin">
    <children>
-      <AnchorPane prefHeight="553.0" prefWidth="900.0">
+      <AnchorPane prefHeight="600.0" prefWidth="900.0">
          <children>
             <ImageView fitHeight="215.0" fitWidth="412.0" layoutX="242.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -41,7 +41,7 @@
                   <Image url="@icons8-forward-button-filled-50.png" />
                </image>
             </ImageView>
-            <Label fx:id="label" layoutX="362.0" layoutY="573.0" prefHeight="21.0" prefWidth="0.0" text="" textFill="RED" />
+            <Label fx:id="label" layoutX="362.0" layoutY="573.0" text="" textFill="RED" />
          </children>
       </AnchorPane>
    </children>
