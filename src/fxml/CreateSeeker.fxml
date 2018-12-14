@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seeker.FXMLCreateSeeker">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seeker.FXMLCreateSeeker">
   <children>
       <AnchorPane prefHeight="603.0" prefWidth="900.0">
          <children>
@@ -82,11 +82,6 @@
                   <ImageView fx:id="nextButton" fitHeight="50.0" fitWidth="50.0" layoutX="840.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@icons8-forward-button-filled-50.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="backButton" fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@icons8-go-back-filled-50.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="label" layoutX="377.0" layoutY="567.0" text="" textFill="RED" />

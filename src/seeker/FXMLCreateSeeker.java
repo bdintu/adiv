@@ -27,8 +27,7 @@ public class FXMLCreateSeeker implements Initializable {
     @FXML
     private TextArea biographyField;
 
-    @FXML
-    private ImageView backButton;
+
     @FXML
     private ImageView   nextButton;
 
@@ -38,21 +37,6 @@ public class FXMLCreateSeeker implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        backButton.setPickOnBounds(true);
-        backButton.setOnMouseClicked((MouseEvent event) -> {
-
-            try {
-
-
-                Stage.stage.changeStage("Login");
-
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-
-        });
 
 
         nextButton.setPickOnBounds(true);
