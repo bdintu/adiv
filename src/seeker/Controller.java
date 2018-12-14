@@ -43,7 +43,7 @@ public class Controller {
         return false;
     }
 
-    private Model getUserSeeker(user.Model user) {
+    private Model getSeeker(user.Model user) {
         for (Model seeker : models) {
             if (seeker.getUser().getEmail().equals(user.getEmail())) {
                 return seeker;
@@ -53,7 +53,7 @@ public class Controller {
         return null;
     }
 
-    private boolean isUserSeeker(user.Model user) {
+    public boolean isSeeker(user.Model user) {
         for (Model seeker : models) {
             if (seeker.getUser().getEmail().equals(user.getEmail())) {
                 return true;
@@ -64,7 +64,7 @@ public class Controller {
     }
 
     public void syncSession() {
-        if (isUserSeeker(user.Controller.controller.getSession())) {
+        if (isSeeker(user.Controller.controller.getSession())) {
             setSession(user.Controller.controller.getSession());
         }
     }
@@ -82,6 +82,6 @@ public class Controller {
     }
 
     public void setSession(user.Model user) {
-        this.session = getUserSeeker(user);
+        this.session = getSeeker(user);
     }
 }

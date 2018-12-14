@@ -46,8 +46,15 @@ public class FXMLLogin implements Initializable {
                     Controller.controller.login(user);
 
                     if (Controller.controller.isLogin()) {
-                        Stage.stage.changeStage("homeSeeker");
-                        Stage.stage.setTitle("Home");
+
+                        if (company.Controller.controller.isCompany(Controller.controller.getSession())) {
+                            Stage.stage.changeStage("homeCompany");
+                            Stage.stage.setTitle("Home Company");
+                        } else if (seeker.Controller.controller.isSeeker(Controller.controller.getSession())) {
+                            Stage.stage.changeStage("homeSeeker");
+                            Stage.stage.setTitle("Home Seeker");
+                        }
+
                     } else {
                         label.setText("Error: email or password incorrect");
                     }
