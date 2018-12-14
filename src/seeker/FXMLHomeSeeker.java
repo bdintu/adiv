@@ -25,6 +25,9 @@ public class FXMLHomeSeeker implements Initializable {
     private ImageView logoutButton;
     @FXML
     private ImageView viewButton;
+    @FXML
+    private ImageView editButton;
+
 
     @FXML
     private MenuButton jobTypeField;
@@ -38,6 +41,7 @@ public class FXMLHomeSeeker implements Initializable {
     private MenuButton skillField;
     @FXML
     private MenuButton jobFunctionField;
+
 
     @FXML
     private TableView<job.Model> table;
@@ -110,6 +114,15 @@ public class FXMLHomeSeeker implements Initializable {
                         Controller.controller.setSelect(newValue);
                     }
                 });
+        editButton.setPickOnBounds(true);
+        editButton.setOnMouseClicked((MouseEvent event) -> {
+
+            try {
+                Stage.stage.changeStage("UpdateSeeker");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     private void addJobTypeField() {
