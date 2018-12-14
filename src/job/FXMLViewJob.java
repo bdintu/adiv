@@ -59,6 +59,7 @@ public class FXMLViewJob implements Initializable {
         okButton.setOnMouseClicked((MouseEvent event) -> {
 
             try {
+                Controller.controller.applyJobThis();
                 Stage.stage.changeStage("viewApplySeeker");
             } catch (Exception e) {
                 e.printStackTrace();

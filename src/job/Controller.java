@@ -49,6 +49,17 @@ public class Controller {
         return false;
     }
 
+    public boolean delApplyJob(Model job_input, user.Model user_input) {
+        for (int i=0; i<job_input.getApply().size(); ++i) {
+            if (job_input.getApply().get(i).equals(user_input)) {
+                job_input.getApply().remove(i);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public void applyJob(Model job_input, user.Model user_input) {
         if (hasApplyJob(job_input, user_input)) {
             System.out.println("Error: duplicate apply job");
@@ -58,8 +69,15 @@ public class Controller {
         job_input.getApply().add(user_input);
     }
 
+    public void applyJobThis() {
+        user.Model user1 = user.Controller.controller.getSession();
+        Model job = getSelect();
+        applyJob(job, user1);
+    }
+
     public void approveJob(Model job_input, user.Model user_input) {
         if (hasApplyJob(job_input, user_input)) {
+            delApplyJob(job_input, user_input);
             job_input.setApprove(user_input);
         } else {
             System.out.println("Error: user not yet apply");

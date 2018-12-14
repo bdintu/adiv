@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="job.FXMLViewApplySeeker">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
   <children>
       <AnchorPane prefHeight="608.0" prefWidth="900.0">
          <children>
@@ -19,17 +19,6 @@
                         <Image url="@apply.png" />
                      </image>
                   </ImageView>
-                  <TableView fx:id="table" layoutX="59.0" layoutY="148.0" prefHeight="360.0" prefWidth="782.0">
-                     <columns>
-                        <TableColumn fx:id="jobFunction1" prefWidth="130.0" resizable="false" text="Job" />
-                        <TableColumn fx:id="jobType1" prefWidth="130.0" resizable="false" text="Employment type" />
-                        <TableColumn fx:id="educationLevel1" prefWidth="100.0" resizable="false" text="Education level" />
-                        <TableColumn fx:id="jobLevel1" prefWidth="100.0" resizable="false" text="Career level" />
-                        <TableColumn fx:id="location1" prefWidth="100.0" resizable="false" text="Location" />
-                        <TableColumn fx:id="skill1" minWidth="0.0" prefWidth="110.0" resizable="false" text="Skill" />
-                        <TableColumn fx:id="salary1" prefWidth="111.0" resizable="false" text="Salary" />
-                     </columns>
-                  </TableView>
                   <ImageView fx:id="delButton" fitHeight="50.0" fitWidth="50.0" layoutX="760.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@icons8-trash-can-filled-50.png" />
@@ -45,6 +34,17 @@
                         <Image url="@icons8-view-filled-50.png" />
                      </image>
                   </ImageView>
+                  <TableView fx:id="table1" layoutX="45.0" layoutY="155.0" prefHeight="358.0" prefWidth="811.0">
+                     <columns>
+                        <TableColumn fx:id="jobNameTable" prefWidth="130.0" resizable="false" text="Job" />
+                        <TableColumn fx:id="companyTable" minWidth="0.0" prefWidth="130.0" text="Company" />
+                        <TableColumn fx:id="jobTypeTable" prefWidth="110.0" text="Employment type" />
+                        <TableColumn fx:id="jobFunctionTable" prefWidth="110.0" text="Job Function" />
+                        <TableColumn fx:id="jobLevelTable" prefWidth="110.0" text="Career level" />
+                        <TableColumn fx:id="locationTable" prefWidth="110.0" text="Location" />
+                        <TableColumn fx:id="salaryTable" prefWidth="110.0" text="Salary" />
+                     </columns>
+                  </TableView>
                </children>
             </Pane>
          </children>
