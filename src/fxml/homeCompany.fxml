@@ -38,7 +38,7 @@
                   </ImageView>
                   <ImageView fx:id="editButton" fitHeight="50.0" fitWidth="50.0" layoutX="110.0" layoutY="530.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@icons8-edit-file-filled-50.png" />
+                        <Image url="@icons8-user-groups-filled-50.png" />
                      </image>
                   </ImageView>
                </children>
