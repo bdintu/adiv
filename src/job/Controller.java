@@ -75,6 +75,23 @@ public class Controller {
         applyJob(job, user1);
     }
 
+    public ArrayList<Model> getApplyJobByUser(user.Model user_input) {
+        ArrayList<Model> applyJobs = new ArrayList<Model>();
+
+        for(Model job: models) {
+            if (job.getApply().contains(user_input)) {
+                applyJobs.add(job);
+            }
+        }
+
+        return applyJobs;
+    }
+
+    public ArrayList<Model> getApplyJobThis() {
+        user.Model user1 = user.Controller.controller.getSession();
+        return getApplyJobByUser(user1);
+    }
+
     public void approveJob(Model job_input, user.Model user_input) {
         if (hasApplyJob(job_input, user_input)) {
             delApplyJob(job_input, user_input);

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="job.FXMLViewApplySeeker">
   <children>
       <AnchorPane prefHeight="608.0" prefWidth="900.0">
          <children>
@@ -34,7 +34,7 @@
                         <Image url="@icons8-view-filled-50.png" />
                      </image>
                   </ImageView>
-                  <TableView fx:id="table1" layoutX="45.0" layoutY="155.0" prefHeight="358.0" prefWidth="811.0">
+                  <TableView fx:id="table" layoutX="45.0" layoutY="155.0" prefHeight="358.0" prefWidth="811.0">
                      <columns>
                         <TableColumn fx:id="jobNameTable" prefWidth="130.0" resizable="false" text="Job" />
                         <TableColumn fx:id="companyTable" minWidth="0.0" prefWidth="130.0" text="Company" />

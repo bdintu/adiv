@@ -27,8 +27,7 @@ public class FXMLHomeSeeker implements Initializable {
     private ImageView viewButton;
     @FXML
     private ImageView editButton;
-
-
+    
     @FXML
     private MenuButton jobTypeField;
     @FXML
@@ -41,7 +40,6 @@ public class FXMLHomeSeeker implements Initializable {
     private MenuButton skillField;
     @FXML
     private MenuButton jobFunctionField;
-
 
     @FXML
     private TableView<job.Model> table;
@@ -80,9 +78,8 @@ public class FXMLHomeSeeker implements Initializable {
         locationTable.setCellValueFactory(new PropertyValueFactory<>("location"));
         salaryTable.setCellValueFactory(new PropertyValueFactory<>("salary"));
 
-        list = getJobModelList();
-        table.setItems(list);
-        
+        table.setItems(getJobModelList());
+
         logoutButton.setPickOnBounds(true);
         logoutButton.setOnMouseClicked((MouseEvent event) -> {
 
@@ -111,11 +108,12 @@ public class FXMLHomeSeeker implements Initializable {
                     @Override
                     public void changed(
                             ObservableValue<? extends Model> observable,
-                            Model oldValue, Model newValue ) {
+                            Model oldValue, Model newValue) {
 
                         Controller.controller.setSelect(newValue);
                     }
                 });
+
         editButton.setPickOnBounds(true);
         editButton.setOnMouseClicked((MouseEvent event) -> {
 
@@ -128,9 +126,9 @@ public class FXMLHomeSeeker implements Initializable {
     }
 
     private void addJobTypeField() {
-        for(jobtype.Model i: jobtype.Controller.controller.getModels()) {
+        for (jobtype.Model i : jobtype.Controller.controller.getModels()) {
             MenuItem item = new MenuItem(i.getName());
-            item.setOnAction(a->{
+            item.setOnAction(a -> {
                 Controller.controller.setJobTypeFilter(i);
                 jobTypeField.setText(i.getName());
                 list = getJobModelList();
@@ -141,9 +139,9 @@ public class FXMLHomeSeeker implements Initializable {
     }
 
     private void addJobFunctionField() {
-        for(jobfunction.Model i: jobfunction.Controller.controller.getModels()) {
+        for (jobfunction.Model i : jobfunction.Controller.controller.getModels()) {
             MenuItem item = new MenuItem(i.getName());
-            item.setOnAction(a->{
+            item.setOnAction(a -> {
                 Controller.controller.setJobFunctionFilter(i);
                 jobFunctionField.setText(i.getName());
                 list = getJobModelList();
@@ -154,9 +152,9 @@ public class FXMLHomeSeeker implements Initializable {
     }
 
     private void addJobLevelField() {
-        for(joblevel.Model i: joblevel.Controller.controller.getModels()) {
+        for (joblevel.Model i : joblevel.Controller.controller.getModels()) {
             MenuItem item = new MenuItem(i.getName());
-            item.setOnAction(a->{
+            item.setOnAction(a -> {
                 Controller.controller.setJobLevelFilter(i);
                 jobLevelField.setText(i.getName());
                 list = getJobModelList();
@@ -167,9 +165,9 @@ public class FXMLHomeSeeker implements Initializable {
     }
 
     private void addLocationField() {
-        for(location.Model i: location.Controller.controller.getModels()) {
+        for (location.Model i : location.Controller.controller.getModels()) {
             MenuItem item = new MenuItem(i.getName());
-            item.setOnAction(a->{
+            item.setOnAction(a -> {
                 Controller.controller.setLocationFilter(i);
                 locationField.setText(i.getName());
                 list = getJobModelList();
@@ -180,9 +178,9 @@ public class FXMLHomeSeeker implements Initializable {
     }
 
     private void addSkillField() {
-        for(skill.Model i: skill.Controller.controller.getModels()) {
+        for (skill.Model i : skill.Controller.controller.getModels()) {
             MenuItem item = new MenuItem(i.getName());
-            item.setOnAction(a->{
+            item.setOnAction(a -> {
                 Controller.controller.setSkilFilterl(i);
                 skillField.setText(i.getName());
                 list = getJobModelList();
@@ -193,9 +191,9 @@ public class FXMLHomeSeeker implements Initializable {
     }
 
     private void addSalaryField() {
-        for(salary.Model i: salary.Controller.controller.getModels()) {
+        for (salary.Model i : salary.Controller.controller.getModels()) {
             MenuItem item = new MenuItem(i.getName());
-            item.setOnAction(a->{
+            item.setOnAction(a -> {
                 Controller.controller.setSalaryFilter(i);
                 salaryField.setText(i.getName());
                 list = getJobModelList();
@@ -210,11 +208,10 @@ public class FXMLHomeSeeker implements Initializable {
         Controller.controller.filterJob();
 
         list = FXCollections.observableArrayList();
-        for(job.Model i: Controller.controller.getFilter()) {
+        for (Model i : Controller.controller.getFilter()) {
             list.add(i);
         }
 
         return list;
     }
-
 }
