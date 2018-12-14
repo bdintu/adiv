@@ -43,7 +43,7 @@ public class FXMLViewJobForRemove implements Initializable {
             try {
 
 
-                Stage.stage.changeStage("homeCompany");
+                Stage.stage.changeStage("homeSeeker");
 
 
             } catch (Exception e) {
