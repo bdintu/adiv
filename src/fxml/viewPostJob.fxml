@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="job.FXMLViewPostjob">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="job.FXMLViewPostjob">
   <children>
       <AnchorPane prefHeight="608.0" prefWidth="900.0">
          <children>
@@ -28,7 +29,6 @@
                         <Image url="@icons8-go-back-filled-50.png" />
                      </image>
                   </ImageView>
-                  <ListView fx:id="listView" layoutX="92.0" layoutY="149.0" prefHeight="375.0" prefWidth="717.0" style="-fx-background-color: gray;" />
                   <ImageView fx:id="viewButton" fitHeight="50.0" fitWidth="50.0" layoutX="840.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@icons8-view-filled-50.png" />
@@ -39,6 +39,16 @@
                         <Image url="@icons8-trash-can-filled-50.png" />
                      </image>
                   </ImageView>
+                  <TableView fx:id="table1" layoutX="85.0" layoutY="153.0" prefHeight="358.0" prefWidth="731.0">
+                     <columns>
+                        <TableColumn fx:id="jobNameTable" prefWidth="150.0" resizable="false" text="Job" />
+                        <TableColumn fx:id="jobTypeTable" prefWidth="110.0" text="Employment type" />
+                        <TableColumn fx:id="jobFunctonTable" prefWidth="130.0" text="Job Function" />
+                        <TableColumn fx:id="jobLevelTable" prefWidth="120.0" text="Career level" />
+                        <TableColumn fx:id="locationTable" prefWidth="110.0" text="Location" />
+                        <TableColumn fx:id="salaryTable" prefWidth="110.0" text="Salary" />
+                     </columns>
+                  </TableView>
                </children>
             </Pane>
          </children>
