@@ -58,6 +58,11 @@
                         <Image url="@icons8-account-filled-50.png" />
                      </image>
                   </ImageView>
+                  <ImageView fx:id="editButton1" fitHeight="50.0" fitWidth="50.0" layoutX="170.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons8-bulleted-list-filled-50.png" />
+                     </image>
+                  </ImageView>
                </children>
             </Pane>
          </children>
