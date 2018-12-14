@@ -48,9 +48,15 @@ public class FXMLLogin implements Initializable {
                     if (Controller.controller.isLogin()) {
 
                         if (company.Controller.controller.isCompany(Controller.controller.getSession())) {
+
+                            company.Controller.controller.syncSession();
+
                             Stage.stage.changeStage("homeCompany");
                             Stage.stage.setTitle("Home Company");
                         } else if (seeker.Controller.controller.isSeeker(Controller.controller.getSession())) {
+
+                            seeker.Controller.controller.syncSession();
+
                             Stage.stage.changeStage("homeSeeker");
                             Stage.stage.setTitle("Home Seeker");
                         }
