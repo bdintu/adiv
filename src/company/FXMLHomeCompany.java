@@ -64,7 +64,7 @@ public class FXMLHomeCompany implements Initializable {
 
             try {
 
-                Stage.stage.changeStage("UpdateCompany");
+                Stage.stage.changeStage("profileCompany");
 
             } catch (Exception e) {
                 e.printStackTrace();

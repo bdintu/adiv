@@ -118,7 +118,7 @@ public class FXMLHomeSeeker implements Initializable {
         editButton.setOnMouseClicked((MouseEvent event) -> {
 
             try {
-                Stage.stage.changeStage("UpdateSeeker");
+                Stage.stage.changeStage("profileSeeker");
             } catch (Exception e) {
                 e.printStackTrace();
             }
