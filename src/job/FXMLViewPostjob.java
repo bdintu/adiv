@@ -46,7 +46,7 @@ public class FXMLViewPostjob implements Initializable {
             try {
 
 
-                Stage.stage.changeStage("ViewJob");
+                Stage.stage.changeStage("viewJobForRemove");
 
 
             } catch (Exception e) {
