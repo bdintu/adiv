@@ -11,7 +11,7 @@ import stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class FXMLprofileSeeker implements Initializable {
+public class FXMLProfileSeeker implements Initializable {
     @FXML
     private TextField firstNameField;
     @FXML
@@ -21,18 +21,25 @@ public class FXMLprofileSeeker implements Initializable {
     @FXML
     private TextField educationLevelField;
     @FXML
-    private  TextField addressField;
-
+    private TextArea addressField;
     @FXML
     private TextArea biographyField;
-
     @FXML
     private ImageView backButton;
     @FXML
-    private ImageView   editButton;
+    private ImageView editButton;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        Model user = Controller.controller.getSession();
+
+        firstNameField.setText(user.getFirstName());
+        lastNameField.setText(user.getLastName());
+        phoneField.setText(user.getPhone());
+        addressField.setText(user.getAddress());
+        educationLevelField.setText(user.getEducationLevel());
+        biographyField.setText(user.getBiography());
 
         backButton.setPickOnBounds(true);
         backButton.setOnMouseClicked((MouseEvent event) -> {

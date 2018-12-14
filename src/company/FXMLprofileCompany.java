@@ -2,6 +2,7 @@ package company;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -10,7 +11,7 @@ import stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class FXMLprofileCompany implements Initializable {
+public class FXMLProfileCompany implements Initializable {
     @FXML
     private TextField nameField;
     @FXML
@@ -18,16 +19,24 @@ public class FXMLprofileCompany implements Initializable {
     @FXML
     private TextField phoneField;
     @FXML
-    private TextField biographyField;
+    private TextArea biographyField;
     @FXML
-    private  TextField addressField;
-
+    private TextArea addressField;
     @FXML
     private ImageView backButton;
     @FXML
-    private ImageView   editButton;
+    private ImageView editButton;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        Model company = Controller.controller.getSession();
+
+        nameField.setText(company.getName());
+        websiteField.setText(company.getWebsite());
+        phoneField.setText(company.getPhone());
+        addressField.setText(company.getAddress());
+        biographyField.setText(company.getBiography());
 
         backButton.setPickOnBounds(true);
         backButton.setOnMouseClicked((MouseEvent event) -> {
