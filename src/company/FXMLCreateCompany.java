@@ -52,12 +52,11 @@ public class FXMLCreateCompany implements Initializable {
                     Controller.controller.syncSession();
 
                     Stage.stage.changeStage("homeCompany");
-
+                    Stage.stage.setTitle("Home Company");
 
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
             }
         });
     }

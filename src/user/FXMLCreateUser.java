@@ -63,22 +63,19 @@ public class FXMLCreateUser implements Initializable {
                     label.setText("Error: not select");
                 } else if (!chooseSeeker.isSelected() && !chooseCompany.isSelected()) {
                     label.setText("Error: pess select one type");
-                } else if (chooseSeeker.isSelected()) {
+                } else {
 
                     Model user = new Model(emailField.getText(), passwordField.getText());
                     Controller.controller.addModel(user);
                     Controller.controller.login(user);
 
-                    Stage.stage.changeStage("CreateSeeker");
-                    Stage.stage.setTitle("New Seeker Profile");
-                } else if (chooseCompany.isSelected()) {
-
-                    Model user = new Model(emailField.getText(), passwordField.getText());
-                    Controller.controller.addModel(user);
-                    Controller.controller.login(user);
-
-                    Stage.stage.changeStage("CreateCompany");
-                    Stage.stage.setTitle("New Company Profile");
+                    if (chooseSeeker.isSelected()) {
+                        Stage.stage.changeStage("CreateSeeker");
+                        Stage.stage.setTitle("New Seeker Profile");
+                    } else if (chooseCompany.isSelected()) {
+                        Stage.stage.changeStage("CreateCompany");
+                        Stage.stage.setTitle("New Company Profile");
+                    }
                 }
 
             } catch (Exception e) {
