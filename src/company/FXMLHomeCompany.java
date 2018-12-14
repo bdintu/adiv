@@ -17,7 +17,10 @@ public class FXMLHomeCompany implements Initializable {
     @FXML
     private ImageView approveButton;
     @FXML
-    private  ImageView logoutButton;
+    private ImageView logoutButton;
+    @FXML
+    private ImageView editButton;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         postJobButton.setPickOnBounds(true);
@@ -25,15 +28,11 @@ public class FXMLHomeCompany implements Initializable {
 
             try {
 
-
                 Stage.stage.changeStage("viewPostJob");
-
 
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-
         });
 
         logoutButton.setPickOnBounds(true);
@@ -41,15 +40,11 @@ public class FXMLHomeCompany implements Initializable {
 
             try {
 
-
                 Stage.stage.changeStage("Login");
-
 
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-
         });
 
         approveButton.setPickOnBounds(true);
@@ -57,15 +52,23 @@ public class FXMLHomeCompany implements Initializable {
 
             try {
 
-
                 Stage.stage.changeStage("viewSeekerToApprove");
-
 
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        });
 
+        editButton.setPickOnBounds(true);
+        editButton.setOnMouseClicked((MouseEvent event) -> {
 
+            try {
+
+                Stage.stage.changeStage("UpdateCompany");
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         });
     }
 }

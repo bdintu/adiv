@@ -21,13 +21,11 @@ public class FXMLUpdateCompany implements Initializable {
     @FXML
     private TextField phoneField;
     @FXML
-    private TextField educationLevelField;
-    @FXML
-    private  TextField emailField;
+    private TextField emailField;
     @FXML
     private PasswordField passwordField;
     @FXML
-    private  PasswordField confirmPasswordField;
+    private PasswordField confirmPasswordField;
 
     @FXML
     private TextArea addressField;
@@ -37,13 +35,22 @@ public class FXMLUpdateCompany implements Initializable {
     @FXML
     private ImageView backButton;
     @FXML
-    private ImageView   okButton;
+    private ImageView okButton;
 
     @FXML
     private Label label;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        Model company = Controller.controller.getSession();
+
+        nameField.setText(company.getName());
+        websiteField.setText(company.getWebsite());
+        phoneField.setText(company.getPhone());
+        addressField.setText(company.getAddress());
+        biographyField.setText(company.getBiography());
+        emailField.setText(company.getUser().getEmail());
 
         backButton.setPickOnBounds(true);
         backButton.setOnMouseClicked((MouseEvent event) -> {
@@ -63,7 +70,7 @@ public class FXMLUpdateCompany implements Initializable {
 
         okButton.setPickOnBounds(true);
         okButton.setOnMouseClicked((MouseEvent event) -> {
-            if (nameField.getText().trim().isEmpty()&phoneField.getText().trim().isEmpty()&&addressField.getText().trim().isEmpty()&&educationLevelField.getText().trim().isEmpty() ) {
+            if (nameField.getText().trim().isEmpty() & phoneField.getText().trim().isEmpty() && addressField.getText().trim().isEmpty()) {
                 label.setText("Please fill your detail");
             } else if (nameField.getText().trim().isEmpty()) {
                 label.setText("Please fill your company name");
@@ -71,19 +78,27 @@ public class FXMLUpdateCompany implements Initializable {
                 label.setText("Please fill your telephone number");
             } else if (addressField.getText().trim().isEmpty()) {
                 label.setText("Please fill your Address");
-            } else if (educationLevelField.getText().trim().isEmpty()) {
-                label.setText("Please fill your Education level");
             } else if (emailField.getText().trim().isEmpty()) {
                 label.setText("Please fill your email");
             } else if (passwordField.getText().trim().isEmpty()) {
                 label.setText("Please fill your password");
             } else if (confirmPasswordField.getText().trim().isEmpty()) {
                 label.setText("Please fill your confirm password");
-            }else {
+            } else if (passwordField.getText().equals(confirmPasswordField.getText()) == false) {
+                label.setText("Error: password mai tong kun");
+            } else {
                 try {
 
+                    company.setName(nameField.getText());
+                    company.setWebsite(websiteField.getText());
+                    company.setPhone(phoneField.getText());
+                    company.setAddress(addressField.getText());
+                    company.setBiography(biographyField.getText());
+                    company.getUser().setEmail(emailField.getText());
+                    company.getUser().setPassword(passwordField.getText());
 
                     Stage.stage.changeStage("homeCompany");
+                    Stage.stage.setTitle("Home Company");
 
 
                 } catch (Exception e) {
