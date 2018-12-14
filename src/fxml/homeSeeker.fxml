@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
@@ -54,6 +53,11 @@
                         <TableColumn fx:id="salaryTable" prefWidth="95.0" text="Salary" />
                      </columns>
                   </TableView>
+                  <ImageView fx:id="editButton" fitHeight="50.0" fitWidth="50.0" layoutX="90.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons8-edit-file-filled-50.png" />
+                     </image>
+                  </ImageView>
                </children>
             </Pane>
          </children>
