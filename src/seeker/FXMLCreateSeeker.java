@@ -70,11 +70,15 @@ public class FXMLCreateSeeker implements Initializable {
             } else if (educationLevelField.getText().trim().isEmpty()) {
                 label.setText("Please fill your Education level");
             } else {
+
                 try {
 
+                    Model seeker = new Model(user.Controller.controller.getSession(),firstNameField.getText(), lastNameField.getText(), phoneField.getText(), addressField.getText(), educationLevelField.getText(), biographyField.getText());
+                    Controller.controller.addModel(seeker);
+                    Controller.controller.syncSession();
 
                     Stage.stage.changeStage("homeSeeker");
-
+                    Stage.stage.setTitle("Home Seeker");
 
                 } catch (Exception e) {
                     e.printStackTrace();
