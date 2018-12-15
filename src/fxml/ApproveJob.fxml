@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -68,7 +67,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="salaryField" editable="false" layoutX="501.0" layoutY="183.0" prefHeight="58.0" prefWidth="337.0">
+                  <TextField fx:id="phoneField" editable="false" layoutX="501.0" layoutY="183.0" prefHeight="58.0" prefWidth="337.0">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -105,7 +104,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="emailField1" editable="false" layoutX="501.0" layoutY="266.0" prefHeight="58.0" prefWidth="337.0">
+                  <TextField fx:id="educationLevelField" editable="false" layoutX="501.0" layoutY="266.0" prefHeight="58.0" prefWidth="337.0">
                      <font>
                         <Font size="16.0" />
                      </font>
