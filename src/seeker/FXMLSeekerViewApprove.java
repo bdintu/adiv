@@ -26,7 +26,7 @@ public class FXMLSeekerViewApprove implements Initializable {
             try {
 
 
-                Stage.stage.changeStage("viewApplySeeker");
+                Stage.stage.changeStage("HomeSeeker");
 
 
             } catch (Exception e) {
