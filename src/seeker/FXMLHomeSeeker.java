@@ -27,6 +27,8 @@ public class FXMLHomeSeeker implements Initializable {
     private ImageView viewButton;
     @FXML
     private ImageView editButton;
+    @FXML
+    private ImageView profileButton;
     
     @FXML
     private MenuButton jobTypeField;
@@ -119,6 +121,16 @@ public class FXMLHomeSeeker implements Initializable {
 
             try {
                 Stage.stage.changeStage("profileSeeker");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        profileButton.setPickOnBounds(true);
+        profileButton.setOnMouseClicked((MouseEvent event) -> {
+
+            try {
+                Stage.stage.changeStage("viewApplySeeker");
             } catch (Exception e) {
                 e.printStackTrace();
             }
