@@ -2,7 +2,9 @@ package job;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -13,27 +15,27 @@ import java.util.ResourceBundle;
 
 public class FXMLPostJob implements Initializable {
     @FXML
-    private TextField name;
+    private TextField nameField;
     @FXML
-    private MenuButton jobType;
+    private MenuButton jobTypeField;
     @FXML
-    private MenuButton salary;
+    private MenuButton salaryField;
     @FXML
-    private  MenuButton educationLevel;
+    private MenuButton skillField;
     @FXML
-    private  MenuButton skill;
+    private MenuButton locationField;
     @FXML
-    private  MenuButton location;
+    private MenuButton jobFunctionField;
     @FXML
-    private  MenuButton jobFunction;
+    private MenuButton jobLevelField;
     @FXML
-    private  MenuButton jobLevel;
+    private TextArea detailField;
     @FXML
-    private  TextField detail;
+    private Label label;
     @FXML
     private ImageView okButton;
     @FXML
-    private  ImageView backButton;
+    private ImageView backButton;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -41,36 +43,38 @@ public class FXMLPostJob implements Initializable {
 
         okButton.setPickOnBounds(true);
         okButton.setOnMouseClicked((MouseEvent event) -> {
+            if (nameField.getText().trim().isEmpty() && jobTypeField.getText().trim().isEmpty() && salaryField.getText().trim().isEmpty() && locationField.getText().trim().isEmpty() && jobFunctionField.getText().trim().isEmpty() && jobLevelField.getText().trim().isEmpty()) {
+                label.setText("Please fill something to make post job perfect");
+            } else {
 
-            try {
+                try {
 
 
-                Stage.stage.changeStage("viewPostJob");
+                    Stage.stage.changeStage("viewPostJob");
 
 
-            } catch (Exception e) {
-                e.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
 
-
-        });
-
+            });
 
 
-        backButton.setPickOnBounds(true);
-        backButton.setOnMouseClicked((MouseEvent event) -> {
+            backButton.setPickOnBounds(true);
+            backButton.setOnMouseClicked((MouseEvent event) -> {
 
-            try {
-
-
-                Stage.stage.changeStage("viewPostJob");
+                try {
 
 
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+                    Stage.stage.changeStage("viewPostJob");
 
 
-        });
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
+            });
+        }
     }
-}

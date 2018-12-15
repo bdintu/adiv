@@ -19,7 +19,7 @@ public class FXMLHomeCompany implements Initializable {
     @FXML
     private ImageView logoutButton;
     @FXML
-    private ImageView editButton;
+    private ImageView profileButton;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -59,8 +59,8 @@ public class FXMLHomeCompany implements Initializable {
             }
         });
 
-        editButton.setPickOnBounds(true);
-        editButton.setOnMouseClicked((MouseEvent event) -> {
+        profileButton.setPickOnBounds(true);
+        profileButton.setOnMouseClicked((MouseEvent event) -> {
 
             try {
 
