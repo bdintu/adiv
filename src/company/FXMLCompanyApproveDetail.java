@@ -32,6 +32,7 @@ public class FXMLCompanyApproveDetail implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         job.Model sel = job.Controller.controller.getSelect();
+        jobNameField.setText(sel.getName());
         companyNameField.setText(sel.getCompany().getName());
 
         backButton.setPickOnBounds(true);
@@ -50,7 +51,7 @@ public class FXMLCompanyApproveDetail implements Initializable {
             if (detailApproveField.getText().trim().isEmpty()) {
                 label.setText("pless key detail");
             } else {
-                job.Controller.controller.approveJobThis();
+                job.Controller.controller.approveJobThis(detailApproveField.getText());
                 try {
                     Stage.stage.changeStage("viewSeekerToApprove");
                 } catch (Exception e) {

@@ -115,19 +115,20 @@ public class Controller {
         return applyJobs;
     }
 
-    public void approveJob(Model job_input, seeker.Model seeker_input) {
+    public void approveJob(Model job_input, seeker.Model seeker_input, String detail_input) {
         if (hasApplyJob(job_input, seeker_input)) {
             delApplyJob(job_input, seeker_input);
             job_input.setApprove(seeker_input);
+            job_input.setDetail(detail_input);
         } else {
             System.out.println("Error: user not yet apply");
         }
     }
 
-    public void approveJobThis() {
+    public void approveJobThis(String detail_input) {
         Model job_input = select;
         seeker.Model seeker_input = selectSeeker;
-        approveJob(job_input, seeker_input);
+        approveJob(job_input, seeker_input, detail_input);
     }
 
     public void filter() {
