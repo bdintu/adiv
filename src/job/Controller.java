@@ -187,6 +187,15 @@ public class Controller {
         }
     }
 
+    public void clearFilter() {
+        jobFunctionFilter = null;
+        jobLevelFilter = null;
+        jobTypeFilter = null;
+        locationFilter = null;
+        salaryFilter = null;
+        skilFilterl = null;
+    }
+
     public ArrayList<Model> getModels(company.Model company_input) {
         ArrayList<Model> companyJob = new ArrayList<Model>();
         for (Model model : models) {

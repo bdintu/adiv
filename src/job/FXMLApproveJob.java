@@ -75,10 +75,12 @@ public class FXMLApproveJob implements Initializable {
 
         okButton.setPickOnBounds(true);
         okButton.setOnMouseClicked((MouseEvent event) -> {
-            try {
-                Stage.stage.changeStage("CompanyApproveDetail");
-            } catch (Exception e) {
-                e.printStackTrace();
+            if (!userField.getText().equals("select name seeker")) {
+                try {
+                    Stage.stage.changeStage("CompanyApproveDetail");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 

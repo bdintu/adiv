@@ -62,6 +62,8 @@ public class FXMLHomeSeeker implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        Controller.controller.clearFilter();
+
         job.ControllerMenu.addJobTypeFieldTable(jobTypeField, table);
         job.ControllerMenu.addJobFunctionFieldTable(jobFunctionField, table);
         job.ControllerMenu.addJobLevelFieldTable(jobLevelField, table);
