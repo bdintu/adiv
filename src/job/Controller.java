@@ -66,19 +66,20 @@ public class Controller {
         delApplyJob(job, user1);
     }
 
-    public void applyJob(Model job_input, user.Model user_input) {
+    public boolean applyJob(Model job_input, user.Model user_input) {
         if (hasApplyJob(job_input, user_input)) {
             System.out.println("Error: duplicate apply job");
-            return;
+            return false;
         }
 
         job_input.getApply().add(user_input);
+        return true;
     }
 
-    public void applyJobThis() {
+    public boolean applyJobThis() {
         user.Model user1 = user.Controller.controller.getSession();
         Model job = getSelect();
-        applyJob(job, user1);
+        return applyJob(job, user1);
     }
 
     public ArrayList<Model> getApplyJobByUser(user.Model user_input) {

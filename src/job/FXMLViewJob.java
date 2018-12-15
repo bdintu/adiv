@@ -2,6 +2,7 @@ package job;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -26,7 +27,8 @@ public class FXMLViewJob implements Initializable {
     private  TextField skillField;
     @FXML
     private TextArea detailField;
-
+    @FXML
+    private Label label;
     @FXML
     private ImageView backButton;
     @FXML
@@ -60,8 +62,12 @@ public class FXMLViewJob implements Initializable {
         okButton.setOnMouseClicked((MouseEvent event) -> {
 
             try {
-                Controller.controller.applyJobThis();
-                Stage.stage.changeStage("viewApplySeeker");
+                if (Controller.controller.applyJobThis()) {
+                    Stage.stage.changeStage("viewApplySeeker");
+                } else {
+                    label.setText("You already apply this job!");
+                }
+
             } catch (Exception e) {
                 e.printStackTrace();
             }

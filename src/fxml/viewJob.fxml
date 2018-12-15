@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="job.FXMLViewJob">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="job.FXMLViewJob">
   <children>
       <AnchorPane prefHeight="607.0" prefWidth="900.0">
          <children>
@@ -88,6 +88,7 @@
                         <Font size="16.0" />
                      </font>
                   </TextArea>
+                  <Label fx:id="label" layoutX="362.0" layoutY="573.0" text="" textFill="RED" />
                </children>
             </Pane>
          </children>

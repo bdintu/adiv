@@ -50,12 +50,7 @@ public class FXMLViewJobForRemove implements Initializable {
 
             try {
 
-                Controller.controller.delApplyJobThis();
-                try {
-                    Stage.stage.changeStage("homeSeeker");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                Stage.stage.changeStage("viewApplySeeker");
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -64,7 +59,7 @@ public class FXMLViewJobForRemove implements Initializable {
 
         delButton.setPickOnBounds(true);
         delButton.setOnMouseClicked((MouseEvent event) -> {
-
+            Controller.controller.delApplyJobThis();
             try {
 
                 Stage.stage.changeStage("viewApplySeeker");
