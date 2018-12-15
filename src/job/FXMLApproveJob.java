@@ -49,17 +49,17 @@ public class FXMLApproveJob implements Initializable {
             seeker.Model selMenu = seeker.Controller.controller.getModel(parts[0], parts[1]);
 
             if (selMenu != null) {
-            Controller.controller.setSelectSeeker(selMenu);
+                Controller.controller.setSelectSeeker(selMenu);
 
-            seeker.Model selSeeker = Controller.controller.getSelectSeeker();
-            emailField.setText(selSeeker.getUser().getEmail());
-            phoneField.setText(selSeeker.getPhone());
-            educationLevelField.setText((selSeeker.getEducationLevel()));
-            biographyField.setText(selSeeker.getBiography());
+                seeker.Model selSeeker = Controller.controller.getSelectSeeker();
+                emailField.setText(selSeeker.getUser().getEmail());
+                phoneField.setText(selSeeker.getPhone());
+                educationLevelField.setText((selSeeker.getEducationLevel()));
+                biographyField.setText(selSeeker.getBiography());
             }
         });
 
-            backButton.setPickOnBounds(true);
+        backButton.setPickOnBounds(true);
         backButton.setOnMouseClicked((MouseEvent event) -> {
 
             try {
@@ -71,7 +71,6 @@ public class FXMLApproveJob implements Initializable {
 
         okButton.setPickOnBounds(true);
         okButton.setOnMouseClicked((MouseEvent event) -> {
-
             try {
                 Stage.stage.changeStage("CompanyApproveDetail");
             } catch (Exception e) {
@@ -81,7 +80,7 @@ public class FXMLApproveJob implements Initializable {
 
         delButton.setPickOnBounds(true);
         delButton.setOnMouseClicked((MouseEvent event) -> {
-
+            Controller.controller.delApplyJobThis();
             try {
                 Stage.stage.changeStage("viewSeekerToApprove");
             } catch (Exception e) {
