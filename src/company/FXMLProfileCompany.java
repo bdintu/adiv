@@ -13,7 +13,7 @@ import java.util.ResourceBundle;
 
 public class FXMLProfileCompany implements Initializable {
     @FXML
-    private TextField nameField;
+    private TextField companyNameField;
     @FXML
     private TextField websiteField;
     @FXML
@@ -32,7 +32,7 @@ public class FXMLProfileCompany implements Initializable {
 
         Model company = Controller.controller.getSession();
 
-        nameField.setText(company.getName());
+        companyNameField.setText(company.getName());
         websiteField.setText(company.getWebsite());
         phoneField.setText(company.getPhone());
         addressField.setText(company.getAddress());

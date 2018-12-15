@@ -46,8 +46,6 @@ public class FXMLViewApplySeeker implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-
-
         jobNameTable.setCellValueFactory(new PropertyValueFactory<>("name"));
         companyTable.setCellValueFactory(new PropertyValueFactory<>("company"));
         jobTypeTable.setCellValueFactory(new PropertyValueFactory<>("jobType"));
@@ -58,20 +56,26 @@ public class FXMLViewApplySeeker implements Initializable {
 
         table.setItems(getJobModelList());
 
+        table.getSelectionModel().selectedItemProperty()
+                .addListener(new ChangeListener<Model>() {
+
+                    @Override
+                    public void changed(
+                            ObservableValue<? extends Model> observable,
+                            Model oldValue, Model newValue) {
+
+                        Controller.controller.setSelect(newValue);
+                    }
+                });
+
         backButton.setPickOnBounds(true);
         backButton.setOnMouseClicked((MouseEvent event) -> {
 
             try {
-
-
                 Stage.stage.changeStage("homeSeeker");
-
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-
         });
 
         viewButton.setPickOnBounds(true);
@@ -85,18 +89,6 @@ public class FXMLViewApplySeeker implements Initializable {
                 e.printStackTrace();
             }
         });
-
-        table.getSelectionModel().selectedItemProperty()
-                .addListener(new ChangeListener<Model>() {
-
-                    @Override
-                    public void changed(
-                            ObservableValue<? extends Model> observable,
-                            Model oldValue, Model newValue) {
-
-                        Controller.controller.setSelect(newValue);
-                    }
-                });
 
         delButton.setPickOnBounds(true);
         delButton.setOnMouseClicked((MouseEvent event) -> {
@@ -114,7 +106,8 @@ public class FXMLViewApplySeeker implements Initializable {
     private ObservableList<Model> getJobModelList() {
 
         list = FXCollections.observableArrayList();
-        for (Model i : Controller.controller.getApplyJobThis()) {
+        user.Model userl = user.Controller.controller.getSession();
+        for (Model i : Controller.controller.getApplyJob(userl)) {
             list.add(i);
         }
         return list;

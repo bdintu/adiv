@@ -11,7 +11,6 @@ import java.util.ResourceBundle;
 
 public class FXMLHomeCompany implements Initializable {
 
-
     @FXML
     private ImageView postJobButton;
     @FXML
@@ -27,9 +26,7 @@ public class FXMLHomeCompany implements Initializable {
         postJobButton.setOnMouseClicked((MouseEvent event) -> {
 
             try {
-
                 Stage.stage.changeStage("viewPostJob");
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -39,9 +36,7 @@ public class FXMLHomeCompany implements Initializable {
         logoutButton.setOnMouseClicked((MouseEvent event) -> {
 
             try {
-
                 Stage.stage.changeStage("Login");
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -51,9 +46,7 @@ public class FXMLHomeCompany implements Initializable {
         approveButton.setOnMouseClicked((MouseEvent event) -> {
 
             try {
-
                 Stage.stage.changeStage("viewSeekerToApprove");
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -63,9 +56,7 @@ public class FXMLHomeCompany implements Initializable {
         profileButton.setOnMouseClicked((MouseEvent event) -> {
 
             try {
-
                 Stage.stage.changeStage("profileCompany");
-
             } catch (Exception e) {
                 e.printStackTrace();
             }

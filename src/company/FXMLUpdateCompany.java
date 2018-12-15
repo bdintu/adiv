@@ -15,7 +15,7 @@ import java.util.ResourceBundle;
 
 public class FXMLUpdateCompany implements Initializable {
     @FXML
-    private TextField nameField;
+    private TextField companyNameField;
     @FXML
     private TextField websiteField;
     @FXML
@@ -45,7 +45,7 @@ public class FXMLUpdateCompany implements Initializable {
 
         Model company = Controller.controller.getSession();
 
-        nameField.setText(company.getName());
+        companyNameField.setText(company.getName());
         websiteField.setText(company.getWebsite());
         phoneField.setText(company.getPhone());
         addressField.setText(company.getAddress());
@@ -56,23 +56,17 @@ public class FXMLUpdateCompany implements Initializable {
         backButton.setOnMouseClicked((MouseEvent event) -> {
 
             try {
-
-
                 Stage.stage.changeStage("HomeCompany");
-
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-
         });
 
         okButton.setPickOnBounds(true);
         okButton.setOnMouseClicked((MouseEvent event) -> {
-            if (nameField.getText().trim().isEmpty() & phoneField.getText().trim().isEmpty() && addressField.getText().trim().isEmpty()) {
+            if (companyNameField.getText().trim().isEmpty() & phoneField.getText().trim().isEmpty() && addressField.getText().trim().isEmpty()) {
                 label.setText("Please fill your detail");
-            } else if (nameField.getText().trim().isEmpty()) {
+            } else if (companyNameField.getText().trim().isEmpty()) {
                 label.setText("Please fill your company name");
             } else if (phoneField.getText().trim().isEmpty()) {
                 label.setText("Please fill your telephone number");
@@ -89,7 +83,7 @@ public class FXMLUpdateCompany implements Initializable {
             } else {
                 try {
 
-                    company.setName(nameField.getText());
+                    company.setName(companyNameField.getText());
                     company.setWebsite(websiteField.getText());
                     company.setPhone(phoneField.getText());
                     company.setAddress(addressField.getText());
@@ -99,7 +93,6 @@ public class FXMLUpdateCompany implements Initializable {
 
                     Stage.stage.changeStage("homeCompany");
                     Stage.stage.setTitle("Home Company");
-
 
                 } catch (Exception e) {
                     e.printStackTrace();

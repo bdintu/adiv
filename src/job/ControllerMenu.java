@@ -12,7 +12,7 @@ public class ControllerMenu {
 
     public static ObservableList<Model> getJobModelList() {
 
-        Controller.controller.filterJob();
+        Controller.controller.filter();
 
         list = FXCollections.observableArrayList();
         for (Model i : Controller.controller.getFilter()) {

@@ -90,7 +90,7 @@ public class Controller {
         return applyJob(job, user1);
     }
 
-    public ArrayList<Model> getApplyJobByUser(user.Model user_input) {
+    public ArrayList<Model> getApplyJob(user.Model user_input) {
         ArrayList<Model> applyJobs = new ArrayList<Model>();
 
         for (Model job : models) {
@@ -102,9 +102,16 @@ public class Controller {
         return applyJobs;
     }
 
-    public ArrayList<Model> getApplyJobThis() {
-        user.Model user1 = user.Controller.controller.getSession();
-        return getApplyJobByUser(user1);
+    public ArrayList<Model> getApplyJob(company.Model company_input) {
+        ArrayList<Model> applyJobs = new ArrayList<Model>();
+
+        for (Model job : models) {
+            if (job.getCompany().equals(company_input) && job.getApply().size() != 0) {
+                applyJobs.add(job);
+            }
+        }
+
+        return applyJobs;
     }
 
     public void approveJob(Model job_input, user.Model user_input) {
@@ -116,7 +123,7 @@ public class Controller {
         }
     }
 
-    public void filterJob() {
+    public void filter() {
 
         filter = new ArrayList<>(models);
 

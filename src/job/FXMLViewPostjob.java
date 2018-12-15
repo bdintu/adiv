@@ -10,7 +10,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import stage.Stage;
@@ -114,7 +113,7 @@ public class FXMLViewPostjob implements Initializable {
 
     public static ObservableList<Model> getJobModelList() {
 
-        Controller.controller.filterJob();
+        Controller.controller.filter();
 
         ObservableList<job.Model> list = FXCollections.observableArrayList();
         for (Model i : Controller.controller.getModels(company.Controller.controller.getSession())) {
