@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -41,17 +43,12 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="firstNameField" editable="false" layoutX="94.0" layoutY="100.0" prefHeight="58.0" prefWidth="337.0">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </TextField>
-                  <Label layoutX="94.0" layoutY="158.0" text="Surename">
+                  <Label layoutX="94.0" layoutY="158.0" text="Job">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="lastNameField" editable="false" layoutX="94.0" layoutY="183.0" prefHeight="58.0" prefWidth="337.0">
+                  <TextField fx:id="jobNameField" editable="false" layoutX="94.0" layoutY="183.0" prefHeight="58.0" prefWidth="337.0">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -66,86 +63,55 @@
                         <Font size="16.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="94.0" layoutY="325.0" text="Telephone Number">
+                  <Label layoutX="501.0" layoutY="158.0" text="Telephone Number">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="phoneField" editable="false" layoutX="94.0" layoutY="351.0" prefHeight="58.0" prefWidth="337.0">
+                  <TextField fx:id="salaryField" editable="false" layoutX="501.0" layoutY="183.0" prefHeight="58.0" prefWidth="337.0">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="94.0" layoutY="408.0" text="Biography">
+                  <Label layoutX="501.0" layoutY="327.0" text="Details">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextArea fx:id="biographyField" editable="false" layoutX="94.0" layoutY="435.0" prefHeight="58.0" prefWidth="337.0" wrapText="true">
+                  <TextField fx:id="detailField" editable="false" layoutX="501.0" layoutY="356.0" prefHeight="169.0" prefWidth="323.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="94.0" layoutY="327.0" text="Biography">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="biographyField" editable="false" layoutX="94.0" layoutY="356.0" prefHeight="169.0" prefWidth="329.0" wrapText="true">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </TextArea>
-                  <Label layoutX="501.0" layoutY="74.0" text="Job">
+                  <MenuButton fx:id="userField" layoutX="95.0" layoutY="100.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="743.0" text="select name seeker">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Action 1" />
+                      <MenuItem mnemonicParsing="false" text="Action 2" />
+                    </items>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </MenuButton>
+                  <Label layoutX="501.0" layoutY="242.0" text="Education Level">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="jobNameField" editable="false" layoutX="501.0" layoutY="100.0" prefHeight="58.0" prefWidth="337.0">
+                  <TextField fx:id="emailField1" editable="false" layoutX="501.0" layoutY="266.0" prefHeight="58.0" prefWidth="337.0">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="501.0" layoutY="158.0" text="Job Function">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="jobFunctionField" editable="false" layoutX="501.0" layoutY="183.0" prefHeight="58.0" prefWidth="337.0">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </TextField>
-                  <Label layoutX="501.0" layoutY="242.0" text="Career level">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="jobLevelField" editable="false" layoutX="501.0" layoutY="266.0" prefHeight="58.0" prefWidth="337.0">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </TextField>
-                  <Label layoutX="501.0" layoutY="325.0" text="Saraly">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="salaryField" editable="false" layoutX="501.0" layoutY="351.0" prefHeight="58.0" prefWidth="337.0">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </TextField>
-                  <Label layoutX="500.0" layoutY="408.0" text="Skill">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="skillField" editable="false" layoutX="501.0" layoutY="435.0" prefHeight="58.0" prefWidth="337.0">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </TextField>
-                  <Label layoutX="93.0" layoutY="493.0" text="Details">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <TextArea fx:id="detailField" editable="false" layoutX="94.0" layoutY="520.0" prefHeight="67.0" prefWidth="650.0" wrapText="true">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </TextArea>
                </children>
             </Pane>
          </children>
