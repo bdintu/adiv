@@ -14,34 +14,35 @@ import java.util.ResourceBundle;
 
 public class FXMLSeekerViewApproveDetail implements Initializable {
 
-   @FXML
-   private TextField jobNameField;
-   @FXML
-   private TextField companyNameField;
-   @FXML
-   private TextArea detailApproveField;
-   @FXML
-   private ImageView backButton;
-   @FXML
-   private Label label;
+    @FXML
+    private TextField jobNameField;
+    @FXML
+    private TextField companyNameField;
+    @FXML
+    private TextArea detailApproveField;
+    @FXML
+    private ImageView backButton;
+    @FXML
+    private Label label;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        job.Model sel = job.Controller.controller.getSelect();
+
+        jobNameField.setText(sel.getName());
+        companyNameField.setText(sel.getCompany().getName());
+        detailApproveField.setText(sel.getDetail());
+
         backButton.setPickOnBounds(true);
         backButton.setOnMouseClicked((MouseEvent event) -> {
 
             try {
-
                 Stage.stage.changeStage("SeekerViewApprove");
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-
         });
-
     }
 }
