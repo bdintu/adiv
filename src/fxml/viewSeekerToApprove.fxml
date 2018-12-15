@@ -31,8 +31,7 @@
                   </ImageView>
                   <TableView fx:id="table1" layoutX="42.0" layoutY="150.0" prefHeight="358.0" prefWidth="816.0">
                      <columns>
-                        <TableColumn fx:id="firstNameTable" prefWidth="130.0" resizable="false" text="First Name" />
-                        <TableColumn fx:id="lastNameTable" prefWidth="130.0" text="Last Name" />
+                        <TableColumn fx:id="firstNameTable" prefWidth="260.0" resizable="false" text="Seeker Name" />
                         <TableColumn fx:id="jobNameTable" prefWidth="130.0" text="Job" />
                         <TableColumn fx:id="jobFunctionTable" prefWidth="110.0" text="Job Function" />
                         <TableColumn fx:id="jobLevelTable" prefWidth="105.0" text="Career Level" />
