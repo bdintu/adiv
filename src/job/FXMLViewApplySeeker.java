@@ -46,9 +46,7 @@ public class FXMLViewApplySeeker implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        System.out.println("adasdasdasd");
 
-        System.out.println(Controller.controller.getApplyJobThis().size());
 
         jobNameTable.setCellValueFactory(new PropertyValueFactory<>("name"));
         companyTable.setCellValueFactory(new PropertyValueFactory<>("company"));
