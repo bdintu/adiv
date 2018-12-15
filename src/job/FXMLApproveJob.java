@@ -69,7 +69,7 @@ public class FXMLApproveJob implements Initializable {
             try {
 
 
-                Stage.stage.changeStage("viewSeekerToApprove");
+                Stage.stage.changeStage("CompanyApproveDetail");
 
 
             } catch (Exception e) {
