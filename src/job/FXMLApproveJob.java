@@ -40,9 +40,28 @@ public class FXMLApproveJob implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        job.ControllerMenu.addJobTypeField(userField);
+        job.ControllerMenu.addUserApprove(userField);
 
-        backButton.setPickOnBounds(true);
+        Model sel = Controller.controller.getSelect();
+        jobNameField.setText(sel.getName());
+        salaryField.setText(sel.getSalary().getName());
+
+        userField.setOnMouseClicked((MouseEvent event) -> {
+
+            String[] parts = userField.getText().split(" ");
+            seeker.Model selMenu = seeker.Controller.controller.getModel(parts[0], parts[1]);
+
+            if (selMenu != null) {
+            Controller.controller.setSelectSeeker(selMenu);
+
+            seeker.Model selSeeker = Controller.controller.getSelectSeeker();
+            emailField.setText(selSeeker.getUser().getEmail());
+            phoneField.setText(selSeeker.getPhone());
+            biographyField.setText(selSeeker.getBiography());
+            }
+        });
+
+            backButton.setPickOnBounds(true);
         backButton.setOnMouseClicked((MouseEvent event) -> {
 
             try {

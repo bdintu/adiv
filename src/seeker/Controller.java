@@ -23,9 +23,19 @@ public class Controller {
         }
     }
 
-    private Model getModel(Model seeker_input) {
+    public Model getModel(Model seeker_input) {
         for (Model seeker : models) {
             if (seeker.equals(seeker_input)) {
+                return seeker;
+            }
+        }
+
+        return null;
+    }
+
+    public Model getModel(String firstName, String lastName) {
+        for (Model seeker : models) {
+            if (seeker.getFirstName().equals(firstName) && seeker.getLastName().equals(lastName)) {
                 return seeker;
             }
         }

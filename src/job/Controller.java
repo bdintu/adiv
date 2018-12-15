@@ -9,6 +9,7 @@ public class Controller {
     private ArrayList<Model> models;
     private ArrayList<Model> filter;
     private Model select;
+    private seeker.Model selectSeeker;
 
     private jobfunction.Model jobFunctionFilter;
     private joblevel.Model jobLevelFilter;
@@ -199,6 +200,14 @@ public class Controller {
 
     public void setSelect(Model select) {
         this.select = select;
+    }
+
+    public seeker.Model getSelectSeeker() {
+        return selectSeeker;
+    }
+
+    public void setSelectSeeker(seeker.Model select) {
+        this.selectSeeker = select;
     }
 
     public jobfunction.Model getJobFunctionFilter() {
