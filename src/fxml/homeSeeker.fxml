@@ -20,17 +20,15 @@
                         <Image url="@logo.png" />
                      </image>
                   </ImageView>
-                  <MenuButton fx:id="jobTypeField" layoutX="10.0" layoutY="180.0" mnemonicParsing="false" text="Employment type">
+                  <MenuButton fx:id="jobTypeField" layoutX="10.0" layoutY="220.0" mnemonicParsing="false" text="Employment type">
                   </MenuButton>
-                  <MenuButton fx:id="locationField" layoutX="10.0" layoutY="245.0" mnemonicParsing="false" text="Location">
+                  <MenuButton fx:id="locationField" layoutX="10.0" layoutY="295.0" mnemonicParsing="false" text="Location">
                   </MenuButton>
-                  <MenuButton fx:id="jobLevelField" layoutX="10.0" layoutY="310.0" mnemonicParsing="false" text="Career level">
+                  <MenuButton fx:id="jobLevelField" layoutX="10.0" layoutY="370.0" mnemonicParsing="false" text="Career level">
                   </MenuButton>
-                  <MenuButton fx:id="salaryField" layoutX="10.0" layoutY="375.0" mnemonicParsing="false" text="Salary">
+                  <MenuButton fx:id="salaryField" layoutX="10.0" layoutY="445.0" mnemonicParsing="false" text="Salary">
                   </MenuButton>
-                  <MenuButton fx:id="skillField" layoutX="10.0" layoutY="440.0" mnemonicParsing="false" text="Skill">
-                  </MenuButton>
-                  <MenuButton fx:id="jobFunctionField" layoutX="10.0" layoutY="115.0" mnemonicParsing="false" text="Job Function">
+                  <MenuButton fx:id="jobFunctionField" layoutX="10.0" layoutY="145.0" mnemonicParsing="false" text="Job Function">
                   </MenuButton>
                   <ImageView fx:id="viewButton" fitHeight="50.0" fitWidth="50.0" layoutX="840.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
                      <image>

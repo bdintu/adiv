@@ -82,17 +82,17 @@ public class ControllerMenu {
         }
     }
 
-    public static void addSkillFieldTable(MenuButton skillField, TableView<Model> table) {
-        for (skill.Model i : skill.Controller.controller.getModels()) {
-            MenuItem item = new MenuItem(i.getName());
-            item.setOnAction(a -> {
-                skillField.setText(i.getName());
-                Controller.controller.setSkilFilterl(i);
-                table.setItems(getJobModelList());
-            });
-            skillField.getItems().add(item);
-        }
-    }
+//    public static void addSkillFieldTable(MenuButton skillField, TableView<Model> table) {
+//        for (skill.Model i : skill.Controller.controller.getModels()) {
+//            MenuItem item = new MenuItem(i.getName());
+//            item.setOnAction(a -> {
+//                skillField.setText(i.getName());
+//                Controller.controller.setSkilFilterl(i);
+//                table.setItems(getJobModelList());
+//            });
+//            skillField.getItems().add(item);
+//        }
+//    }
 
     public static void addSalaryFieldTable(MenuButton salaryField, TableView<Model> table) {
         for (salary.Model i : salary.Controller.controller.getModels()) {

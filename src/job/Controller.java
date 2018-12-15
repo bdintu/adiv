@@ -69,6 +69,10 @@ public class Controller {
         return false;
     }
 
+    public void delAllApplyJob(Model job_input) {
+        job_input.getApply().clear();
+    }
+
     public void delApplyJobThis() {
         seeker.Model seekerr = seeker.Controller.controller.getSession();
         Model job = getSelect();
@@ -117,7 +121,8 @@ public class Controller {
 
     public void approveJob(Model job_input, seeker.Model seeker_input, String detail_input) {
         if (hasApplyJob(job_input, seeker_input)) {
-            delApplyJob(job_input, seeker_input);
+//            delApplyJob(job_input, seeker_input);
+            delAllApplyJob(job_input);
             job_input.setApprove(seeker_input);
             job_input.setDetail(detail_input);
         } else {
