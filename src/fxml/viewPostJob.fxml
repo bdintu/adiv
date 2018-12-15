@@ -39,11 +39,11 @@
                         <Image url="@icons8-trash-can-filled-50.png" />
                      </image>
                   </ImageView>
-                  <TableView fx:id="table1" layoutX="85.0" layoutY="153.0" prefHeight="358.0" prefWidth="731.0">
+                  <TableView fx:id="table" layoutX="85.0" layoutY="153.0" prefHeight="358.0" prefWidth="731.0">
                      <columns>
                         <TableColumn fx:id="jobNameTable" prefWidth="150.0" resizable="false" text="Job" />
                         <TableColumn fx:id="jobTypeTable" prefWidth="110.0" text="Employment type" />
-                        <TableColumn fx:id="jobFunctonTable" prefWidth="130.0" text="Job Function" />
+                        <TableColumn fx:id="jobFunctionTable" prefWidth="130.0" text="Job Function" />
                         <TableColumn fx:id="jobLevelTable" prefWidth="120.0" text="Career level" />
                         <TableColumn fx:id="locationTable" prefWidth="110.0" text="Location" />
                         <TableColumn fx:id="salaryTable" prefWidth="110.0" text="Salary" />

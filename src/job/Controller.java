@@ -50,7 +50,7 @@ public class Controller {
     }
 
     public boolean delApplyJob(Model job_input, user.Model user_input) {
-        for (int i=0; i<job_input.getApply().size(); ++i) {
+        for (int i = 0; i < job_input.getApply().size(); ++i) {
             if (job_input.getApply().get(i).equals(user_input)) {
                 job_input.getApply().remove(i);
                 return true;
@@ -85,7 +85,7 @@ public class Controller {
     public ArrayList<Model> getApplyJobByUser(user.Model user_input) {
         ArrayList<Model> applyJobs = new ArrayList<Model>();
 
-        for(Model job: models) {
+        for (Model job : models) {
             if (job.getApply().contains(user_input)) {
                 applyJobs.add(job);
             }
@@ -112,7 +112,7 @@ public class Controller {
 
         filter = new ArrayList<>(models);
 
-        for (int i=0; i<filter.size(); ++i) {
+        for (int i = 0; i < filter.size(); ++i) {
             if (jobFunctionFilter != null)
                 if (!filter.get(i).getJobFunction().equals(jobFunctionFilter)) {
                     filter.remove(i);
@@ -150,6 +150,16 @@ public class Controller {
                         continue;
                     }
         }
+    }
+
+    public ArrayList<Model> getModels(company.Model company_input) {
+        ArrayList<Model> companyJob = new ArrayList<Model>();
+        for (Model model : models) {
+            if (model.getCompany().equals(company_input)) {
+                companyJob.add(model);
+            }
+        }
+        return companyJob;
     }
 
     public ArrayList<Model> getModels() {
