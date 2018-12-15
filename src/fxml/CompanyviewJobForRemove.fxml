@@ -23,12 +23,12 @@
                   </ImageView>
                   <ImageView fx:id="delButton" fitHeight="50.0" fitWidth="50.0" layoutX="840.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../UI/adiv-fxml/icons8-trash-can-filled-50.png" />
+                        <Image url="@icons8-trash-can-filled-50.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="backButton" fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../UI/adiv-fxml/icons8-go-back-filled-50.png" />
+                        <Image url="@icons8-go-back-filled-50.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="90.0" layoutY="144.0" text="Job">

@@ -2,6 +2,7 @@ package job;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -13,29 +14,27 @@ import java.util.ResourceBundle;
 public class FXMLApproveJob implements Initializable {
 
     @FXML
-    private TextField firstName;
+    private TextField firstNameField;
     @FXML
-    private TextField lastName;
+    private TextField lastNameField;
     @FXML
-    private TextField email;
+    private TextField emailField;
     @FXML
-    private TextField phone;
+    private TextField phoneField;
     @FXML
-    private  TextField biography;
+    private TextArea biographyField;
     @FXML
-    private  TextField jobType;
+    private TextArea detailField;
     @FXML
-    private  TextField name;
+    private TextField jobNameField;
     @FXML
-    private  TextField educationLevel;
+    private TextField jobLevelField;
     @FXML
-    private  TextField jobLevel;
+    private TextField salaryField;
     @FXML
-    private  TextField salary;
+    private TextField skillField;
     @FXML
-    private  TextField skill;
-    @FXML
-    private  TextField jobFunction;
+    private TextField jobFunctionField;
 
     @FXML
     private ImageView backButton;
