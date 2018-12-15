@@ -17,6 +17,15 @@ public class Controller {
         models.add(jobFunction);
     }
 
+    public Model getModel(String text) {
+        for(Model model: models) {
+            if (model.getName().equals(text)) {
+                return model;
+            }
+        }
+        return null;
+    }
+
     public ArrayList<Model> getModels() {
         return models;
     }

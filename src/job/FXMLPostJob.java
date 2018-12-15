@@ -11,6 +11,7 @@ import javafx.scene.input.MouseEvent;
 import stage.Stage;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class FXMLPostJob implements Initializable {
@@ -39,7 +40,7 @@ public class FXMLPostJob implements Initializable {
     private ImageView backButton;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL locationtion, ResourceBundle resources) {
 
         job.ControllerMenu.addJobTypeField(jobTypeField);
         job.ControllerMenu.addJobFunctionField(jobFunctionField);
@@ -54,6 +55,19 @@ public class FXMLPostJob implements Initializable {
             if (jobNameField.getText().trim().isEmpty() && jobTypeField.getText().equals("Employment type") && salaryField.getText().equals("Salary") && locationField.getText().equals("Location") && jobFunctionField.getText().equals("Job Function") && jobLevelField.getText().equals("Career level")) {
                 label.setText("Please fill something to make post job perfect");
             } else {
+
+                jobfunction.Model jf = jobfunction.Controller.controller.getModel(jobFunctionField.getText());
+                joblevel.Model jl = joblevel.Controller.controller.getModel(jobLevelField.getText());
+                jobtype.Model jt = jobtype.Controller.controller.getModel(jobTypeField.getText());
+                location.Model loc = location.Controller.controller.getModel(locationField.getText());
+                salary.Model sa = salary.Controller.controller.getModel(salaryField.getText());
+
+                skill.Model ski = skill.Controller.controller.getModels().get(0);
+                ArrayList<skill.Model> skil = new ArrayList<skill.Model>();
+                skil.add(ski);
+
+                Model jo = new job.Model(jobNameField.getText(), detailField.getText(), company.Controller.controller.getSession(), jf, jl, jt, loc, sa, skil);
+                Controller.controller.addModel(jo);
 
                 try {
                     Stage.stage.changeStage("viewPostJob");
