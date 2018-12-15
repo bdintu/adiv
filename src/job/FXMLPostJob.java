@@ -52,9 +52,17 @@ public class FXMLPostJob implements Initializable {
         okButton.setPickOnBounds(true);
         okButton.setOnMouseClicked((MouseEvent event) -> {
 
-            if (jobNameField.getText().trim().isEmpty() && jobTypeField.getText().equals("Employment type") && salaryField.getText().equals("Salary") && locationField.getText().equals("Location") && jobFunctionField.getText().equals("Job Function") && jobLevelField.getText().equals("Career level")) {
-                label.setText("Please fill something to make post job perfect");
-            } else {
+
+
+            System.out.println(jobTypeField.getText().equals("Employment type"));
+            System.out.println(salaryField.getText().equals("Salary"));
+            System.out.println(locationField.getText().equals("Location"));
+            System.out.println(jobFunctionField.getText().equals("Job Function"));
+            System.out.println(jobLevelField.getText().equals("Career level"));
+
+
+            if (!jobNameField.getText().trim().isEmpty() && !jobTypeField.getText().equals("Employment type") && !salaryField.getText().equals("Salary") && !locationField.getText().equals("Location") && !jobFunctionField.getText().equals("Job Function") && !jobLevelField.getText().equals("Career level")) {
+
 
                 jobfunction.Model jf = jobfunction.Controller.controller.getModel(jobFunctionField.getText());
                 joblevel.Model jl = joblevel.Controller.controller.getModel(jobLevelField.getText());
@@ -74,6 +82,13 @@ public class FXMLPostJob implements Initializable {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+
+
+
+            } else {
+
+                label.setText("Please fill something to make post job perfect");
+
             }
         });
 
