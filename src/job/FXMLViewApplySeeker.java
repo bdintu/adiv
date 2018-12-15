@@ -81,7 +81,7 @@ public class FXMLViewApplySeeker implements Initializable {
 
             try {
                 if (table.getSelectionModel().getSelectedIndex() != -1) {
-                    Stage.stage.changeStage("viewJobForRemove");
+                    Stage.stage.changeStage("SeekerviewJobForRemove");
                 }
             } catch (Exception e) {
                 e.printStackTrace();

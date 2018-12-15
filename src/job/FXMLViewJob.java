@@ -44,6 +44,7 @@ public class FXMLViewJob implements Initializable {
         locationField.setText(sel.getLocation().getName());
         salaryField.setText(sel.getSalary().getName());
         skillField.setText(sel.getSkill().toString());
+        detailField.setText((sel.getDetail()));
 
         backButton.setPickOnBounds(true);
         backButton.setOnMouseClicked((MouseEvent event) -> {
