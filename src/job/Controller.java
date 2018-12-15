@@ -60,6 +60,12 @@ public class Controller {
         return false;
     }
 
+    public void delApplyJobThis() {
+        user.Model user1 = user.Controller.controller.getSession();
+        Model job = getSelect();
+        delApplyJob(job, user1);
+    }
+
     public void applyJob(Model job_input, user.Model user_input) {
         if (hasApplyJob(job_input, user_input)) {
             System.out.println("Error: duplicate apply job");

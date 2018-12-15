@@ -22,7 +22,7 @@ public class FXMLViewApplySeeker implements Initializable {
     @FXML
     private ImageView delButton;
     @FXML
-    private  ImageView viewButton;
+    private ImageView viewButton;
 
     @FXML
     private TableView<job.Model> table;
@@ -94,7 +94,7 @@ public class FXMLViewApplySeeker implements Initializable {
                     @Override
                     public void changed(
                             ObservableValue<? extends Model> observable,
-                            Model oldValue, Model newValue ) {
+                            Model oldValue, Model newValue) {
 
                         Controller.controller.setSelect(newValue);
                     }
@@ -102,16 +102,21 @@ public class FXMLViewApplySeeker implements Initializable {
 
         delButton.setPickOnBounds(true);
         delButton.setOnMouseClicked((MouseEvent event) -> {
-
-
-
+            if (table.getSelectionModel().getSelectedIndex() != -1) {
+                Controller.controller.delApplyJobThis();
+                try {
+                    Stage.stage.changeStage("viewApplySeeker");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         });
     }
 
     private ObservableList<Model> getJobModelList() {
 
         list = FXCollections.observableArrayList();
-        for(Model i: Controller.controller.getApplyJobThis()) {
+        for (Model i : Controller.controller.getApplyJobThis()) {
             list.add(i);
         }
         return list;
