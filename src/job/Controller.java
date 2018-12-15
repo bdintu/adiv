@@ -124,6 +124,12 @@ public class Controller {
         }
     }
 
+    public void approveJobThis() {
+        Model job_input = select;
+        seeker.Model seeker_input = selectSeeker;
+        approveJob(job_input, seeker_input);
+    }
+
     public void filter() {
 
         filter = new ArrayList<>(models);

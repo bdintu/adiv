@@ -19,11 +19,9 @@ public class FXMLApproveJob implements Initializable {
     @FXML
     private TextField emailField;
     @FXML
-    private TextField salaryField;
-    @FXML
     private TextField phoneField;
     @FXML
-    private TextArea detailField;
+    private TextField educationLevelField;
     @FXML
     private TextArea biographyField;
 
@@ -44,7 +42,6 @@ public class FXMLApproveJob implements Initializable {
 
         Model sel = Controller.controller.getSelect();
         jobNameField.setText(sel.getName());
-        salaryField.setText(sel.getSalary().getName());
 
         userField.setOnMouseClicked((MouseEvent event) -> {
 
@@ -57,6 +54,7 @@ public class FXMLApproveJob implements Initializable {
             seeker.Model selSeeker = Controller.controller.getSelectSeeker();
             emailField.setText(selSeeker.getUser().getEmail());
             phoneField.setText(selSeeker.getPhone());
+            educationLevelField.setText((selSeeker.getEducationLevel()));
             biographyField.setText(selSeeker.getBiography());
             }
         });
