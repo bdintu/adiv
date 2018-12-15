@@ -70,7 +70,7 @@ public class FXMLPostJob implements Initializable {
                 location.Model loc = location.Controller.controller.getModel(locationField.getText());
                 salary.Model sa = salary.Controller.controller.getModel(salaryField.getText());
 
-                skill.Model ski = skill.Controller.controller.getModels().get(0);
+                skill.Model ski = skill.Controller.controller.getModel(skillField.getText());
                 ArrayList<skill.Model> skil = new ArrayList<skill.Model>();
                 skil.add(ski);
 
