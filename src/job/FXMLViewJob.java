@@ -27,13 +27,14 @@ public class FXMLViewJob implements Initializable {
     private  TextField skillField;
     @FXML
     private TextArea detailField;
+
     @FXML
     private Label label;
+
     @FXML
     private ImageView backButton;
     @FXML
     private ImageView okButton;
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
