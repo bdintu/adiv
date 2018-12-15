@@ -95,7 +95,7 @@ public class Controller {
         ArrayList<Model> applyJobs = new ArrayList<Model>();
 
         for (Model job : models) {
-            if (job.getApprove().equals(seeker_input)) {
+            if (job.getApply().contains(seeker_input)) {
                 applyJobs.add(job);
             }
         }
