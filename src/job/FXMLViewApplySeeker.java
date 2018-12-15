@@ -106,8 +106,8 @@ public class FXMLViewApplySeeker implements Initializable {
     private ObservableList<Model> getJobModelList() {
 
         list = FXCollections.observableArrayList();
-        user.Model userl = user.Controller.controller.getSession();
-        for (Model i : Controller.controller.getApplyJob(userl)) {
+        seeker.Model seeker1 = seeker.Controller.controller.getSession();
+        for (Model i : Controller.controller.getApplyJob(seeker1)) {
             list.add(i);
         }
         return list;

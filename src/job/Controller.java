@@ -47,9 +47,9 @@ public class Controller {
         return false;
     }
 
-    public boolean hasApplyJob(Model job_input, user.Model user_input) {
-        for (user.Model user : job_input.getApply()) {
-            if (user.equals(user_input)) {
+    public boolean hasApplyJob(Model job_input, seeker.Model seeker_input) {
+        for (seeker.Model seeker : job_input.getApply()) {
+            if (seeker.equals(seeker_input)) {
                 return true;
             }
         }
@@ -57,9 +57,9 @@ public class Controller {
         return false;
     }
 
-    public boolean delApplyJob(Model job_input, user.Model user_input) {
+    public boolean delApplyJob(Model job_input, seeker.Model seeker_input) {
         for (int i = 0; i < job_input.getApply().size(); ++i) {
-            if (job_input.getApply().get(i).equals(user_input)) {
+            if (job_input.getApply().get(i).equals(seeker_input)) {
                 job_input.getApply().remove(i);
                 return true;
             }
@@ -69,32 +69,32 @@ public class Controller {
     }
 
     public void delApplyJobThis() {
-        user.Model user1 = user.Controller.controller.getSession();
+        seeker.Model seekerr = seeker.Controller.controller.getSession();
         Model job = getSelect();
-        delApplyJob(job, user1);
+        delApplyJob(job, seekerr);
     }
 
-    public boolean applyJob(Model job_input, user.Model user_input) {
-        if (hasApplyJob(job_input, user_input)) {
+    public boolean applyJob(Model job_input, seeker.Model seeker_input) {
+        if (hasApplyJob(job_input, seeker_input)) {
             System.out.println("Error: duplicate apply job");
             return false;
         }
 
-        job_input.getApply().add(user_input);
+        job_input.getApply().add(seeker_input);
         return true;
     }
 
     public boolean applyJobThis() {
-        user.Model user1 = user.Controller.controller.getSession();
+        seeker.Model seekerr = seeker.Controller.controller.getSession();
         Model job = getSelect();
-        return applyJob(job, user1);
+        return applyJob(job, seekerr);
     }
 
-    public ArrayList<Model> getApplyJob(user.Model user_input) {
+    public ArrayList<Model> getApplyJob(seeker.Model seeker_input) {
         ArrayList<Model> applyJobs = new ArrayList<Model>();
 
         for (Model job : models) {
-            if (job.getApply().contains(user_input)) {
+            if (job.getApply().contains(seeker_input)) {
                 applyJobs.add(job);
             }
         }
@@ -114,10 +114,10 @@ public class Controller {
         return applyJobs;
     }
 
-    public void approveJob(Model job_input, user.Model user_input) {
-        if (hasApplyJob(job_input, user_input)) {
-            delApplyJob(job_input, user_input);
-            job_input.setApprove(user_input);
+    public void approveJob(Model job_input, seeker.Model seeker_input) {
+        if (hasApplyJob(job_input, seeker_input)) {
+            delApplyJob(job_input, seeker_input);
+            job_input.setApprove(seeker_input);
         } else {
             System.out.println("Error: user not yet apply");
         }

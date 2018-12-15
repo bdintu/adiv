@@ -17,8 +17,8 @@ public class Model implements Serializable {
     private salary.Model salary;
     private ArrayList<skill.Model> skill;
 
-    private ArrayList<user.Model> apply;
-    private user.Model approve;
+    private ArrayList<seeker.Model> apply;
+    private seeker.Model approve;
 
     public Model(String name, String detail, company.Model company, jobfunction.Model jobFunction, joblevel.Model jobLevel, jobtype.Model jobType, location.Model location, salary.Model salary, ArrayList<skill.Model> skill) {
         this.name = name;
@@ -31,8 +31,8 @@ public class Model implements Serializable {
         this.salary = salary;
         this.skill = skill;
 
-        this.apply = new ArrayList<user.Model>();
-        this.approve = new user.Model();
+        this.apply = new ArrayList<seeker.Model>();
+        this.approve = new seeker.Model();
     }
 
     public String getName() {
@@ -107,19 +107,19 @@ public class Model implements Serializable {
         this.skill = skill;
     }
 
-    public ArrayList<user.Model> getApply() {
+    public ArrayList<seeker.Model> getApply() {
         return apply;
     }
 
-    public void setApply(ArrayList<user.Model> apply) {
+    public void setApply(ArrayList<seeker.Model> apply) {
         this.apply = apply;
     }
 
-    public user.Model getApprove() {
+    public seeker.Model getApprove() {
         return approve;
     }
 
-    public void setApprove(user.Model approve) {
+    public void setApprove(seeker.Model approve) {
         this.approve = approve;
     }
 

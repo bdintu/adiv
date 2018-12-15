@@ -10,6 +10,18 @@ public class ControllerMenu {
 
     private static ObservableList<job.Model> list;
 
+//    public static void addUserApprove(MenuButton userField) {
+//        company.Model companyy = company.Controller.controller.getSession();
+//        Model jobb = Controller.controller.getSelect();
+//        for (user.Model i : jobb.getApply()) {
+//            MenuItem item = new MenuItem(i.get());
+//            item.setOnAction(a -> {
+//                locationField.setText(i.getName());
+//            });
+//            locationField.getItems().add(item);
+//        }
+//    }
+
     public static ObservableList<Model> getJobModelList() {
 
         Controller.controller.filter();

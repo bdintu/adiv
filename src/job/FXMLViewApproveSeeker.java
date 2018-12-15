@@ -72,11 +72,12 @@ public class FXMLViewApproveSeeker implements Initializable {
 
         viewButton.setPickOnBounds(true);
         viewButton.setOnMouseClicked((MouseEvent event) -> {
-
-            try {
-                Stage.stage.changeStage("ApproveJob");
-            } catch (Exception e) {
-                e.printStackTrace();
+            if (table.getSelectionModel().getSelectedIndex() != -1) {
+                try {
+                    Stage.stage.changeStage("ApproveJob");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
     }

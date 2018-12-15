@@ -14,6 +14,9 @@ public class Model implements Serializable {
     private String educationLevel;
     private String biography;
 
+    public Model() {
+    }
+
     public Model(user.Model user, String firstName, String lastName, String phone, String address, String educationLevel, String biography) {
         this.user = user;
         this.firstName = firstName;

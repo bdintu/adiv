@@ -41,17 +41,17 @@ public class Test {
     }
 
     public static void applyJob() {
-        user.Model u = user.Controller.controller.getModels().get(0);
+        seeker.Model s = seeker.Controller.controller.getModels().get(0);
         Model j = Controller.controller.getModels().get(0);
-        Controller.controller.applyJob(j, u);
+        Controller.controller.applyJob(j, s);
 
         System.out.println(Controller.controller.getModels().get(0).getApply());
     }
 
     public static void approveJob() {
-        user.Model u = user.Controller.controller.getModels().get(0);
+        seeker.Model s = seeker.Controller.controller.getModels().get(0);
         Model j = Controller.controller.getModels().get(0);
-        Controller.controller.approveJob(j, u);
+        Controller.controller.approveJob(j, s);
 
         System.out.println(Controller.controller.getModels().get(0).getApprove());
     }
