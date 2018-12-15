@@ -21,8 +21,8 @@ public class ControllerMenu {
 
         return list;
     }
-    
-    public static void addJobTypeField(MenuButton jobTypeField, TableView<Model> table) {
+
+    public static void addJobTypeFieldTable(MenuButton jobTypeField, TableView<Model> table) {
         for (jobtype.Model i : jobtype.Controller.controller.getModels()) {
             MenuItem item = new MenuItem(i.getName());
             item.setOnAction(a -> {
@@ -34,19 +34,19 @@ public class ControllerMenu {
         }
     }
 
-    public static void addJobFunctionField(MenuButton jobFunctionField, TableView<Model> table) {
+    public static void addJobFunctionFieldTable(MenuButton jobFunctionField, TableView<Model> table) {
         for (jobfunction.Model i : jobfunction.Controller.controller.getModels()) {
             MenuItem item = new MenuItem(i.getName());
             item.setOnAction(a -> {
-                Controller.controller.setJobFunctionFilter(i);
                 jobFunctionField.setText(i.getName());
+                Controller.controller.setJobFunctionFilter(i);
                 table.setItems(getJobModelList());
             });
             jobFunctionField.getItems().add(item);
         }
     }
 
-    public static void addJobLevelField(MenuButton jobLevelField, TableView<Model> table) {
+    public static void addJobLevelFieldTable(MenuButton jobLevelField, TableView<Model> table) {
         for (joblevel.Model i : joblevel.Controller.controller.getModels()) {
             MenuItem item = new MenuItem(i.getName());
             item.setOnAction(a -> {
@@ -58,7 +58,7 @@ public class ControllerMenu {
         }
     }
 
-    public static void addLocationField(MenuButton locationField, TableView<Model> table) {
+    public static void addLocationFieldTable(MenuButton locationField, TableView<Model> table) {
         for (location.Model i : location.Controller.controller.getModels()) {
             MenuItem item = new MenuItem(i.getName());
             item.setOnAction(a -> {
@@ -70,7 +70,7 @@ public class ControllerMenu {
         }
     }
 
-    public static void addSkillField(MenuButton skillField, TableView<Model> table) {
+    public static void addSkillFieldTable(MenuButton skillField, TableView<Model> table) {
         for (skill.Model i : skill.Controller.controller.getModels()) {
             MenuItem item = new MenuItem(i.getName());
             item.setOnAction(a -> {
@@ -82,13 +82,73 @@ public class ControllerMenu {
         }
     }
 
-    public static void addSalaryField(MenuButton salaryField, TableView<Model> table) {
+    public static void addSalaryFieldTable(MenuButton salaryField, TableView<Model> table) {
         for (salary.Model i : salary.Controller.controller.getModels()) {
             MenuItem item = new MenuItem(i.getName());
             item.setOnAction(a -> {
                 salaryField.setText(i.getName());
                 Controller.controller.setSalaryFilter(i);
                 table.setItems(getJobModelList());
+            });
+            salaryField.getItems().add(item);
+        }
+    }
+
+    public static void addJobTypeField(MenuButton jobTypeField) {
+        for (jobtype.Model i : jobtype.Controller.controller.getModels()) {
+            MenuItem item = new MenuItem(i.getName());
+            item.setOnAction(a -> {
+                jobTypeField.setText(i.getName());
+            });
+            jobTypeField.getItems().add(item);
+        }
+    }
+
+    public static void addJobFunctionField(MenuButton jobFunctionField) {
+        for (jobfunction.Model i : jobfunction.Controller.controller.getModels()) {
+            MenuItem item = new MenuItem(i.getName());
+            item.setOnAction(a -> {
+                jobFunctionField.setText(i.getName());
+            });
+            jobFunctionField.getItems().add(item);
+        }
+    }
+
+    public static void addJobLevelField(MenuButton jobLevelField) {
+        for (joblevel.Model i : joblevel.Controller.controller.getModels()) {
+            MenuItem item = new MenuItem(i.getName());
+            item.setOnAction(a -> {
+                jobLevelField.setText(i.getName());
+            });
+            jobLevelField.getItems().add(item);
+        }
+    }
+
+    public static void addLocationField(MenuButton locationField) {
+        for (location.Model i : location.Controller.controller.getModels()) {
+            MenuItem item = new MenuItem(i.getName());
+            item.setOnAction(a -> {
+                locationField.setText(i.getName());
+            });
+            locationField.getItems().add(item);
+        }
+    }
+
+    public static void addSkillField(MenuButton skillField) {
+        for (skill.Model i : skill.Controller.controller.getModels()) {
+            MenuItem item = new MenuItem(i.getName());
+            item.setOnAction(a -> {
+                skillField.setText(i.getName());
+            });
+            skillField.getItems().add(item);
+        }
+    }
+
+    public static void addSalaryField(MenuButton salaryField) {
+        for (salary.Model i : salary.Controller.controller.getModels()) {
+            MenuItem item = new MenuItem(i.getName());
+            item.setOnAction(a -> {
+                salaryField.setText(i.getName());
             });
             salaryField.getItems().add(item);
         }

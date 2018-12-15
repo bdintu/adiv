@@ -2,7 +2,6 @@ package seeker;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.MenuButton;
@@ -61,12 +60,12 @@ public class FXMLHomeSeeker implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        job.ControllerMenu.addJobTypeField(jobTypeField, table);
-        job.ControllerMenu.addJobFunctionField(jobFunctionField, table);
-        job.ControllerMenu.addJobLevelField(jobLevelField, table);
-        job.ControllerMenu.addLocationField(locationField, table);
-        job.ControllerMenu.addSkillField(skillField, table);
-        job.ControllerMenu.addSalaryField(salaryField, table);
+        job.ControllerMenu.addJobTypeFieldTable(jobTypeField, table);
+        job.ControllerMenu.addJobFunctionFieldTable(jobFunctionField, table);
+        job.ControllerMenu.addJobLevelFieldTable(jobLevelField, table);
+        job.ControllerMenu.addLocationFieldTable(locationField, table);
+        job.ControllerMenu.addSkillFieldTable(skillField, table);
+        job.ControllerMenu.addSalaryFieldTable(salaryField, table);
 
         jobNameTable.setCellValueFactory(new PropertyValueFactory<>("name"));
         companyTable.setCellValueFactory(new PropertyValueFactory<>("company"));

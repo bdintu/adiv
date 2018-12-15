@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -45,12 +44,6 @@
                   </TextField>
                   <MenuButton fx:id="jobTypeField" layoutX="192.0" layoutY="250.0" mnemonicParsing="false" text="Employment type">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="High School" />
-                        <MenuItem mnemonicParsing="false" text="Vocational" />
-                        <MenuItem mnemonicParsing="false" text="High Vocational" />
-                        <MenuItem mnemonicParsing="false" text="Bachelor Degrees" />
-                        <MenuItem mnemonicParsing="false" text="Master Degrees" />
-                        <MenuItem mnemonicParsing="false" text="Doctor Degrees" />
                     </items>
                      <font>
                         <Font size="16.0" />
@@ -58,56 +51,6 @@
                   </MenuButton>
                   <MenuButton fx:id="locationField" layoutX="192.0" layoutY="330.0" mnemonicParsing="false" text="Location">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Phra Nakhon" />
-                      <MenuItem mnemonicParsing="false" text="Bang Bon" />
-                        <MenuItem mnemonicParsing="false" text="Bang Kapi" />
-                        <MenuItem mnemonicParsing="false" text="Bang Khae" />
-                        <MenuItem mnemonicParsing="false" text="Bang Khen" />
-                        <MenuItem mnemonicParsing="false" text="Bang Kho Laem" />
-                        <MenuItem mnemonicParsing="false" text="Bang Khun Thian" />
-                        <MenuItem mnemonicParsing="false" text="Bang Na" />
-                        <MenuItem mnemonicParsing="false" text="Bang Phlat" />
-                        <MenuItem mnemonicParsing="false" text="Bang Rak" />
-                        <MenuItem mnemonicParsing="false" text="Bang Sue" />
-                        <MenuItem mnemonicParsing="false" text="Bangkok Noi" />
-                        <MenuItem mnemonicParsing="false" text="Bangkok Yai" />
-                        <MenuItem mnemonicParsing="false" text="Bueng Kum" />
-                        <MenuItem mnemonicParsing="false" text="Chatuchak" />
-                        <MenuItem mnemonicParsing="false" text="Chom Thong" />
-                        <MenuItem mnemonicParsing="false" text="Din Daeng" />
-                        <MenuItem mnemonicParsing="false" text="Don Mueang" />
-                        <MenuItem mnemonicParsing="false" text="Dusit" />
-                        <MenuItem mnemonicParsing="false" text="Huai Khwang" />
-                        <MenuItem mnemonicParsing="false" text="Khan Na Yao" />
-                        <MenuItem mnemonicParsing="false" text="Khlong Sam Wa" />
-                        <MenuItem mnemonicParsing="false" text="Khlong San" />
-                        <MenuItem mnemonicParsing="false" text="Khlong Toei" />
-                        <MenuItem mnemonicParsing="false" text="Lak Si" />
-                        <MenuItem mnemonicParsing="false" text="Lat Krabang" />
-                        <MenuItem mnemonicParsing="false" text="Lat Phrao" />
-                        <MenuItem mnemonicParsing="false" text="Min Buri" />
-                        <MenuItem mnemonicParsing="false" text="Nong Chok" />
-                        <MenuItem mnemonicParsing="false" text="Nong Khaem" />
-                        <MenuItem mnemonicParsing="false" text="Pathum Wan" />
-                        <MenuItem mnemonicParsing="false" text="Phasi Charoen" />
-                        <MenuItem mnemonicParsing="false" text="Phaya Thai" />
-                        <MenuItem mnemonicParsing="false" text="Phra Khanong" />
-                        <MenuItem mnemonicParsing="false" text="Pom Prap Sattru" />
-                        <MenuItem mnemonicParsing="false" text="Prawet" />
-                        <MenuItem mnemonicParsing="false" text="Rat Burana" />
-                        <MenuItem mnemonicParsing="false" text="Ratchathewi" />
-                        <MenuItem mnemonicParsing="false" text="Sai Mai" />
-                        <MenuItem mnemonicParsing="false" text="Samphanthawong" />
-                        <MenuItem mnemonicParsing="false" text="Saphan Sung" />
-                        <MenuItem mnemonicParsing="false" text="Sathon" />
-                        <MenuItem mnemonicParsing="false" text="Suan Luang" />
-                        <MenuItem mnemonicParsing="false" text="Taling Chan" />
-                        <MenuItem mnemonicParsing="false" text="Thawi Watthana" />
-                        <MenuItem mnemonicParsing="false" text="Thon Buri" />
-                        <MenuItem mnemonicParsing="false" text="Thung Khru" />
-                        <MenuItem mnemonicParsing="false" text="Wang Thonglang" />
-                        <MenuItem mnemonicParsing="false" text="Vadhana" />
-                        <MenuItem mnemonicParsing="false" text="Yan Nawa" />
                     </items>
                      <font>
                         <Font size="16.0" />
@@ -115,17 +58,6 @@
                   </MenuButton>
                   <MenuButton fx:id="jobFunctionField" layoutX="579.0" layoutY="250.0" mnemonicParsing="false" text="Job Function">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Business Development" />
-                        <MenuItem mnemonicParsing="false" text="Content Creator" />
-                        <MenuItem mnemonicParsing="false" text="Data &amp; Analytics" />
-                        <MenuItem mnemonicParsing="false" text="Graphic Designer" />
-                        <MenuItem mnemonicParsing="false" text="Project &amp; Product Manager" />
-                        <MenuItem mnemonicParsing="false" text="QA &amp; Tester" />
-                        <MenuItem mnemonicParsing="false" text="Sales &amp; Marketing" />
-                        <MenuItem mnemonicParsing="false" text="Software Developer" />
-                        <MenuItem mnemonicParsing="false" text="System Administrator" />
-                        <MenuItem mnemonicParsing="false" text="UI/UX Designer" />
-                        <MenuItem mnemonicParsing="false" text="Others" />
                      </items>
                      <font>
                         <Font size="16.0" />
@@ -133,9 +65,6 @@
                   </MenuButton>
                   <MenuButton fx:id="jobLevelField" layoutX="579.0" layoutY="335.0" mnemonicParsing="false" text="Career level">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Entry" />
-                        <MenuItem mnemonicParsing="false" text="Middle" />
-                        <MenuItem mnemonicParsing="false" text="Senior" />
                      </items>
                      <font>
                         <Font size="16.0" />
@@ -143,11 +72,6 @@
                   </MenuButton>
                   <MenuButton fx:id="salaryField" layoutX="579.0" layoutY="415.0" mnemonicParsing="false" text="Salary">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Under 20000 THB" />
-                        <MenuItem mnemonicParsing="false" text="20001-30000 THB" />
-                        <MenuItem mnemonicParsing="false" text="30001-40000 THB" />
-                        <MenuItem mnemonicParsing="false" text="40001-50000 THB" />
-                        <MenuItem mnemonicParsing="false" text="Upper 50000 THB" />
                      </items>
                      <font>
                         <Font size="16.0" />
@@ -155,17 +79,6 @@
                   </MenuButton>
                   <MenuButton fx:id="skillField" layoutX="192.0" layoutY="410.0" mnemonicParsing="false" text="Skill">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Java/JavaScript" />
-                        <MenuItem mnemonicParsing="false" text="Python" />
-                        <MenuItem mnemonicParsing="false" text="C/C#/C++" />
-                        <MenuItem mnemonicParsing="false" text="PHP/HTML" />
-                        <MenuItem mnemonicParsing="false" text="Web Development" />
-                        <MenuItem mnemonicParsing="false" text="React" />
-                        <MenuItem mnemonicParsing="false" text="Mobile Application" />
-                        <MenuItem mnemonicParsing="false" text="Electronics" />
-                        <MenuItem mnemonicParsing="false" text="Network" />
-                        <MenuItem mnemonicParsing="false" text="Testing" />
-                        <MenuItem mnemonicParsing="false" text="Others" />
                      </items>
                      <font>
                         <Font size="16.0" />

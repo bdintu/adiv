@@ -15,7 +15,7 @@ import java.util.ResourceBundle;
 
 public class FXMLPostJob implements Initializable {
     @FXML
-    private TextField nameField;
+    private TextField jobNameField;
     @FXML
     private MenuButton jobTypeField;
     @FXML
@@ -41,9 +41,17 @@ public class FXMLPostJob implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        job.ControllerMenu.addJobTypeField(jobTypeField);
+        job.ControllerMenu.addJobFunctionField(jobFunctionField);
+        job.ControllerMenu.addJobLevelField(jobLevelField);
+        job.ControllerMenu.addLocationField(locationField);
+        job.ControllerMenu.addSkillField(skillField);
+        job.ControllerMenu.addSalaryField(salaryField);
+
         okButton.setPickOnBounds(true);
         okButton.setOnMouseClicked((MouseEvent event) -> {
-            if (nameField.getText().trim().isEmpty() && jobTypeField.getText().trim().isEmpty() && salaryField.getText().trim().isEmpty() && locationField.getText().trim().isEmpty() && jobFunctionField.getText().trim().isEmpty() && jobLevelField.getText().trim().isEmpty()) {
+
+            if (jobNameField.getText().trim().isEmpty() && jobTypeField.getText().equals("Employment type") && salaryField.getText().equals("Salary") && locationField.getText().equals("Location") && jobFunctionField.getText().equals("Job Function") && jobLevelField.getText().equals("Career level")) {
                 label.setText("Please fill something to make post job perfect");
             } else {
 
@@ -54,7 +62,6 @@ public class FXMLPostJob implements Initializable {
                 }
             }
         });
-
 
         backButton.setPickOnBounds(true);
         backButton.setOnMouseClicked((MouseEvent event) -> {
