@@ -1,5 +1,7 @@
 package job;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -55,6 +57,18 @@ public class FXMLViewPostjob implements Initializable {
 
         table.setItems(getJobModelList());
 
+        table.getSelectionModel().selectedItemProperty()
+                .addListener(new ChangeListener<Model>() {
+
+                    @Override
+                    public void changed(
+                            ObservableValue<? extends Model> observable,
+                            Model oldValue, Model newValue) {
+
+                        Controller.controller.setSelect(newValue);
+                    }
+                });
+
         backButton.setPickOnBounds(true);
         backButton.setOnMouseClicked((MouseEvent event) -> {
 
@@ -82,6 +96,18 @@ public class FXMLViewPostjob implements Initializable {
                 Stage.stage.changeStage("Postjob");
             } catch (Exception e) {
                 e.printStackTrace();
+            }
+        });
+
+        delButton.setPickOnBounds(true);
+        delButton.setOnMouseClicked((MouseEvent event) -> {
+            if (table.getSelectionModel().getSelectedIndex() != -1) {
+                Controller.controller.delModelThis();
+                try {
+                    Stage.stage.changeStage("viewPostJob");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
     }

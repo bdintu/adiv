@@ -29,6 +29,14 @@ public class Controller {
         }
     }
 
+    public void delModel(Model job) {
+        models.remove(job);
+    }
+
+    public void delModelThis() {
+        delModel(select);
+    }
+
     private boolean hasModel(Model job_input) {
         for (Model job : models) {
             if (job.equals(job_input)) {
