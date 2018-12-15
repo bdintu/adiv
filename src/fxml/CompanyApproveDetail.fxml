@@ -51,7 +51,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextArea fx:id="detailApproveField" editable="false" layoutX="90.0" layoutY="265.0" prefHeight="266.0" prefWidth="740.0" wrapText="true">
+                  <TextArea fx:id="detailApproveField" editable="true" layoutX="90.0" layoutY="265.0" prefHeight="266.0" prefWidth="740.0" wrapText="true">
                      <font>
                         <Font size="16.0" />
                      </font>
