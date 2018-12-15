@@ -131,6 +131,18 @@ public class Controller {
         approveJob(job_input, seeker_input, detail_input);
     }
 
+    public ArrayList<Model> getApprove(seeker.Model seeker_input) {
+        ArrayList<Model> approveJob = new ArrayList<Model>();
+
+        for (Model job : models) {
+            if (job.getApprove().equals(seeker_input)) {
+                approveJob.add(job);
+            }
+        }
+
+        return approveJob;
+    }
+
     public void filter() {
 
         filter = new ArrayList<>(models);

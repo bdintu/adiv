@@ -93,7 +93,7 @@ public class FXMLSeekerViewApprove implements Initializable {
 
         list = FXCollections.observableArrayList();
         seeker.Model seekerr = seeker.Controller.controller.getSession();
-        for (job.Model i : job.Controller.controller.getApplyJob(seekerr)) {
+        for (job.Model i : job.Controller.controller.getApprove(seekerr)) {
             list.add(i);
         }
         return list;
