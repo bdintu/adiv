@@ -2,12 +2,10 @@ package seeker;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -60,17 +58,15 @@ public class FXMLHomeSeeker implements Initializable {
     @FXML
     private TableColumn<job.Model, String> salaryTable;
 
-    private ObservableList<job.Model> list;
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        addJobTypeField();
-        addJobFunctionField();
-        addJobLevelField();
-        addLocationField();
-        addSkillField();
-        addSalaryField();
+        job.ControllerMenu.addJobTypeField(jobTypeField, table);
+        job.ControllerMenu.addJobFunctionField(jobFunctionField, table);
+        job.ControllerMenu.addJobLevelField(jobLevelField, table);
+        job.ControllerMenu.addLocationField(locationField, table);
+        job.ControllerMenu.addSkillField(skillField, table);
+        job.ControllerMenu.addSalaryField(salaryField, table);
 
         jobNameTable.setCellValueFactory(new PropertyValueFactory<>("name"));
         companyTable.setCellValueFactory(new PropertyValueFactory<>("company"));
@@ -80,7 +76,7 @@ public class FXMLHomeSeeker implements Initializable {
         locationTable.setCellValueFactory(new PropertyValueFactory<>("location"));
         salaryTable.setCellValueFactory(new PropertyValueFactory<>("salary"));
 
-        table.setItems(getJobModelList());
+        table.setItems(job.ControllerMenu.getJobModelList());
 
         logoutButton.setPickOnBounds(true);
         logoutButton.setOnMouseClicked((MouseEvent event) -> {
@@ -135,95 +131,5 @@ public class FXMLHomeSeeker implements Initializable {
                 e.printStackTrace();
             }
         });
-    }
-
-    private void addJobTypeField() {
-        for (jobtype.Model i : jobtype.Controller.controller.getModels()) {
-            MenuItem item = new MenuItem(i.getName());
-            item.setOnAction(a -> {
-                Controller.controller.setJobTypeFilter(i);
-                jobTypeField.setText(i.getName());
-                list = getJobModelList();
-                table.setItems(list);
-            });
-            jobTypeField.getItems().add(item);
-        }
-    }
-
-    private void addJobFunctionField() {
-        for (jobfunction.Model i : jobfunction.Controller.controller.getModels()) {
-            MenuItem item = new MenuItem(i.getName());
-            item.setOnAction(a -> {
-                Controller.controller.setJobFunctionFilter(i);
-                jobFunctionField.setText(i.getName());
-                list = getJobModelList();
-                table.setItems(list);
-            });
-            jobFunctionField.getItems().add(item);
-        }
-    }
-
-    private void addJobLevelField() {
-        for (joblevel.Model i : joblevel.Controller.controller.getModels()) {
-            MenuItem item = new MenuItem(i.getName());
-            item.setOnAction(a -> {
-                Controller.controller.setJobLevelFilter(i);
-                jobLevelField.setText(i.getName());
-                list = getJobModelList();
-                table.setItems(list);
-            });
-            jobLevelField.getItems().add(item);
-        }
-    }
-
-    private void addLocationField() {
-        for (location.Model i : location.Controller.controller.getModels()) {
-            MenuItem item = new MenuItem(i.getName());
-            item.setOnAction(a -> {
-                Controller.controller.setLocationFilter(i);
-                locationField.setText(i.getName());
-                list = getJobModelList();
-                table.setItems(list);
-            });
-            locationField.getItems().add(item);
-        }
-    }
-
-    private void addSkillField() {
-        for (skill.Model i : skill.Controller.controller.getModels()) {
-            MenuItem item = new MenuItem(i.getName());
-            item.setOnAction(a -> {
-                Controller.controller.setSkilFilterl(i);
-                skillField.setText(i.getName());
-                list = getJobModelList();
-                table.setItems(list);
-            });
-            skillField.getItems().add(item);
-        }
-    }
-
-    private void addSalaryField() {
-        for (salary.Model i : salary.Controller.controller.getModels()) {
-            MenuItem item = new MenuItem(i.getName());
-            item.setOnAction(a -> {
-                Controller.controller.setSalaryFilter(i);
-                salaryField.setText(i.getName());
-                list = getJobModelList();
-                table.setItems(list);
-            });
-            salaryField.getItems().add(item);
-        }
-    }
-
-    private ObservableList<job.Model> getJobModelList() {
-
-        Controller.controller.filterJob();
-
-        list = FXCollections.observableArrayList();
-        for (Model i : Controller.controller.getFilter()) {
-            list.add(i);
-        }
-
-        return list;
     }
 }

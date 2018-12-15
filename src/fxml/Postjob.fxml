@@ -38,7 +38,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="nameField" layoutX="192.0" layoutY="165.0" prefHeight="37.0" prefWidth="521.0">
+                  <TextField fx:id="jobNameField" layoutX="192.0" layoutY="165.0" prefHeight="37.0" prefWidth="521.0">
                      <font>
                         <Font size="16.0" />
                      </font>

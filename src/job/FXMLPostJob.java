@@ -30,6 +30,7 @@ public class FXMLPostJob implements Initializable {
     private MenuButton jobLevelField;
     @FXML
     private TextArea detailField;
+
     @FXML
     private Label label;
     @FXML
@@ -40,7 +41,6 @@ public class FXMLPostJob implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-
         okButton.setPickOnBounds(true);
         okButton.setOnMouseClicked((MouseEvent event) -> {
             if (nameField.getText().trim().isEmpty() && jobTypeField.getText().trim().isEmpty() && salaryField.getText().trim().isEmpty() && locationField.getText().trim().isEmpty() && jobFunctionField.getText().trim().isEmpty() && jobLevelField.getText().trim().isEmpty()) {
@@ -48,33 +48,22 @@ public class FXMLPostJob implements Initializable {
             } else {
 
                 try {
-
-
                     Stage.stage.changeStage("viewPostJob");
-
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
-
-            });
-
-
-            backButton.setPickOnBounds(true);
-            backButton.setOnMouseClicked((MouseEvent event) -> {
-
-                try {
+        });
 
 
-                    Stage.stage.changeStage("viewPostJob");
+        backButton.setPickOnBounds(true);
+        backButton.setOnMouseClicked((MouseEvent event) -> {
 
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-
-            });
-        }
+            try {
+                Stage.stage.changeStage("viewPostJob");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
+}
