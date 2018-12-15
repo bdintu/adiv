@@ -2,6 +2,7 @@ package job;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -29,6 +30,9 @@ public class FXMLApproveJob implements Initializable {
     private MenuButton userField;
 
     @FXML
+    private Button viewButton;
+
+    @FXML
     private ImageView backButton;
     @FXML
     private ImageView okButton;
@@ -43,7 +47,7 @@ public class FXMLApproveJob implements Initializable {
         Model sel = Controller.controller.getSelect();
         jobNameField.setText(sel.getName());
 
-        userField.setOnMouseClicked((MouseEvent event) -> {
+        viewButton.setOnMouseClicked((MouseEvent event) -> {
 
             String[] parts = userField.getText().split(" ");
             seeker.Model selMenu = seeker.Controller.controller.getModel(parts[0], parts[1]);

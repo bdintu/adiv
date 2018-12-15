@@ -51,7 +51,7 @@ public class Test {
     public static void approveJob() {
         seeker.Model s = seeker.Controller.controller.getModels().get(0);
         Model j = Controller.controller.getModels().get(0);
-        Controller.controller.approveJob(j, s);
+        Controller.controller.approveJob(j, s, "");
 
         System.out.println(Controller.controller.getModels().get(0).getApprove());
     }

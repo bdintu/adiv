@@ -7,6 +7,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import job.Controller;
 import stage.Stage;
 
 import java.net.URL;
@@ -16,7 +17,7 @@ public class FXMLCompanyApproveDetail implements Initializable {
     @FXML
     private TextField jobNameField;
     @FXML
-    private TextField companyNameField;
+    private TextField firstNameField;
     @FXML
     private TextArea detailApproveField;
 
@@ -32,8 +33,9 @@ public class FXMLCompanyApproveDetail implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         job.Model sel = job.Controller.controller.getSelect();
+        seeker.Model selSeeker = Controller.controller.getSelectSeeker();
         jobNameField.setText(sel.getName());
-        companyNameField.setText(sel.getCompany().getName());
+        firstNameField.setText(selSeeker.getFirstName() +' '+ selSeeker.getLastName());
 
         backButton.setPickOnBounds(true);
         backButton.setOnMouseClicked((MouseEvent event) -> {
