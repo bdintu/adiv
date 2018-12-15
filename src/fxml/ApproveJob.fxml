@@ -72,22 +72,12 @@
                         <Font size="16.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="501.0" layoutY="327.0" text="Details">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <TextArea fx:id="detailField" editable="false" layoutX="501.0" layoutY="356.0" prefHeight="169.0" prefWidth="323.0">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </TextArea>
                   <Label layoutX="94.0" layoutY="327.0" text="Biography">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextArea fx:id="biographyField" editable="false" layoutX="94.0" layoutY="356.0" prefHeight="169.0" prefWidth="329.0" wrapText="true">
+                  <TextArea fx:id="biographyField" editable="false" layoutX="94.0" layoutY="356.0" prefHeight="169.0" prefWidth="743.0" wrapText="true">
                      <font>
                         <Font size="16.0" />
                      </font>
