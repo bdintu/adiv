@@ -153,6 +153,10 @@ public class Controller {
         filter = new ArrayList<>(models);
 
         for (int i = 0; i < filter.size(); ++i) {
+            if (filter.get(i).getApprove() != null) {
+                filter.remove(i);
+            }
+
             if (jobFunctionFilter != null)
                 if (!filter.get(i).getJobFunction().equals(jobFunctionFilter)) {
                     filter.remove(i);
