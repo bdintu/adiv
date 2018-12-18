@@ -1,11 +1,9 @@
 package user;
 
-import java.util.ArrayList;
-
 public class Test {
     public static void init() {
         Model user = new Model("j@adiv.com", "j");
-        Controller.controller.addModel(user);
+        Controller.controller.addUser(user);
     }
 
     public static void login() {

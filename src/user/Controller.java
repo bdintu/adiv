@@ -14,16 +14,16 @@ public class Controller {
         controller.models = new ArrayList<Model>();
     }
 
-    public void addModel(Model user) {
+    public void addUser(Model user) {
 
-        if (hasModel(user)) {
+        if (hasUser(user)) {
             System.out.println("Error: duplicate email");
         } else {
             models.add(user);
         }
     }
 
-    private Model getModel(Model user_input) {
+    private Model getUser(Model user_input) {
         for (Model user : models) {
             if (user.equals(user_input)) {
                 return user;
@@ -33,7 +33,7 @@ public class Controller {
         return null;
     }
 
-    private boolean hasModel(Model user_input) {
+    private boolean hasUser(Model user_input) {
         for (Model user : models) {
             if (user.equals(user_input)) {
                 return true;
@@ -45,13 +45,13 @@ public class Controller {
 
     public void login(Model user_input) {
 
-        if (hasModel(user_input) && checkPassword(user_input)) {
-            session = getModel(user_input);
+        if (hasUser(user_input) && checkPassword(user_input)) {
+            session = getUser(user_input);
         }
     }
 
     private boolean checkPassword(Model user_input) {
-        Model user = getModel(user_input);
+        Model user = getUser(user_input);
         return user.getPassword().equals(user_input.getPassword());
     }
 

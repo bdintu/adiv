@@ -1,7 +1,5 @@
 package user;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -66,7 +64,7 @@ public class FXMLCreateUser implements Initializable {
                 } else {
 
                     Model user = new Model(emailField.getText(), passwordField.getText());
-                    Controller.controller.addModel(user);
+                    Controller.controller.addUser(user);
                     Controller.controller.login(user);
 
                     if (chooseSeeker.isSelected()) {
