@@ -16,6 +16,18 @@ public class Serialize {
 
     public static void Serialize() {
         serialize = new Serialize();
+
+        user.Controller.Controller();
+        location.Controller.Controller();
+        industry.Controller.Controller();
+        company.Controller.Controller();
+        seeker.Controller.Controller();
+        salary.Controller.Controller();
+        skill.Controller.Controller();
+        jobfunction.Controller.Controller();
+        joblevel.Controller.Controller();
+        jobtype.Controller.Controller();
+        job.Controller.Controller();
     }
 
     public void objRead() {

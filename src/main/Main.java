@@ -17,18 +17,6 @@ public class Main extends Application {
 
     public static void main(String[] args) {
 
-        user.Controller.Controller();
-        location.Controller.Controller();
-        industry.Controller.Controller();
-        company.Controller.Controller();
-        seeker.Controller.Controller();
-        salary.Controller.Controller();
-        skill.Controller.Controller();
-        jobfunction.Controller.Controller();
-        joblevel.Controller.Controller();
-        jobtype.Controller.Controller();
-        job.Controller.Controller();
-
         Serialize.Serialize();
         Serialize.serialize.objRead();
 
