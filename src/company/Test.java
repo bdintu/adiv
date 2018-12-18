@@ -14,7 +14,7 @@ public class Test {
         user.Model us = user.Controller.controller.getModels().get(0);
         industry.Model ind = industry.Controller.controller.getModels().get(0);
         Model seeker = new Model(us, ind,"Kbank", "0998061524","11/4","kbank.com", "-");
-        Controller.controller.addModel(seeker);
+        Controller.controller.addCompany(seeker);
     }
 
     public static void login() {

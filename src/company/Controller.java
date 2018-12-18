@@ -14,16 +14,16 @@ public class Controller {
         controller.models = new ArrayList<Model>();
     }
 
-    public void addModel(Model company) {
+    public void addCompany(Model company) {
 
-        if (hasModel(company)) {
+        if (hasCompany(company)) {
             System.out.println("Error: duplicate company");
         } else {
             models.add(company);
         }
     }
 
-    private boolean hasModel(Model company_input) {
+    private boolean hasCompany(Model company_input) {
         for (Model company : models) {
             if (company.equals(company_input)) {
                 return true;

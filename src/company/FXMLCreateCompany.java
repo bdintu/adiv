@@ -48,7 +48,7 @@ public class FXMLCreateCompany implements Initializable {
 
                     industry.Model ind = industry.Controller.controller.getModels().get(0);
                     Model seeker = new Model(user.Controller.controller.getSession(), ind, companyNameField.getText(), phoneField.getText(), addressField.getText(), websiteField.getText(), biographyField.getText());
-                    Controller.controller.addModel(seeker);
+                    Controller.controller.addCompany(seeker);
                     Controller.controller.syncSession();
 
                     Stage.stage.changeStage("homeCompany");
