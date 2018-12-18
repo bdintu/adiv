@@ -50,7 +50,7 @@ public class FXMLApproveJob implements Initializable {
         viewButton.setOnMouseClicked((MouseEvent event) -> {
 
             String[] parts = userField.getText().split(" ");
-            seeker.Model selMenu = seeker.Controller.controller.getModel(parts[0], parts[1]);
+            seeker.Model selMenu = seeker.Controller.controller.getSeeker(parts[0], parts[1]);
 
             if (selMenu != null) {
                 Controller.controller.setSelectSeeker(selMenu);

@@ -14,16 +14,16 @@ public class Controller {
         controller.models = new ArrayList<Model>();
     }
 
-    public void addModel(Model seeker) {
+    public void addSeeker(Model seeker) {
 
-        if (hasModel(seeker)) {
+        if (hasSeeker(seeker)) {
             System.out.println("Error: duplicate seeker");
         } else {
             models.add(seeker);
         }
     }
 
-    public Model getModel(Model seeker_input) {
+    public Model getSeeker(Model seeker_input) {
         for (Model seeker : models) {
             if (seeker.equals(seeker_input)) {
                 return seeker;
@@ -33,7 +33,7 @@ public class Controller {
         return null;
     }
 
-    public Model getModel(String firstName, String lastName) {
+    public Model getSeeker(String firstName, String lastName) {
         for (Model seeker : models) {
             if (seeker.getFirstName().equals(firstName) && seeker.getLastName().equals(lastName)) {
                 return seeker;
@@ -43,7 +43,7 @@ public class Controller {
         return null;
     }
 
-    private boolean hasModel(Model seeker_input) {
+    private boolean hasSeeker(Model seeker_input) {
         for (Model seeker : models) {
             if (seeker.equals(seeker_input)) {
                 return true;

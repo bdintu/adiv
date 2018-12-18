@@ -58,7 +58,7 @@ public class FXMLCreateSeeker implements Initializable {
                 try {
 
                     Model seeker = new Model(user.Controller.controller.getSession(),firstNameField.getText(), lastNameField.getText(), phoneField.getText(), addressField.getText(), educationLevelField.getText(), biographyField.getText());
-                    Controller.controller.addModel(seeker);
+                    Controller.controller.addSeeker(seeker);
                     Controller.controller.syncSession();
 
                     Stage.stage.changeStage("homeSeeker");
