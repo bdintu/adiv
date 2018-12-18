@@ -37,7 +37,7 @@ public class Test {
         skill.add(ski);
 
         job.Model j = new job.Model("Computer Vision App", "Ba ba ba",ind, jf, jl, jt, loc, sa, skill);
-        Controller.controller.addModel(j);
+        Controller.controller.addJob(j);
     }
 
     public static void applyJob() {

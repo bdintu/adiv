@@ -63,7 +63,7 @@ public class FXMLSeekerViewApprove implements Initializable {
                             ObservableValue<? extends job.Model> observable,
                             job.Model oldValue, job.Model newValue) {
 
-                        job.Controller.controller.setSelect(newValue);
+                        job.Controller.controller.setSelectJob(newValue);
                     }
                 });
 

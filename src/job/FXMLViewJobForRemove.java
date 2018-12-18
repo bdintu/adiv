@@ -35,7 +35,7 @@ public class FXMLViewJobForRemove implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        Model sel = Controller.controller.getSelect();
+        Model sel = Controller.controller.getSelectJob();
 
         jobNameField.setText(sel.getName());
         jobTypeField.setText(sel.getJobType().getName());

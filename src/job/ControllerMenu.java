@@ -12,7 +12,7 @@ public class ControllerMenu {
 
     public static void addUserApprove(MenuButton userField) {
         company.Model companyy = company.Controller.controller.getSession();
-        Model jobb = Controller.controller.getSelect();
+        Model jobb = Controller.controller.getSelectJob();
         for (seeker.Model i : jobb.getApply()) {
             MenuItem item = new MenuItem(i.getFirstName() +' '+ i.getLastName());
             item.setOnAction(a -> {

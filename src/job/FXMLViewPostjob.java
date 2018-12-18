@@ -64,7 +64,7 @@ public class FXMLViewPostjob implements Initializable {
                             ObservableValue<? extends Model> observable,
                             Model oldValue, Model newValue) {
 
-                        Controller.controller.setSelect(newValue);
+                        Controller.controller.setSelectJob(newValue);
                     }
                 });
 
@@ -102,7 +102,7 @@ public class FXMLViewPostjob implements Initializable {
         delButton.setPickOnBounds(true);
         delButton.setOnMouseClicked((MouseEvent event) -> {
             if (table.getSelectionModel().getSelectedIndex() != -1) {
-                Controller.controller.delModelThis();
+                Controller.controller.delJobThis();
                 try {
                     Stage.stage.changeStage("viewPostJob");
                 } catch (Exception e) {

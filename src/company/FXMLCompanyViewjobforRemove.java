@@ -37,7 +37,7 @@ public class FXMLCompanyViewjobforRemove implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        Model sel = Controller.controller.getSelect();
+        Model sel = Controller.controller.getSelectJob();
 
         jobNameField.setText(sel.getName());
         jobTypeField.setText(sel.getJobType().getName());
@@ -59,7 +59,7 @@ public class FXMLCompanyViewjobforRemove implements Initializable {
 
         delButton.setPickOnBounds(true);
         delButton.setOnMouseClicked((MouseEvent event) -> {
-            Controller.controller.delModelThis();
+            Controller.controller.delJobThis();
             try {
                 Stage.stage.changeStage("viewPostJob");
             } catch (Exception e) {
