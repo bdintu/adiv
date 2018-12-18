@@ -223,7 +223,7 @@ public class Controller {
         this.models = models;
     }
 
-    public ArrayList<Model> getFilter() {
+    public ArrayList<Model> getJobAfterFilter() {
         return filter;
     }
 

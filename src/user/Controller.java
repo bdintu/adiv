@@ -74,4 +74,8 @@ public class Controller {
     public void setSession(Model session) {
         this.session = session;
     }
+
+    public void clearSession() {
+        this.session = null;
+    }
 }

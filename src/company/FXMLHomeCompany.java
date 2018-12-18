@@ -35,6 +35,9 @@ public class FXMLHomeCompany implements Initializable {
         logoutButton.setPickOnBounds(true);
         logoutButton.setOnMouseClicked((MouseEvent event) -> {
 
+            Controller.controller.clearSession();
+            user.Controller.controller.clearSession();
+
             try {
                 Stage.stage.changeStage("Login");
             } catch (Exception e) {
