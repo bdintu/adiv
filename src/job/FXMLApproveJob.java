@@ -44,7 +44,7 @@ public class FXMLApproveJob implements Initializable {
 
         job.ControllerMenu.addUserApprove(userField);
 
-        Model sel = Controller.controller.getSelectJob();
+        Model sel = Controller.controller.getSelect();
         jobNameField.setText(sel.getName());
 
         viewButton.setOnMouseClicked((MouseEvent event) -> {

@@ -7,8 +7,8 @@ public class Controller {
     public static Controller controller;
 
     private ArrayList<Model> models;
-    private ArrayList<Model> filterJob;
-    private Model selectJob;
+    private ArrayList<Model> filter;
+    private Model select;
     private seeker.Model selectSeeker;
 
     private jobfunction.Model jobFunctionFilter;
@@ -21,24 +21,24 @@ public class Controller {
     public static void Controller() {
         controller = new Controller();
         controller.models = new ArrayList<Model>();
-        controller.filterJob = new ArrayList<Model>();
+        controller.filter = new ArrayList<Model>();
     }
 
-    public void addJob(Model job) {
-        if (hasJob(job) == false) {
+    public void addModel(Model job) {
+        if (hasModel(job) == false) {
             models.add(job);
         }
     }
 
-    public void delJob(Model job) {
+    public void delModel(Model job) {
         models.remove(job);
     }
 
-    public void delJobThis() {
-        delJob(selectJob);
+    public void delModelThis() {
+        delModel(select);
     }
 
-    private boolean hasJob(Model job_input) {
+    private boolean hasModel(Model job_input) {
         for (Model job : models) {
             if (job.equals(job_input)) {
                 return true;
@@ -69,14 +69,14 @@ public class Controller {
         return false;
     }
 
-    public void delApplyJobThis() {
-        seeker.Model seekerr = seeker.Controller.controller.getSession();
-        Model job = getSelectJob();
-        delApplyJob(job, seekerr);
+    public void delAllApplyJob(Model job_input) {
+        job_input.getApply().clear();
     }
 
-    public void delApplyJobs(Model job_input) {
-        job_input.getApply().clear();
+    public void delApplyJobThis() {
+        seeker.Model seekerr = seeker.Controller.controller.getSession();
+        Model job = getSelect();
+        delApplyJob(job, seekerr);
     }
 
     public boolean applyJob(Model job_input, seeker.Model seeker_input) {
@@ -91,7 +91,7 @@ public class Controller {
 
     public boolean applyJobThis() {
         seeker.Model seekerr = seeker.Controller.controller.getSession();
-        Model job = getSelectJob();
+        Model job = getSelect();
         return applyJob(job, seekerr);
     }
 
@@ -122,7 +122,7 @@ public class Controller {
     public void approveJob(Model job_input, seeker.Model seeker_input, String detail_input) {
         if (hasApplyJob(job_input, seeker_input)) {
 //            delApplyJob(job_input, seeker_input);
-            delApplyJobs(job_input);
+            delAllApplyJob(job_input);
             job_input.setApprove(seeker_input);
             job_input.setDetail(detail_input);
         } else {
@@ -131,7 +131,7 @@ public class Controller {
     }
 
     public void approveJobThis(String detail_input) {
-        Model job_input = selectJob;
+        Model job_input = select;
         seeker.Model seeker_input = selectSeeker;
         approveJob(job_input, seeker_input, detail_input);
     }
@@ -150,47 +150,47 @@ public class Controller {
 
     public void filter() {
 
-        filterJob = new ArrayList<>(models);
+        filter = new ArrayList<>(models);
 
-        for (int i = 0; i < filterJob.size(); ++i) {
-            if (filterJob.get(i).getApprove() != null) {
-                filterJob.remove(i);
+        for (int i = 0; i < filter.size(); ++i) {
+            if (filter.get(i).getApprove() != null) {
+                filter.remove(i);
             }
 
             if (jobFunctionFilter != null)
-                if (!filterJob.get(i).getJobFunction().equals(jobFunctionFilter)) {
-                    filterJob.remove(i);
+                if (!filter.get(i).getJobFunction().equals(jobFunctionFilter)) {
+                    filter.remove(i);
                     continue;
                 }
 
             if (jobLevelFilter != null)
-                if (!filterJob.get(i).getJobLevel().equals(jobLevelFilter)) {
-                    filterJob.remove(i);
+                if (!filter.get(i).getJobLevel().equals(jobLevelFilter)) {
+                    filter.remove(i);
                     continue;
                 }
 
             if (jobTypeFilter != null)
-                if (!filterJob.get(i).getJobType().equals(jobTypeFilter)) {
-                    filterJob.remove(i);
+                if (!filter.get(i).getJobType().equals(jobTypeFilter)) {
+                    filter.remove(i);
                     continue;
                 }
 
             if (locationFilter != null)
-                if (!filterJob.get(i).getLocation().equals(locationFilter)) {
-                    filterJob.remove(i);
+                if (!filter.get(i).getLocation().equals(locationFilter)) {
+                    filter.remove(i);
                     continue;
                 }
 
             if (salaryFilter != null)
-                if (!filterJob.get(i).getSalary().equals(salaryFilter)) {
-                    filterJob.remove(i);
+                if (!filter.get(i).getSalary().equals(salaryFilter)) {
+                    filter.remove(i);
                     continue;
                 }
 
             if (skilFilterl != null)
-                for (skill.Model skill : filterJob.get(i).getSkill())
+                for (skill.Model skill : filter.get(i).getSkill())
                     if (!skill.equals(skilFilterl)) {
-                        filterJob.remove(i);
+                        filter.remove(i);
                         continue;
                     }
         }
@@ -224,19 +224,19 @@ public class Controller {
     }
 
     public ArrayList<Model> getJobAfterFilter() {
-        return filterJob;
+        return filter;
     }
 
-    public void setFilterJob(ArrayList<Model> filterJob) {
-        this.filterJob = filterJob;
+    public void setFilter(ArrayList<Model> filter) {
+        this.filter = filter;
     }
 
-    public Model getSelectJob() {
-        return selectJob;
+    public Model getSelect() {
+        return select;
     }
 
-    public void setSelectJob(Model selectJob) {
-        this.selectJob = selectJob;
+    public void setSelect(Model select) {
+        this.select = select;
     }
 
     public seeker.Model getSelectSeeker() {

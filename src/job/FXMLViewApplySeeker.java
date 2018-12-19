@@ -64,7 +64,7 @@ public class FXMLViewApplySeeker implements Initializable {
                             ObservableValue<? extends Model> observable,
                             Model oldValue, Model newValue) {
 
-                        Controller.controller.setSelectJob(newValue);
+                        Controller.controller.setSelect(newValue);
                     }
                 });
 

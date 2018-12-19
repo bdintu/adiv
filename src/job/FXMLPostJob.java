@@ -75,7 +75,7 @@ public class FXMLPostJob implements Initializable {
                 skil.add(ski);
 
                 Model jo = new job.Model(jobNameField.getText(), detailField.getText(), company.Controller.controller.getSession(), jf, jl, jt, loc, sa, skil);
-                Controller.controller.addJob(jo);
+                Controller.controller.addModel(jo);
 
                 try {
                     Stage.stage.changeStage("viewPostJob");

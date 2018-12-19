@@ -39,7 +39,7 @@ public class FXMLViewJob implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        Model sel = Controller.controller.getSelectJob();
+        Model sel = Controller.controller.getSelect();
 
         jobNameField.setText(sel.getName());
         jobTypeField.setText(sel.getJobType().getName());

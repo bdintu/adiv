@@ -32,7 +32,7 @@ public class FXMLCompanyApproveDetail implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        job.Model sel = job.Controller.controller.getSelectJob();
+        job.Model sel = job.Controller.controller.getSelect();
         seeker.Model selSeeker = Controller.controller.getSelectSeeker();
         jobNameField.setText(sel.getName());
         firstNameField.setText(selSeeker.getFirstName() +' '+ selSeeker.getLastName());

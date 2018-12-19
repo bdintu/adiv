@@ -29,7 +29,7 @@ public class FXMLSeekerViewApproveDetail implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        job.Model sel = job.Controller.controller.getSelectJob();
+        job.Model sel = job.Controller.controller.getSelect();
 
         jobNameField.setText(sel.getName());
         companyNameField.setText(sel.getCompany().getName());
