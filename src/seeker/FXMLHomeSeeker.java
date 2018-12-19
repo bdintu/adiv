@@ -37,8 +37,8 @@ public class FXMLHomeSeeker implements Initializable {
     private MenuButton jobLevelField;
     @FXML
     private MenuButton salaryField;
-//    @FXML
-//    private MenuButton skillField;
+    @FXML
+    private MenuButton skillField;
     @FXML
     private MenuButton jobFunctionField;
 
@@ -68,7 +68,7 @@ public class FXMLHomeSeeker implements Initializable {
         job.ControllerMenu.addJobFunctionFieldTable(jobFunctionField, table);
         job.ControllerMenu.addJobLevelFieldTable(jobLevelField, table);
         job.ControllerMenu.addLocationFieldTable(locationField, table);
-//        job.ControllerMenu.addSkillFieldTable(skillField, table);
+        job.ControllerMenu.addSkillFieldTable(skillField, table);
         job.ControllerMenu.addSalaryFieldTable(salaryField, table);
 
         jobNameTable.setCellValueFactory(new PropertyValueFactory<>("name"));
