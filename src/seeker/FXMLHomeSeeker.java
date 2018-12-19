@@ -10,6 +10,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import job.Controller;
+import job.Model;
 import stage.Stage;
 
 import java.net.URL;
@@ -60,7 +62,7 @@ public class FXMLHomeSeeker implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        Controller.controller.clearSession();
+        Controller.controller.clearFilter();
 
         job.ControllerMenu.addJobTypeFieldTable(jobTypeField, table);
         job.ControllerMenu.addJobFunctionFieldTable(jobFunctionField, table);
@@ -82,9 +84,6 @@ public class FXMLHomeSeeker implements Initializable {
         logoutButton.setPickOnBounds(true);
         logoutButton.setOnMouseClicked((MouseEvent event) -> {
 
-            Controller.controller.clearSession();
-            user.Controller.controller.clearSession();
-
             try {
                 Stage.stage.changeStage("Login");
             } catch (Exception e) {
@@ -105,14 +104,14 @@ public class FXMLHomeSeeker implements Initializable {
         });
 
         table.getSelectionModel().selectedItemProperty()
-                .addListener(new ChangeListener<job.Model>() {
+                .addListener(new ChangeListener<Model>() {
 
                     @Override
                     public void changed(
-                            ObservableValue<? extends job.Model> observable,
-                            job.Model oldValue, job.Model newValue) {
+                            ObservableValue<? extends Model> observable,
+                            Model oldValue, Model newValue) {
 
-                        job.Controller.controller.setSelect(newValue);
+                        Controller.controller.setSelect(newValue);
                     }
                 });
 

@@ -75,8 +75,4 @@ public class Controller {
     public void setSession(user.Model user) {
         this.session = getCompany(user);
     }
-
-    public void clearSession() {
-        this.session = null;
-    }
 }

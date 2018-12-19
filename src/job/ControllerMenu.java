@@ -27,7 +27,7 @@ public class ControllerMenu {
         Controller.controller.filter();
 
         list = FXCollections.observableArrayList();
-        for (Model i : Controller.controller.getJobAfterFilter()) {
+        for (Model i : Controller.controller.getFilter()) {
             list.add(i);
         }
 
